@@ -101,6 +101,80 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4DC030B8269AF71500E929A4 /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9C49EFB269A97E600A5FFA5 /* ViewController.swift */,
+			);
+			path = UIViewControllers;
+			sourceTree = "<group>";
+		};
+		4DC030B9269AF75E00E929A4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4DC030B8269AF71500E929A4 /* UIViewControllers */,
+				4DC030BC269AF7C900E929A4 /* UIViews */,
+				4DC030BF269AF83600E929A4 /* ViewModels */,
+				4DC030C0269AF84A00E929A4 /* Data */,
+				4DC030BE269AF7EE00E929A4 /* Protocols */,
+				4DC030BD269AF7D000E929A4 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4DC030BA269AF78900E929A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9C49F00269A97E800A5FFA5 /* Assets.xcassets */,
+				D9C49F05269A97E800A5FFA5 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4DC030BB269AF7AF00E929A4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D9C49F02269A97E800A5FFA5 /* LaunchScreen.storyboard */,
+				D9C49EFD269A97E600A5FFA5 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4DC030BC269AF7C900E929A4 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		4DC030BD269AF7D000E929A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DC030BE269AF7EE00E929A4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4DC030BF269AF83600E929A4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4DC030C0269AF84A00E929A4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		65E8CE29BEE030AD6DA5D815 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +213,11 @@
 		D9C49EF6269A97E600A5FFA5 /* Vitamin */ = {
 			isa = PBXGroup;
 			children = (
+				4DC030B9269AF75E00E929A4 /* Sources */,
 				D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */,
 				D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */,
-				D9C49EFB269A97E600A5FFA5 /* ViewController.swift */,
-				D9C49EFD269A97E600A5FFA5 /* Main.storyboard */,
-				D9C49F00269A97E800A5FFA5 /* Assets.xcassets */,
-				D9C49F02269A97E800A5FFA5 /* LaunchScreen.storyboard */,
-				D9C49F05269A97E800A5FFA5 /* Info.plist */,
+				4DC030BB269AF7AF00E929A4 /* Storyboards */,
+				4DC030BA269AF78900E929A4 /* Resources */,
 			);
 			path = Vitamin;
 			sourceTree = "<group>";
