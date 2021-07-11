@@ -113,11 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				4DC030B8269AF71500E929A4 /* UIViewControllers */,
-				4DC030BC269AF7C900E929A4 /* UIViews */,
-				4DC030BF269AF83600E929A4 /* ViewModels */,
-				4DC030C0269AF84A00E929A4 /* Data */,
-				4DC030BE269AF7EE00E929A4 /* Protocols */,
-				4DC030BD269AF7D000E929A4 /* Extensions */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -138,41 +133,6 @@
 				D9C49EFD269A97E600A5FFA5 /* Main.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		4DC030BC269AF7C900E929A4 /* UIViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIViews;
-			sourceTree = "<group>";
-		};
-		4DC030BD269AF7D000E929A4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		4DC030BE269AF7EE00E929A4 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		4DC030BF269AF83600E929A4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		4DC030C0269AF84A00E929A4 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		65E8CE29BEE030AD6DA5D815 /* Pods */ = {
