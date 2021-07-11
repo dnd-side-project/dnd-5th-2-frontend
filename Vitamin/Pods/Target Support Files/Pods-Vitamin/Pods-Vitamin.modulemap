@@ -1,0 +1,6 @@
+framework module Pods_Vitamin {
+  umbrella header "Pods-Vitamin-umbrella.h"
+
+  export *
+  module * { export * }
+}
