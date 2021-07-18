@@ -8,6 +8,7 @@ target 'Vitamin' do
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'SDWebImage'
+  pod 'SwiftLint'
 
   # Pods for Vitamin
 
