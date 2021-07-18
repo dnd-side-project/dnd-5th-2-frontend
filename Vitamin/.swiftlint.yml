@@ -1,0 +1,9 @@
+excluded:
+  - Pods
+  - Vitamin/AppDelegate.swift
+  - Vitamin/SceneDelegate.swift
+  - VitaminTests/
+  - VitaminUITests/
+
+line_length:
+  error: 99
