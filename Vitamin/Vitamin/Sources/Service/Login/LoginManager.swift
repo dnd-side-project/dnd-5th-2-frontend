@@ -7,6 +7,7 @@
 
 import Foundation
 import JWTDecode
+import Alamofire
 
 class LoginManager {
 
@@ -33,18 +34,6 @@ class LoginManager {
         return
       }
 
-      _ = self.generateToken(jwt: jwt)
-    }
-  }
-
-  func generateToken(jwt: String) -> Bool {
-    do {
-      let jwt = try decode(jwt: jwt)
-
-      return true
-    } catch let error {
-      print(error.localizedDescription)
-      return false
     }
   }
 }

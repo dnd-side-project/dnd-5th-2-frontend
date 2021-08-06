@@ -14,6 +14,7 @@
 		4D27533326BD75B60097B8EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27533226BD75B60097B8EB /* LoginViewController.swift */; };
 		4D27534726BD79570097B8EB /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27534626BD79570097B8EB /* LoginManager.swift */; };
 		4D27534F26BD82F10097B8EB /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27534E26BD82F10097B8EB /* LoginUser.swift */; };
+		4D2753A126BD9B8F0097B8EB /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2753A026BD9B8F0097B8EB /* TokenUtils.swift */; };
 		4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC0316726A42DDD00E929A4 /* .swiftlint.yml */; };
 		D8D75DD365F598B2B294FEDA /* Pods_Vitamin_VitaminUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */; };
 		D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */; };
@@ -57,6 +58,7 @@
 		4D27533226BD75B60097B8EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4D27534626BD79570097B8EB /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		4D27534E26BD82F10097B8EB /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
+		4D2753A026BD9B8F0097B8EB /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		4DC0316726A42DDD00E929A4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6C1714BA967ADA82257E4E23 /* Pods-VitaminTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitaminTests.release.xcconfig"; path = "Target Support Files/Pods-VitaminTests/Pods-VitaminTests.release.xcconfig"; sourceTree = "<group>"; };
 		7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vitamin_VitaminUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4D27534626BD79570097B8EB /* LoginManager.swift */,
+				4D2753A026BD9B8F0097B8EB /* TokenUtils.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2753A126BD9B8F0097B8EB /* TokenUtils.swift in Sources */,
 				D9A564E426BD647100ACB0EB /* URLMaker.swift in Sources */,
 				D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */,
 				D9C49EFC269A97E600A5FFA5 /* ViewController.swift in Sources */,
