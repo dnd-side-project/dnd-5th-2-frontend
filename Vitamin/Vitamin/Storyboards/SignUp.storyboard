@@ -73,6 +73,9 @@
                                     <constraint firstAttribute="width" constant="176" id="vQf-ya-55b"/>
                                 </constraints>
                                 <state key="normal" title="계속하기"/>
+                                <connections>
+                                    <action selector="changeViewType:" destination="SiW-Uj-sri" eventType="touchUpInside" id="Cpi-gF-Fkx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jsI-0F-SgE"/>

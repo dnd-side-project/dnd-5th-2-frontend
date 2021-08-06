@@ -15,6 +15,16 @@ class LoginViewController: UIViewController {
   @IBOutlet var lookAroundButton: UIButton!
   @IBOutlet var continueButton: UIButton!
   @IBOutlet var emailTextFieldResginGestureRecognizer: UITapGestureRecognizer!
+  
+  var viewType: ViewType?
+  
+  enum ViewType {
+    case email
+    case nickName
+    case loginPassword
+    case signUpPassword
+    case findPassword
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,7 +61,28 @@ class LoginViewController: UIViewController {
   @IBAction func lookAround(_ sender: UIButton) {
     // MARK: TODO - Home으로 연결
   }
-
+  
+  @IBAction func changeViewType(_ sender: UIButton) {
+    guard let viewType = viewType else { return }
+    
+    switch viewType {
+    case .email:
+      // MARK: TODO; 이메일 등록 여부 확인 후, signUp이나 login으로 넘어가기
+      print(">")
+    case .findPassword:
+      // MARK: TODO ; 비밀번호 찾기 기능
+      print(">")
+    case .loginPassword:
+      // MARK: TODO; 로그인하고 Home으로 이동하기
+      print(">")
+    case .nickName:
+      // MARK: TODO ; 회원가입 request 요청하고 Home으로 이동하기
+      print(">")
+    case .signUpPassword:
+      self.viewType = .nickName
+    }
+  }
+  
   func updateContinueButton() {
     continueButton.backgroundColor = continueButton.isEnabled ?
       .black :  UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
