@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import JWTDecode
 import Alamofire
 
 class LoginManager {
@@ -26,14 +25,18 @@ class LoginManager {
     }
   }
 
-  func login(loginUser: LoginUser) {
+  func login(loginUser: LoginUser,
+             completionHandler: @escaping (Bool) -> Void) {
     NetworkManager.shared.requestLogin(with: loginUser) { result in
       guard let tokenData = result as? [String: String],
             let jwt = tokenData["jwt"] else {
-        // MARK: - 핸들링
+        completionHandler(false)
         return
       }
 
+      let token = TokenUtils()
+      let successToCreate = token.create(account: "accessToken", value: jwt) // MARK: - token 종류 확인하기
+      completionHandler(successToCreate)
     }
   }
 }

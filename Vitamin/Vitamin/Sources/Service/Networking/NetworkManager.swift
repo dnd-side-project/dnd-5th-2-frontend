@@ -51,6 +51,5 @@ class NetworkManager {
         completionHandler(nil)
       }
     }
-    completionHandler(true)
   }
 }
