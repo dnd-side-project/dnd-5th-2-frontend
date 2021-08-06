@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class User: Codable {
+  var email: String = ""
+  var username: String = ""
+  var gender: Gender
+  var age: Age
+  var password: String = ""
+}
