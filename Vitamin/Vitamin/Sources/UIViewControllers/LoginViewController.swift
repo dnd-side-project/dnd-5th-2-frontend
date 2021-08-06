@@ -15,9 +15,9 @@ class LoginViewController: UIViewController {
   @IBOutlet var lookAroundButton: UIButton!
   @IBOutlet var continueButton: UIButton!
   @IBOutlet var emailTextFieldResginGestureRecognizer: UITapGestureRecognizer!
-  
+
   var viewType: ViewType?
-  
+
   enum ViewType {
     case email
     case nickName
@@ -61,10 +61,10 @@ class LoginViewController: UIViewController {
   @IBAction func lookAround(_ sender: UIButton) {
     // MARK: TODO - Home으로 연결
   }
-  
+
   @IBAction func changeViewType(_ sender: UIButton) {
     guard let viewType = viewType else { return }
-    
+
     switch viewType {
     case .email:
       // MARK: TODO; 이메일 등록 여부 확인 후, signUp이나 login으로 넘어가기
@@ -82,40 +82,10 @@ class LoginViewController: UIViewController {
       self.viewType = .nickName
     }
   }
-  
+
   func updateContinueButton() {
     continueButton.backgroundColor = continueButton.isEnabled ?
       .black :  UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
-  }
-}
-
-// MARK: UITextField 관련 메소드
-extension LoginViewController: UITextFieldDelegate {
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-  }
-
-  @objc func keyboardWillShow() {
-    emailTextFieldResginGestureRecognizer.isEnabled = true
-  }
-
-  @objc func keyboardWillHide() {
-    emailTextFieldResginGestureRecognizer.isEnabled = false
-  }
-
-  @objc func textFieldDidChange(sender: UITextField) {
-    if sender == emailTextField {
-      continueButton.isEnabled = isValidEmail(emailTextField.text ?? "")
-      updateContinueButton()
-    }
-  }
-
-  func isValidEmail(_ email: String) -> Bool {
-      let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-      let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-      return emailPred.evaluate(with: email)
   }
 }
 
