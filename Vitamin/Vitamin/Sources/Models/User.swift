@@ -24,16 +24,14 @@ enum Age: Int, Codable {
 
 class User: Codable {
   var email: String = ""
-  var username: String = ""
-  var gender: Gender
-  var age: Age
   var password: String = ""
+  var username: String? = ""
+  var gender: Gender?
+  var age: Age?
 
-  init(email: String, username: String, gender: Gender, age: Age, password: String) {
+  init(email: String, password: String, username: String) {
     self.email = email
     self.username = username
-    self.gender = gender
-    self.age = age
     self.password = password
   }
 }
