@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1801189CF5CB8783E08CFF32 /* Pods_VitaminTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA85F98757D77AA70A28170 /* Pods_VitaminTests.framework */; };
 		1D990877E1EFB54A4F85E44E /* Pods_Vitamin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79104825172E7C028AD3CDEA /* Pods_Vitamin.framework */; };
+		4D27532326BD746C0097B8EB /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D27532226BD746C0097B8EB /* SignUp.storyboard */; };
+		4D27532B26BD74940097B8EB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27532A26BD74940097B8EB /* SignUpViewController.swift */; };
+		4D27533326BD75B60097B8EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27533226BD75B60097B8EB /* LoginViewController.swift */; };
 		4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC0316726A42DDD00E929A4 /* .swiftlint.yml */; };
 		D8D75DD365F598B2B294FEDA /* Pods_Vitamin_VitaminUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */; };
 		D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */; };
@@ -48,6 +51,9 @@
 		214495BA2DE23CAE316FEB42 /* Pods-Vitamin-VitaminUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vitamin-VitaminUITests.release.xcconfig"; path = "Target Support Files/Pods-Vitamin-VitaminUITests/Pods-Vitamin-VitaminUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2D17F98A158CE7407933F864 /* Pods-Vitamin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vitamin.debug.xcconfig"; path = "Target Support Files/Pods-Vitamin/Pods-Vitamin.debug.xcconfig"; sourceTree = "<group>"; };
 		2EA85F98757D77AA70A28170 /* Pods_VitaminTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VitaminTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D27532226BD746C0097B8EB /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		4D27532A26BD74940097B8EB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4D27533226BD75B60097B8EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4DC0316726A42DDD00E929A4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6C1714BA967ADA82257E4E23 /* Pods-VitaminTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitaminTests.release.xcconfig"; path = "Target Support Files/Pods-VitaminTests/Pods-VitaminTests.release.xcconfig"; sourceTree = "<group>"; };
 		7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vitamin_VitaminUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				D9C49EFB269A97E600A5FFA5 /* ViewController.swift */,
+				4D27532A26BD74940097B8EB /* SignUpViewController.swift */,
+				4D27533226BD75B60097B8EB /* LoginViewController.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 			children = (
 				D9C49F02269A97E800A5FFA5 /* LaunchScreen.storyboard */,
 				D9C49EFD269A97E600A5FFA5 /* Main.storyboard */,
+				4D27532226BD746C0097B8EB /* SignUp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -344,6 +353,7 @@
 				D9C49F04269A97E800A5FFA5 /* LaunchScreen.storyboard in Resources */,
 				D9C49F01269A97E800A5FFA5 /* Assets.xcassets in Resources */,
 				D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */,
+				4D27532326BD746C0097B8EB /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
 		};
 		6736F1F4871E968010185875 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -492,6 +502,8 @@
 				D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */,
 				D9C49EFC269A97E600A5FFA5 /* ViewController.swift in Sources */,
 				D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */,
+				4D27532B26BD74940097B8EB /* SignUpViewController.swift in Sources */,
+				4D27533326BD75B60097B8EB /* LoginViewController.swift in Sources */,
 				D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */,
 				D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */,
 				D9A564E626BD696900ACB0EB /* User.swift in Sources */,
