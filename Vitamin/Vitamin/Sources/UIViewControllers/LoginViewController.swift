@@ -14,12 +14,13 @@ class LoginViewController: UIViewController {
   @IBOutlet var emailTextField: UITextField!
   @IBOutlet var lookAroundButton: UIButton!
   @IBOutlet var continueButton: UIButton!
+  @IBOutlet var emailTextFieldResginGestureRecognizer: UITapGestureRecognizer!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     setupUI()
-    emailTextField.delegate = self
+    setupObserver()
   }
 
   func setupUI() {
@@ -35,6 +36,18 @@ class LoginViewController: UIViewController {
                                      originYOffset: 3)
   }
 
+  func setupObserver() {
+    emailTextField.delegate = self
+    emailTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+  }
+
+  @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+    emailTextField.resignFirstResponder()
+  }
+
   @IBAction func lookAround(_ sender: UIButton) {
     // MARK: TODO - Home으로 연결
   }
@@ -45,8 +58,34 @@ class LoginViewController: UIViewController {
   }
 }
 
+// MARK: UITextField 관련 메소드
 extension LoginViewController: UITextFieldDelegate {
-  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+
+  @objc func keyboardWillShow() {
+    emailTextFieldResginGestureRecognizer.isEnabled = true
+  }
+
+  @objc func keyboardWillHide() {
+    emailTextFieldResginGestureRecognizer.isEnabled = false
+  }
+
+  @objc func textFieldDidChange(sender: UITextField) {
+    if sender == emailTextField {
+      continueButton.isEnabled = isValidEmail(emailTextField.text ?? "")
+      updateContinueButton()
+    }
+  }
+
+  func isValidEmail(_ email: String) -> Bool {
+      let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+      let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+      return emailPred.evaluate(with: email)
+  }
 }
 
 // MARK: - 이후 Extension으로 옮길 것

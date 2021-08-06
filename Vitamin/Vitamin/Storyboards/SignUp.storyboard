@@ -46,7 +46,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gf6-8k-ACQ">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gf6-8k-ACQ">
                                 <rect key="frame" x="61" y="363" width="292" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -77,6 +77,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jsI-0F-SgE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="1B8-W9-bxv" firstAttribute="leading" secondItem="gf6-8k-ACQ" secondAttribute="leading" id="CVc-Y9-CmQ"/>
                             <constraint firstItem="6Q6-0N-6Cd" firstAttribute="centerX" secondItem="U9l-KQ-ESM" secondAttribute="centerX" id="JSe-52-4Zn"/>
@@ -93,14 +94,23 @@
                             <constraint firstItem="gf6-8k-ACQ" firstAttribute="leading" secondItem="jsI-0F-SgE" secondAttribute="leading" constant="61" id="nuN-WR-tk3"/>
                             <constraint firstItem="U9l-KQ-ESM" firstAttribute="centerX" secondItem="jsI-0F-SgE" secondAttribute="centerX" id="rR6-fb-rDh"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="agC-kj-Wy0" appends="YES" id="z9P-KL-wB9"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="continueButton" destination="fGs-8S-cpj" id="RKI-8H-heV"/>
                         <outlet property="emailTextField" destination="gf6-8k-ACQ" id="DB6-37-5qE"/>
+                        <outlet property="emailTextFieldResginGestureRecognizer" destination="agC-kj-Wy0" id="sLA-Cw-cO6"/>
                         <outlet property="lookAroundButton" destination="gIy-en-YrI" id="Mzr-F4-FU9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWa-Tw-aqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="agC-kj-Wy0">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="SiW-Uj-sri" id="TXd-Yc-4Rr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1250.7246376811595" y="407.8125"/>
         </scene>
