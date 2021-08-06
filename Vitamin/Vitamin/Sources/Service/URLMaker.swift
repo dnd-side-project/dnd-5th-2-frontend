@@ -9,11 +9,16 @@ import Foundation
 import Alamofire
 
 enum Feature {
+
   case signUp
+  case login
+
   var urlPath: String {
     switch self {
     case .signUp:
       return "/auth/signup"
+    case .login:
+      return "auth/login"
     }
   }
 }

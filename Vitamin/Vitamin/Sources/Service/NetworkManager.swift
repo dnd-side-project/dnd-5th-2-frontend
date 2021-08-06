@@ -12,13 +12,14 @@ class NetworkManager {
 
   static let shared = NetworkManager()
 
+  let jsonDecoder = JSONDecoder()
+
   private init() { }
 
   func requestSignUp(with user: User,
                      completionHandler: @escaping (Result<User, Error>) -> Void) {
 
     let signUpURL = URLMaker.makeRequestURL(feature: .signUp)
-
     let request = AF.request(signUpURL,
                              method: .post,
                              parameters: user)
@@ -31,5 +32,29 @@ class NetworkManager {
         completionHandler(.failure(error))
       }
     }
+  }
+
+  func requestLogin(with loginUser: LoginUser,
+                    completionHandler: @escaping (Bool) -> Void) {
+
+    let loginURL = URLMaker.makeRequestURL(feature: .login)
+    let request = AF.request(loginURL,
+                             method: .post,
+                             parameters: loginUser)
+
+    request.responseJSON { response in
+      switch response.result {
+      case .success:
+        if let tokenData = response.value as? [String: String],
+           let token = tokenData["jwt"] {
+          print(token)
+        }
+
+      case .failure(let error):
+        print(error.localizedDescription)
+        completionHandler(false)
+      }
+    }
+    completionHandler(true)
   }
 }
