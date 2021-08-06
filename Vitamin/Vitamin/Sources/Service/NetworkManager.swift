@@ -45,10 +45,13 @@ class NetworkManager {
     request.responseJSON { response in
       switch response.result {
       case .success:
-        if let tokenData = response.value as? [String: String],
-           let token = tokenData["jwt"] {
-          print(token)
+        guard let tokenData = response.value as? [String: String],
+              let token = tokenData["jwt"] else {
+          completionHandler(false)
+          return
         }
+
+        self.generateToken(token: token)
 
       case .failure(let error):
         print(error.localizedDescription)
@@ -56,5 +59,9 @@ class NetworkManager {
       }
     }
     completionHandler(true)
+  }
+
+  func generateToken(token: String) {
+
   }
 }
