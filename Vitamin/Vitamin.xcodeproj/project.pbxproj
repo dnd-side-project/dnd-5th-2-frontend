@@ -16,7 +16,6 @@
 		4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC0316726A42DDD00E929A4 /* .swiftlint.yml */; };
 		D8D75DD365F598B2B294FEDA /* Pods_Vitamin_VitaminUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */; };
 		D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */; };
-		D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E126BCCF2100ACB0EB /* SignUp.swift */; };
 		D9A564E426BD647100ACB0EB /* URLMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E326BD647100ACB0EB /* URLMaker.swift */; };
 		D9A564E626BD696900ACB0EB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E526BD696900ACB0EB /* User.swift */; };
 		D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */; };
@@ -62,7 +61,6 @@
 		79104825172E7C028AD3CDEA /* Pods_Vitamin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vitamin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69DADE05C6ABDC668F8EF3B /* Pods-Vitamin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vitamin.release.xcconfig"; path = "Target Support Files/Pods-Vitamin/Pods-Vitamin.release.xcconfig"; sourceTree = "<group>"; };
 		D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		D9A564E126BCCF2100ACB0EB /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		D9A564E326BD647100ACB0EB /* URLMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMaker.swift; sourceTree = "<group>"; };
 		D9A564E526BD696900ACB0EB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D9C49EF4269A97E600A5FFA5 /* Vitamin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitamin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,7 +182,6 @@
 		D9A564E026BCCF1500ACB0EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D9A564E126BCCF2100ACB0EB /* SignUp.swift */,
 				D9A564E526BD696900ACB0EB /* User.swift */,
 			);
 			path = Models;
@@ -509,7 +506,6 @@
 				4D27534726BD79570097B8EB /* LoginManager.swift in Sources */,
 				4D27533326BD75B60097B8EB /* LoginViewController.swift in Sources */,
 				D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */,
-				D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */,
 				D9A564E626BD696900ACB0EB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

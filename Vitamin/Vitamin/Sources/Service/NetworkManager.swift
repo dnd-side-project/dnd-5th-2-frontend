@@ -14,14 +14,14 @@ class NetworkManager {
 
   private init() { }
 
-  func requestSignUp(with signUp: SignUp,
+  func requestSignUp(with user: User,
                      completionHandler: @escaping (Result<User, Error>) -> Void) {
 
     let signUpURL = URLMaker.makeRequestURL(feature: .signUp)
 
     let request = AF.request(signUpURL,
                              method: .post,
-                             parameters: signUp)
+                             parameters: user)
 
     request.responseDecodable { (response: DataResponse<User, AFError>) in
       switch response.result {
