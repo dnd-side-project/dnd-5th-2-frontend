@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum Gender: String, Encodable {
+enum Gender: String, Codable {
   case male = "남"
   case female = "여"
 }
 
-enum Age: Int, Encodable {
+enum Age: Int, Codable {
   case teen = 10
   case twenty = 20
   case thirty = 30
