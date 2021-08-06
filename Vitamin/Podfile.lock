@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (5.4.1)
-  - JWTDecode (2.6.1)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
@@ -14,7 +13,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - JWTDecode (~> 2.6)
   - RxCocoa
   - RxSwift
   - SDWebImage
@@ -23,7 +21,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - JWTDecode
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -32,13 +29,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
-  JWTDecode: 5e6d4b49c2b098f994cf7617401c195c8c06300b
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 992dfa3cb14fd46c311feca1d37d3aace9266653
+PODFILE CHECKSUM: 86bdcad2cb17b66331e00ff7f71c3ac486b13812
 
 COCOAPODS: 1.10.1

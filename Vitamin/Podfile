@@ -9,7 +9,6 @@ target 'Vitamin' do
   pod 'Alamofire'
   pod 'SDWebImage'
   pod 'SwiftLint'
-  pod 'JWTDecode', '~> 2.6'
 
   # Pods for Vitamin
 
