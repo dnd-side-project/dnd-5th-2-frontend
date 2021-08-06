@@ -119,6 +119,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D27536126BD8FA00097B8EB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */,
+				D9A564E326BD647100ACB0EB /* URLMaker.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4D27536326BD8FAE0097B8EB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4D27534626BD79570097B8EB /* LoginManager.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		4DC030B8269AF71500E929A4 /* UIViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +191,8 @@
 		D9A564DD26BCCE2900ACB0EB /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */,
-				D9A564E326BD647100ACB0EB /* URLMaker.swift */,
-				4D27534626BD79570097B8EB /* LoginManager.swift */,
+				4D27536326BD8FAE0097B8EB /* Login */,
+				4D27536126BD8FA00097B8EB /* Networking */,
 			);
 			path = Service;
 			sourceTree = "<group>";
