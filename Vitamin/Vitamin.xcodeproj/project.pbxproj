@@ -12,6 +12,7 @@
 		4D27532326BD746C0097B8EB /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D27532226BD746C0097B8EB /* SignUp.storyboard */; };
 		4D27532B26BD74940097B8EB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27532A26BD74940097B8EB /* SignUpViewController.swift */; };
 		4D27533326BD75B60097B8EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27533226BD75B60097B8EB /* LoginViewController.swift */; };
+		4D27534726BD79570097B8EB /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27534626BD79570097B8EB /* LoginManager.swift */; };
 		4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC0316726A42DDD00E929A4 /* .swiftlint.yml */; };
 		D8D75DD365F598B2B294FEDA /* Pods_Vitamin_VitaminUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */; };
 		D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */; };
@@ -54,6 +55,7 @@
 		4D27532226BD746C0097B8EB /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		4D27532A26BD74940097B8EB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4D27533226BD75B60097B8EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4D27534626BD79570097B8EB /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		4DC0316726A42DDD00E929A4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6C1714BA967ADA82257E4E23 /* Pods-VitaminTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitaminTests.release.xcconfig"; path = "Target Support Files/Pods-VitaminTests/Pods-VitaminTests.release.xcconfig"; sourceTree = "<group>"; };
 		7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vitamin_VitaminUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				D9A564E026BCCF1500ACB0EB /* Models */,
-				D9A564DD26BCCE2900ACB0EB /* WebService */,
+				D9A564DD26BCCE2900ACB0EB /* Service */,
 				4DC030B8269AF71500E929A4 /* UIViewControllers */,
 			);
 			path = Sources;
@@ -169,13 +171,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D9A564DD26BCCE2900ACB0EB /* WebService */ = {
+		D9A564DD26BCCE2900ACB0EB /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */,
 				D9A564E326BD647100ACB0EB /* URLMaker.swift */,
+				4D27534626BD79570097B8EB /* LoginManager.swift */,
 			);
-			path = WebService;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D9A564E026BCCF1500ACB0EB /* Models */ = {
@@ -503,6 +506,7 @@
 				D9C49EFC269A97E600A5FFA5 /* ViewController.swift in Sources */,
 				D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */,
 				4D27532B26BD74940097B8EB /* SignUpViewController.swift in Sources */,
+				4D27534726BD79570097B8EB /* LoginManager.swift in Sources */,
 				4D27533326BD75B60097B8EB /* LoginViewController.swift in Sources */,
 				D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */,
 				D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */,
