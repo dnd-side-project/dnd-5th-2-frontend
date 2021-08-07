@@ -12,4 +12,8 @@ enum Constants {
     case english = "en"
     case korean = "ko"
   }
+
+  enum StoryboardName: String {
+    case Main
+  }
 }
