@@ -24,7 +24,9 @@ extension LoginViewController: UITextFieldDelegate {
 
   @objc func textFieldDidChange(sender: UITextField) {
     if sender == emailTextField {
-      continueButton.isEnabled = isValidEmail(emailTextField.text ?? "")
+      let isValid = isValidEmail(emailTextField.text ?? "")
+      continueButton.isEnabled = isValid
+      emailTextField.textColor = isValid ? textFieldValidColor : textFieldInvalidColor
       updateContinueButton()
     }
   }

@@ -20,6 +20,9 @@ class LoginViewController: UIViewController {
   var viewType: ViewType?
   var loginUser: LoginUser?
 
+  let textFieldValidColor = Constants.textBlack1
+  let textFieldInvalidColor = Constants.textBlack5
+
   enum ViewType {
     case email
     case nickName
@@ -47,7 +50,7 @@ class LoginViewController: UIViewController {
   }
 
   func setupUI() {
-    continueButton.setTitleColor(UIColor(red: 199/255, green: 199/255, blue: 206/255, alpha: 1), for: .disabled)
+    continueButton.setTitleColor(Constants.textBlack5, for: .disabled)
     continueButton.setTitleColor(UIColor.white, for: .normal)
     continueButton.makeRounded(radius: 13)
     emailTextField.makeRounded(radius: 13)
