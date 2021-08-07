@@ -24,10 +24,10 @@ extension LoginViewController: UITextFieldDelegate {
 
   @objc func textFieldDidChange(sender: UITextField) {
     switch sender {
-    case emailTextField:
+    case commonTextField:
       let isEnable = isEnalbeContinueButton()
       continueButton.isEnabled = isEnable
-      emailTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
+      commonTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
     case passwordTextField, checkPasswordTextField:
       let isEnable: Bool = { // MARK: TODO 비밀번호 규칙 추가
         if let passwordTextFieldText = passwordTextField.text,
@@ -62,7 +62,7 @@ extension LoginViewController: UITextFieldDelegate {
   }
 
   func isValidEmail() -> Bool {
-    let email = emailTextField.text ?? ""
+    let email = commonTextField.text ?? ""
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
     return emailPred.evaluate(with: email)

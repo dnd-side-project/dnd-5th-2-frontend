@@ -14,7 +14,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-  @IBOutlet var emailTextField: CustomTextField!
+  @IBOutlet var commonTextField: CustomTextField!
   @IBOutlet var lookAroundButton: UIButton!
   @IBOutlet var continueButton: UIButton!
   @IBOutlet var emailTextFieldResginGestureRecognizer: UITapGestureRecognizer!
@@ -72,7 +72,7 @@ class LoginViewController: UIViewController {
     continueButton.setTitleColor(UIColor.textBlack5, for: .disabled)
     continueButton.setTitleColor(UIColor.white, for: .normal)
     continueButton.makeRounded(radius: 13)
-    emailTextField.setupUI()
+    commonTextField.setupUI()
     passwordTextField.setupUI()
     checkPasswordTextField.setupUI()
     updateContinueButton()
@@ -82,7 +82,7 @@ class LoginViewController: UIViewController {
   }
 
   func setupObserver() {
-    emailTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
+    commonTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
     passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
     checkPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-    emailTextField.resignFirstResponder()
+    commonTextField.resignFirstResponder()
   }
 
   @IBAction func lookAround(_ sender: UIButton) {
@@ -102,7 +102,7 @@ class LoginViewController: UIViewController {
     switch self.viewType {
     case .email:
       // MARK: TODO; 이메일 등록 여부 확인 후, signUp이나 login으로 넘어가기
-      loginUser?.email = emailTextField.text
+      loginUser?.email = commonTextField.text
       checkEmail { exist in
         self.viewType = exist ? .loginPassword : .signUpPassword
       }
@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
       // MARK: TODO ; 회원가입 request 요청하고 Home으로 이동하기
       print(">")
     case .signUpPassword:
-      loginUser?.password = emailTextField.text
+      loginUser?.password = commonTextField.text
       self.viewType = .nickName
     default:
       break
@@ -132,22 +132,22 @@ class LoginViewController: UIViewController {
   }
 
   func updateViewByViewType() {
-    emailTextField.text = ""
-    emailTextField.isHidden = true
+    commonTextField.text = ""
+    commonTextField.isHidden = true
     passwordTextField.isHidden = true
     checkPasswordTextField.isHidden = true
     updateContinueButton(isEnable: false)
 
     switch viewType {
     case .email:
-      emailTextField.isHidden = false
+      commonTextField.isHidden = false
     case .signUpPassword:
       passwordTextField.isHidden = false
       checkPasswordTextField.isHidden = false
       continueButtonTopToEmailTextFieldConstraint.isActive = false
       continueButtonTopToCheckPasswordTextFieldConstraint.isActive = true
     case .nickName:
-      emailTextField.isHidden = false
+      commonTextField.isHidden = false
       continueButtonTopToCheckPasswordTextFieldConstraint.isActive = false
       continueButtonTopToEmailTextFieldConstraint.isActive = true
     default:

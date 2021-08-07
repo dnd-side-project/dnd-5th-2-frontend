@@ -138,9 +138,9 @@
                     </view>
                     <connections>
                         <outlet property="checkPasswordTextField" destination="SQf-Wk-Ydm" id="c5E-PE-ayZ"/>
+                        <outlet property="commonTextField" destination="gf6-8k-ACQ" id="DB6-37-5qE"/>
                         <outlet property="continueButton" destination="fGs-8S-cpj" id="RKI-8H-heV"/>
                         <outlet property="continueButtonTopToEmailTextFieldConstraint" destination="gVa-GD-O7x" id="UM3-tA-ZIL"/>
-                        <outlet property="emailTextField" destination="gf6-8k-ACQ" id="DB6-37-5qE"/>
                         <outlet property="emailTextFieldResginGestureRecognizer" destination="agC-kj-Wy0" id="sLA-Cw-cO6"/>
                         <outlet property="lookAroundButton" destination="gIy-en-YrI" id="Mzr-F4-FU9"/>
                         <outlet property="passwordTextField" destination="ynU-8v-61C" id="X5S-LG-Ze9"/>
