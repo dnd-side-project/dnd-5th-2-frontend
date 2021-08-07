@@ -25,12 +25,14 @@ class OnboardingViewController: UIViewController {
   private func setMainIntroductionLabel() {
     mainIntroductionLabel.text = "어떤 영양제가 필요한지\n꿀꺽이 알려드릴게요."
     mainIntroductionLabel.numberOfLines = 2
+    mainIntroductionLabel.font = UIFont.Pretendard(type: .Medium, size: 23)
   }
 
   private func setSubIntroductionLabel() {
     subIntroductionLabel.text = "시작하기 전, 간단한 질문을 통해, 딱 맞는\n영양제를 분석하여 큐레이션 해드릴게요."
     subIntroductionLabel.numberOfLines = 2
     subIntroductionLabel.textColor = UIColor(red: 115/255, green: 115/255, blue: 124/255, alpha: 1)
+    subIntroductionLabel.font = UIFont.Pretendard(type: .Light, size: 15)
   }
 
   private func setCheckUpButton() {
