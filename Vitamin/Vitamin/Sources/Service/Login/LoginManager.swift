@@ -11,7 +11,7 @@ import Alamofire
 class LoginManager {
 
   static let shared = LoginManager()
-  
+
   var currentUser: User?
 
   private init() { }
