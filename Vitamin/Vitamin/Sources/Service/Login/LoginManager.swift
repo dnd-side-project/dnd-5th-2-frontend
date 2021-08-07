@@ -11,6 +11,8 @@ import Alamofire
 class LoginManager {
 
   static let shared = LoginManager()
+  
+  var currentUser: User?
 
   private init() { }
 
@@ -28,8 +30,9 @@ class LoginManager {
   func login(loginUser: LoginUser,
              completionHandler: @escaping (Bool) -> Void) {
     NetworkManager.shared.requestLogin(with: loginUser) { result in
-      guard let tokenData = result as? [String: String],
-            let jwt = tokenData["jwt"] else {
+      guard let result = result as? [String: String],
+            let jwt = result["jwt"],
+            let user = result["user"] else { // MARK: TODO 백엔드 기능 구현되면 user 체크
         completionHandler(false)
         return
       }

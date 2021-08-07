@@ -23,15 +23,32 @@ enum Age: Int, Codable {
 }
 
 class User: Codable {
-  var email: String = ""
-  var password: String = ""
+  private var _email: String = ""
+  private var _password: String = ""
+  
+  var email: String {
+    get {
+      return self._email
+    }
+  }
+  
+  var password: String {
+    get {
+      return self._password
+    }
+  }
+  
   var username: String? = ""
   var gender: Gender?
   var age: Age?
 
   init(email: String, password: String, username: String) {
-    self.email = email
+    self._email = email
     self.username = username
-    self.password = password
+    self._password = password
+  }
+  
+  func updatePassword(_ password: String) {
+    self._password = password
   }
 }
