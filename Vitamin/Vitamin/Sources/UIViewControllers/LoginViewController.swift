@@ -115,6 +115,7 @@ class LoginViewController: UIViewController {
       // MARK: TODO ; 회원가입 request 요청하고 Home으로 이동하기
       print(">")
     case .signUpPassword:
+      loginUser?.password = emailTextField.text
       self.viewType = .nickName
     default:
       break
