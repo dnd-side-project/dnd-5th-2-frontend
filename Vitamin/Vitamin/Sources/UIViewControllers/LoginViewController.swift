@@ -15,8 +15,10 @@ class LoginViewController: UIViewController {
   @IBOutlet var lookAroundButton: UIButton!
   @IBOutlet var continueButton: UIButton!
   @IBOutlet var emailTextFieldResginGestureRecognizer: UITapGestureRecognizer!
+  @IBOutlet var titleLabel: UILabel!
 
   var viewType: ViewType?
+  var loginUser: LoginUser?
 
   enum ViewType {
     case email
@@ -24,6 +26,17 @@ class LoginViewController: UIViewController {
     case loginPassword
     case signUpPassword
     case findPassword
+
+    var titleLabelText: String {
+      switch self {
+      case .email:
+        return "이메일을 입력해주세요"
+      case .loginPassword, .signUpPassword:
+        return "비밀번호를 입력해주세요"
+      default:
+        return ""
+      }
+    }
   }
 
   override func viewDidLoad() {
@@ -34,16 +47,15 @@ class LoginViewController: UIViewController {
   }
 
   func setupUI() {
-    continueButton.setTitleColor(UIColor.black.withAlphaComponent(0.35), for: .disabled)
+    continueButton.setTitleColor(UIColor(red: 199/255, green: 199/255, blue: 206/255, alpha: 1), for: .disabled)
     continueButton.setTitleColor(UIColor.white, for: .normal)
+    continueButton.makeRounded(radius: 13)
+    emailTextField.makeRounded(radius: 13)
+    emailTextField.addBorder(color: UIColor(red: 224/255, green: 224/255, blue: 229/255, alpha: 1), borderWidth: 1)
     updateContinueButton()
-    emailTextField.textColor = UIColor.black.withAlphaComponent(0.4)
-    emailTextField.addBottomBorder(color: UIColor.black.withAlphaComponent(0.3),
-                                   borderWidth: 1,
-                                   originYOffset: -7)
     lookAroundButton.addBottomBorder(color: UIColor(red: 88/255, green: 88/255, blue: 88/255, alpha: 1),
                                      borderWidth: 1,
-                                     originYOffset: 3)
+                                     originYOffset: -3)
   }
 
   func setupObserver() {
@@ -73,8 +85,7 @@ class LoginViewController: UIViewController {
       // MARK: TODO ; 비밀번호 찾기 기능
       print(">")
     case .loginPassword:
-      // MARK: TODO; 로그인하고 Home으로 이동하기
-      print(">")
+      requestLogin()
     case .nickName:
       // MARK: TODO ; 회원가입 request 요청하고 Home으로 이동하기
       print(">")
@@ -87,6 +98,16 @@ class LoginViewController: UIViewController {
     continueButton.backgroundColor = continueButton.isEnabled ?
       .black :  UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
   }
+
+  func updateUIByViewType() {
+//    guard let viewType = viewType else { return }
+//    switch viewType {
+//    case .loginPassword:
+//      <#code#>
+//    default:
+//      <#code#>
+//    }
+  }
 }
 
 // MARK: - 이후 Extension으로 옮길 것
@@ -96,5 +117,17 @@ extension UIView {
     bottomLine.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth - (originYOffset ?? 0), width: self.frame.size.width, height: borderWidth)
     bottomLine.backgroundColor = color.cgColor
     layer.addSublayer(bottomLine)
+  }
+
+  func makeRounded(radius: CGFloat, at corners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]) {
+      self.layer.cornerRadius = radius
+      self.clipsToBounds = true
+
+      self.layer.maskedCorners = corners
+  }
+
+  func addBorder(color: UIColor, borderWidth: CGFloat) {
+    layer.borderColor = color.cgColor
+    layer.borderWidth = borderWidth
   }
 }

@@ -31,7 +31,6 @@ extension LoginViewController: UITextFieldDelegate {
 
   func isValidEmail(_ email: String) -> Bool {
       let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
       let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
       return emailPred.evaluate(with: email)
   }
@@ -39,5 +38,15 @@ extension LoginViewController: UITextFieldDelegate {
 
 // MARK: - 네트워크
 extension LoginViewController {
+  func requestLogin() {
+    guard let loginUser = loginUser else { return }
+    LoginManager.shared.login(loginUser: loginUser) { success in
+      guard success else {
+        // MARK: TODO - 로그인 오류 핸들링
+        return
+      }
 
+      // MARK: TODO - Home으로 이동하는 함수 구현
+    }
+  }
 }
