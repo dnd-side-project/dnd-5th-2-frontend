@@ -126,6 +126,7 @@ class LoginViewController: UIViewController {
     }
   }
 
+  // MARK: 뷰 업데이트
   func updateContinueButton(isEnable: Bool? = nil) {
     if let isEnable = isEnable {
       continueButton.isEnabled = isEnable

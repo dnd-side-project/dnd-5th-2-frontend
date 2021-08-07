@@ -97,8 +97,7 @@ extension LoginViewController {
         // MARK: TODO - 로그인 오류 핸들링
         return
       }
-
-      // MARK: TODO - Home으로 이동하는 함수 구현
+      // MARK: TODO - Home이나 온보딩 체크
     }
   }
 }

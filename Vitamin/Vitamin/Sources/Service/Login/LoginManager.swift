@@ -35,7 +35,7 @@ class LoginManager {
       }
 
       let token = TokenUtils()
-      let successToCreate = token.create(account: "accessToken", value: jwt) // MARK: - token 종류 확인하기
+      let successToCreate = token.create(account: "accessToken", value: jwt)
       completionHandler(successToCreate)
     }
   }
