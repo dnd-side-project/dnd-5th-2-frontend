@@ -14,11 +14,67 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="Vitamin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="eM2-VA-zPR">
+                                <rect key="frame" x="22" y="97" width="59" height="61"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FID-AI-lAh">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKH-Mw-n6L">
+                                        <rect key="frame" x="0.0" y="44" width="59" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="YhZ-RS-4Ot">
+                                <rect key="frame" x="22" y="663" width="331" height="103"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yl2-1C-t1J">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="48"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7S-Jd-RTg">
+                                        <rect key="frame" x="0.0" y="73" width="331" height="30"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Button">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YhZ-RS-4Ot" firstAttribute="leading" secondItem="eM2-VA-zPR" secondAttribute="leading" id="8Ww-MB-tN2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="YhZ-RS-4Ot" secondAttribute="bottom" constant="46" id="PhI-2e-8uF"/>
+                            <constraint firstItem="YhZ-RS-4Ot" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jLk-8L-tP3"/>
+                            <constraint firstItem="eM2-VA-zPR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="53" id="k5s-RN-G0Y"/>
+                            <constraint firstItem="eM2-VA-zPR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="rSx-mx-OSA"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="checkUpButton" destination="Yl2-1C-t1J" id="d2h-ua-7Ma"/>
+                        <outlet property="mainIntroductionLabel" destination="FID-AI-lAh" id="Oed-BP-cqe"/>
+                        <outlet property="skipButton" destination="L7S-Jd-RTg" id="htc-QY-hAp"/>
+                        <outlet property="subIntroductionLabel" destination="vKH-Mw-n6L" id="nJi-BI-cI2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

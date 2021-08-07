@@ -8,21 +8,46 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
+  @IBOutlet weak var mainIntroductionLabel: UILabel!
+  @IBOutlet weak var subIntroductionLabel: UILabel!
+  @IBOutlet weak var checkUpButton: UIButton!
+  @IBOutlet weak var skipButton: UIButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+    setMainIntroductionLabel()
+    setSubIntroductionLabel()
+    setCheckUpButton()
+    setSkipButton()
+  }
 
-    /*
-    // MARK: - Navigation
+  private func setMainIntroductionLabel() {
+    mainIntroductionLabel.text = "어떤 영양제가 필요한지\n꿀꺽이 알려드릴게요."
+    mainIntroductionLabel.numberOfLines = 2
+  }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  private func setSubIntroductionLabel() {
+    subIntroductionLabel.text = "시작하기 전, 간단한 질문을 통해, 딱 맞는\n영양제를 분석하여 큐레이션 해드릴게요."
+    subIntroductionLabel.numberOfLines = 2
+    subIntroductionLabel.textColor = UIColor(red: 115/255, green: 115/255, blue: 124/255, alpha: 1)
+  }
 
+  private func setCheckUpButton() {
+    checkUpButton.backgroundColor = .black
+    checkUpButton.setTitleColor(.white, for: .normal)
+    checkUpButton.setTitle("건강 유형 검사하기", for: .normal)
+    checkUpButton.makeRounded(radius: 13)
+  }
+
+  private func setSkipButton() {
+    skipButton.setTitleColor(UIColor(red: 115/255, green: 115/255, blue: 124/255, alpha: 1), for: .normal)
+
+    let skipText = "다음에 하기"
+    let titleString = NSMutableAttributedString(string: skipText)
+    titleString.addAttribute(NSAttributedString.Key.underlineStyle,
+                             value: NSUnderlineStyle.single.rawValue,
+                             range: NSRange(location: 0, length: skipText.count))
+    skipButton.setAttributedTitle(titleString, for: .normal)
+  }
 }

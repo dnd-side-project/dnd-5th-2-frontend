@@ -22,6 +22,8 @@
 		D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E126BCCF2100ACB0EB /* SignUp.swift */; };
 		D9A564E426BD647100ACB0EB /* URLMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E326BD647100ACB0EB /* URLMaker.swift */; };
 		D9A564E626BD696900ACB0EB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E526BD696900ACB0EB /* User.swift */; };
+		D9A564E826BEA53300ACB0EB /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */; };
+		D9A564EA26BEA55400ACB0EB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */; };
 		D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */; };
 		D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */; };
 		D9C49EFC269A97E600A5FFA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EFB269A97E600A5FFA5 /* ViewController.swift */; };
@@ -71,6 +73,8 @@
 		D9A564E126BCCF2100ACB0EB /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		D9A564E326BD647100ACB0EB /* URLMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMaker.swift; sourceTree = "<group>"; };
 		D9A564E526BD696900ACB0EB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D9C49EF4269A97E600A5FFA5 /* Vitamin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitamin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C49EFB269A97E600A5FFA5 /* ViewController.swift */,
+				D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			children = (
 				D9C49F02269A97E800A5FFA5 /* LaunchScreen.storyboard */,
 				D9C49EFD269A97E600A5FFA5 /* Main.storyboard */,
+				D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */,
+				D9A564E826BEA53300ACB0EB /* Onboarding.storyboard in Resources */,
 				D9C49F04269A97E800A5FFA5 /* LaunchScreen.storyboard in Resources */,
 				D9C49F01269A97E800A5FFA5 /* Assets.xcassets in Resources */,
 				D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */,
@@ -540,6 +547,7 @@
 				4DBD910726BD55B7005FA999 /* UIFont+Extension.swift in Sources */,
 				D9C49EFC269A97E600A5FFA5 /* ViewController.swift in Sources */,
 				4DBD910226BD555D005FA999 /* UIDevice+Extension.swift in Sources */,
+				D9A564EA26BEA55400ACB0EB /* OnboardingViewController.swift in Sources */,
 				D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */,
 				4DBD90FD26BD5531005FA999 /* Font.swift in Sources */,
 				4DBD90F726BD54F6005FA999 /* UIView+Extension.swift in Sources */,
