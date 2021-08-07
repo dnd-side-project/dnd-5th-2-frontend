@@ -19,7 +19,7 @@ class User: Codable {
 
   var password: String {
     get {
-      return self._password
+      return ""
     }
   }
 
