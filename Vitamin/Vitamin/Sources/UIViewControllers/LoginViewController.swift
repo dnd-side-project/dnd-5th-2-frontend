@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
   var viewType: ViewType?
   var loginUser: LoginUser?
 
-  let textFieldValidColor = Constants.textBlack1
-  let textFieldInvalidColor = Constants.textBlack5
+  let textFieldValidColor: UIColor = .textBlack1
+  let textFieldInvalidColor: UIColor = .textBlack5
 
   enum ViewType {
     case email
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
   }
 
   func setupUI() {
-    continueButton.setTitleColor(Constants.textBlack5, for: .disabled)
+    continueButton.setTitleColor(UIColor.textBlack5, for: .disabled)
     continueButton.setTitleColor(UIColor.white, for: .normal)
     continueButton.makeRounded(radius: 13)
     emailTextField.makeRounded(radius: 13)
@@ -110,28 +110,6 @@ class LoginViewController: UIViewController {
 //    default:
 //      <#code#>
 //    }
-  }
-}
-
-// MARK: - 이후 Extension으로 옮길 것
-extension UIView {
-  func addBottomBorder(color: UIColor, borderWidth: CGFloat, originYOffset: CGFloat? = nil) {
-    let bottomLine = CALayer()
-    bottomLine.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth - (originYOffset ?? 0), width: self.frame.size.width, height: borderWidth)
-    bottomLine.backgroundColor = color.cgColor
-    layer.addSublayer(bottomLine)
-  }
-
-  func makeRounded(radius: CGFloat, at corners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]) {
-      self.layer.cornerRadius = radius
-      self.clipsToBounds = true
-
-      self.layer.maskedCorners = corners
-  }
-
-  func addBorder(color: UIColor, borderWidth: CGFloat) {
-    layer.borderColor = color.cgColor
-    layer.borderWidth = borderWidth
   }
 }
 

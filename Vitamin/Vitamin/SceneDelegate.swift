@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
       
-      LoginManager.shared.login(loginUser: LoginUser(email: "example@email.com", password: "examplepassword"))
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
