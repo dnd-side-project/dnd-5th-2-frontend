@@ -28,6 +28,7 @@
 		4D27541626BE2B800097B8EB /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27540426BE2B800097B8EB /* LoginManager.swift */; };
 		4D27541726BE2B800097B8EB /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27540626BE2B800097B8EB /* UserDefaultsHelper.swift */; };
 		4D27541F26BE2C940097B8EB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27541E26BE2C940097B8EB /* UIColor+Extension.swift */; };
+		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC0316726A42DDD00E929A4 /* .swiftlint.yml */; };
 		D8D75DD365F598B2B294FEDA /* Pods_Vitamin_VitaminUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */; };
 		D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		4D27540426BE2B800097B8EB /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		4D27540626BE2B800097B8EB /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		4D27541E26BE2C940097B8EB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4DC0316726A42DDD00E929A4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6C1714BA967ADA82257E4E23 /* Pods-VitaminTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitaminTests.release.xcconfig"; path = "Target Support Files/Pods-VitaminTests/Pods-VitaminTests.release.xcconfig"; sourceTree = "<group>"; };
 		7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vitamin_VitaminUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				4D2753F026BE2B800097B8EB /* Font.swift */,
+				4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D27540826BE2B800097B8EB /* Font.swift in Sources */,
+				4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */,
 				4D27541026BE2B800097B8EB /* ViewController.swift in Sources */,
 				4D27540A26BE2B800097B8EB /* User.swift in Sources */,
 				4D27540C26BE2B800097B8EB /* UIFont+Extension.swift in Sources */,
