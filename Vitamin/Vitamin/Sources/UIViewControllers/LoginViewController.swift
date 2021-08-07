@@ -7,7 +7,10 @@
 
 import UIKit
 
-// MARK: - TODO 폰트 적용
+/* MARK: - TODO
+ 1. 폰트 적용
+ 2. 비밀번호 rule 추가
+ */
 
 class LoginViewController: UIViewController {
 
@@ -75,6 +78,8 @@ class LoginViewController: UIViewController {
 
   func setupObserver() {
     emailTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
+    passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
+    checkPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
@@ -111,7 +116,11 @@ class LoginViewController: UIViewController {
     }
   }
 
-  func updateContinueButton() {
+  func updateContinueButton(isEnable: Bool? = nil) {
+    if let isEnable = isEnable {
+      continueButton.isEnabled = isEnable
+    }
+
     continueButton.backgroundColor = continueButton.isEnabled ?
       .black :  UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
   }
@@ -120,6 +129,7 @@ class LoginViewController: UIViewController {
     emailTextField.isHidden = true
     passwordTextField.isHidden = true
     checkPasswordTextField.isHidden = true
+    updateContinueButton(isEnable: false)
 
     switch viewType {
     case .email:

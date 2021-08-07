@@ -23,18 +23,49 @@ extension LoginViewController: UITextFieldDelegate {
   }
 
   @objc func textFieldDidChange(sender: UITextField) {
-    if sender == emailTextField {
-      let isValid = isValidEmail(emailTextField.text ?? "")
-      continueButton.isEnabled = isValid
-      emailTextField.textColor = isValid ? textFieldValidColor : textFieldInvalidColor
-      updateContinueButton()
+    switch sender {
+    case emailTextField:
+      let isEnable = isEnalbeContinueButton()
+      continueButton.isEnabled = isEnable
+      emailTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
+    case passwordTextField, checkPasswordTextField:
+      let isEnable: Bool = { // MARK: TODO 비밀번호 규칙 추가
+        if let passwordTextFieldText = passwordTextField.text,
+           !passwordTextFieldText.isEmpty,
+           let checkPasswordTextFieldText = checkPasswordTextField.text,
+           !checkPasswordTextFieldText.isEmpty,
+           passwordTextFieldText == checkPasswordTextFieldText {
+          return true
+        } else {
+          return false
+        }
+      }()
+      continueButton.isEnabled = isEnable
+      passwordTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
+      checkPasswordTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
+    default:
+      break
+    }
+
+    updateContinueButton()
+  }
+
+  func isEnalbeContinueButton() -> Bool {
+    switch viewType {
+    case .email:
+      return isValidEmail()
+    case .signUpPassword:
+      return passwordTextField.text == checkPasswordTextField.text
+    default:
+      return false
     }
   }
 
-  func isValidEmail(_ email: String) -> Bool {
-      let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-      let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-      return emailPred.evaluate(with: email)
+  func isValidEmail() -> Bool {
+    let email = emailTextField.text ?? ""
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+    return emailPred.evaluate(with: email)
   }
 }
 
