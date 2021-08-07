@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
   @IBOutlet var continueButtonTopToEmailTextFieldConstraint: NSLayoutConstraint!
 
   lazy var loginUser: LoginUser? = LoginUser(email: "", password: "")
+  lazy var continueButtonTopToCheckPasswordTextFieldConstraint: NSLayoutConstraint = {
+    return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15)
+  }()
   let textFieldValidColor: UIColor = .textBlack1
   let textFieldInvalidColor: UIColor = .textBlack5
   var viewType: ViewType? {
@@ -43,6 +46,8 @@ class LoginViewController: UIViewController {
       switch self {
       case .email:
         return "반가워요.\n꿀꺽을 시작해볼까요?\n이메일을 부탁해요."
+      case .nickName:
+        return "꿀꺽이 고객님을\n어떻게 부르면 될까요?"
       case .loginPassword:
         return "우리 또 만났네요.\n비밀번호를 써주세요."
       case .signUpPassword:
@@ -93,7 +98,7 @@ class LoginViewController: UIViewController {
     // MARK: TODO - Home으로 연결
   }
 
-  @IBAction func changeViewType(_ sender: UIButton) {
+  @IBAction func tapContinueButton(_ sender: UIButton) {
     switch self.viewType {
     case .email:
       // MARK: TODO; 이메일 등록 여부 확인 후, signUp이나 login으로 넘어가기
@@ -126,6 +131,7 @@ class LoginViewController: UIViewController {
   }
 
   func updateViewByViewType() {
+    emailTextField.text = ""
     emailTextField.isHidden = true
     passwordTextField.isHidden = true
     checkPasswordTextField.isHidden = true
@@ -138,7 +144,11 @@ class LoginViewController: UIViewController {
       passwordTextField.isHidden = false
       checkPasswordTextField.isHidden = false
       continueButtonTopToEmailTextFieldConstraint.isActive = false
-      continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15).isActive = true
+      continueButtonTopToCheckPasswordTextFieldConstraint.isActive = true
+    case .nickName:
+      emailTextField.isHidden = false
+      continueButtonTopToCheckPasswordTextFieldConstraint.isActive = false
+      continueButtonTopToEmailTextFieldConstraint.isActive = true
     default:
       break
     }

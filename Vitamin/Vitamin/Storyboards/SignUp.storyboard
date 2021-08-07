@@ -73,7 +73,7 @@
                                 </constraints>
                                 <state key="normal" title="다음"/>
                                 <connections>
-                                    <action selector="changeViewType:" destination="SiW-Uj-sri" eventType="touchUpInside" id="Cpi-gF-Fkx"/>
+                                    <action selector="tapContinueButton:" destination="SiW-Uj-sri" eventType="touchUpInside" id="Cpi-gF-Fkx"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-qa-w63">
