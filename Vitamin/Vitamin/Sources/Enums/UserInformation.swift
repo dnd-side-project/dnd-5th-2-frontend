@@ -20,3 +20,7 @@ enum Age: Int, Codable {
   case fifty = 50
   case elder = 60
 }
+
+enum UserType: String, Codable {
+  case working = "직장인 유형"
+}

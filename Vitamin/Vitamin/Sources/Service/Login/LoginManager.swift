@@ -20,7 +20,7 @@ class LoginManager {
     NetworkManager.shared.requestSignUp(with: user) { result in
       switch result {
       case .success(let user):
-        print(user.username)
+        self.currentUser = user
       case .failure(let error):
         print(error.localizedDescription)
       }

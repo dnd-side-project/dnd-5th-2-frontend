@@ -26,6 +26,7 @@ class User: Codable {
   var username: String? = ""
   var gender: Gender?
   var age: Age?
+  var type: UserType?
 
   init(email: String, password: String, username: String) {
     self._email = email
