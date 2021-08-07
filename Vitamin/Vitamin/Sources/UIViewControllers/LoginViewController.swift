@@ -11,7 +11,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-  @IBOutlet var emailTextField: UITextField!
+  @IBOutlet var emailTextField: CustomTextField!
   @IBOutlet var lookAroundButton: UIButton!
   @IBOutlet var continueButton: UIButton!
   @IBOutlet var emailTextFieldResginGestureRecognizer: UITapGestureRecognizer!
@@ -129,5 +129,12 @@ extension UIView {
   func addBorder(color: UIColor, borderWidth: CGFloat) {
     layer.borderColor = color.cgColor
     layer.borderWidth = borderWidth
+  }
+}
+
+class CustomTextField: UITextField {
+  override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+    let width: CGFloat = 18
+    return CGRect(x: frame.width - 12 - width, y: 18, width: width, height: width)
   }
 }
