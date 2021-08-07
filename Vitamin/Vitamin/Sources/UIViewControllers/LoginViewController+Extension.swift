@@ -40,7 +40,17 @@ extension LoginViewController: UITextFieldDelegate {
 
 // MARK: - 네트워크
 extension LoginViewController {
-  func requestLogin() {
+  func checkEmail(completion: @escaping (Bool) -> Void) {
+    guard let loginUser = loginUser else {
+      completion(false)
+      return
+    }
+
+    // MARK: TODO - email 유무 확인하고 completion 실행
+    completion(false)
+  }
+
+  func login() {
     guard let loginUser = loginUser else { return }
     LoginManager.shared.login(loginUser: loginUser) { success in
       guard success else {
