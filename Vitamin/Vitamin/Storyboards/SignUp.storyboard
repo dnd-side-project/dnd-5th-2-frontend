@@ -144,6 +144,7 @@
                         <outlet property="emailTextFieldResginGestureRecognizer" destination="agC-kj-Wy0" id="sLA-Cw-cO6"/>
                         <outlet property="lookAroundButton" destination="gIy-en-YrI" id="Mzr-F4-FU9"/>
                         <outlet property="passwordTextField" destination="ynU-8v-61C" id="X5S-LG-Ze9"/>
+                        <outlet property="passwordTextFieldTopToTitleLabelConstraint" destination="IcW-1c-dW4" id="BcL-pg-lbr"/>
                         <outlet property="titleLabel" destination="6Q6-0N-6Cd" id="1tu-qO-ROR"/>
                     </connections>
                 </viewController>

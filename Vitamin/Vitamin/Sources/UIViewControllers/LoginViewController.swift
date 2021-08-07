@@ -22,10 +22,14 @@ class LoginViewController: UIViewController {
   @IBOutlet var passwordTextField: CustomTextField!
   @IBOutlet var checkPasswordTextField: CustomTextField!
   @IBOutlet var continueButtonTopToEmailTextFieldConstraint: NSLayoutConstraint!
+  @IBOutlet var passwordTextFieldTopToTitleLabelConstraint: NSLayoutConstraint!
 
   lazy var loginUser: LoginUser? = LoginUser(email: "", password: "")
   lazy var continueButtonTopToCheckPasswordTextFieldConstraint: NSLayoutConstraint = {
     return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15)
+  }()
+  lazy var continueButtonTopToPasswordTextFieldConstrinat: NSLayoutConstraint = {
+    return continueButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15)
   }()
   let textFieldValidColor: UIColor = .textBlack1
   let textFieldInvalidColor: UIColor = .textBlack5
@@ -137,19 +141,23 @@ class LoginViewController: UIViewController {
     passwordTextField.isHidden = true
     checkPasswordTextField.isHidden = true
     updateContinueButton(isEnable: false)
+    continueButtonTopToEmailTextFieldConstraint.isActive = false
 
     switch viewType {
     case .email:
       commonTextField.isHidden = false
+      continueButtonTopToEmailTextFieldConstraint.isActive = true
     case .signUpPassword:
       passwordTextField.isHidden = false
       checkPasswordTextField.isHidden = false
-      continueButtonTopToEmailTextFieldConstraint.isActive = false
       continueButtonTopToCheckPasswordTextFieldConstraint.isActive = true
     case .nickName:
       commonTextField.isHidden = false
-      continueButtonTopToCheckPasswordTextFieldConstraint.isActive = false
       continueButtonTopToEmailTextFieldConstraint.isActive = true
+    case .loginPassword:
+      passwordTextField.isHidden = false
+      passwordTextFieldTopToTitleLabelConstraint.constant = 125
+      continueButtonTopToPasswordTextFieldConstrinat.isActive = true
     default:
       break
     }

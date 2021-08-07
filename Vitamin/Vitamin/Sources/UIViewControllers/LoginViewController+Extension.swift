@@ -23,12 +23,12 @@ extension LoginViewController: UITextFieldDelegate {
   }
 
   @objc func textFieldDidChange(sender: UITextField) {
-    switch sender {
-    case commonTextField:
+    switch viewType {
+    case .email:
       let isEnable = isEnalbeContinueButton()
       continueButton.isEnabled = isEnable
       commonTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
-    case passwordTextField, checkPasswordTextField:
+    case .signUpPassword:
       let isEnable: Bool = { // MARK: TODO 비밀번호 규칙 추가
         if let passwordTextFieldText = passwordTextField.text,
            !passwordTextFieldText.isEmpty,
@@ -43,6 +43,15 @@ extension LoginViewController: UITextFieldDelegate {
       continueButton.isEnabled = isEnable
       passwordTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
       checkPasswordTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
+    case .loginPassword:
+      continueButton.isEnabled = {
+        if let passwordTextFieldText = passwordTextField.text,
+           !passwordTextFieldText.isEmpty {
+          return true
+        } else {
+          return false
+        }
+      }()
     default:
       break
     }
@@ -73,12 +82,12 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
   func checkEmail(completion: @escaping (Bool) -> Void) {
     guard let loginUser = loginUser else {
-      completion(false)
+      completion(true)
       return
     }
 
     // MARK: TODO - email 유무 확인하고 completion 실행
-    completion(false)
+    completion(true)
   }
 
   func login() {
