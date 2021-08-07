@@ -21,7 +21,6 @@
 		4DBBC7B826BED06E00FFDFC2 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7AF26BED06D00FFDFC2 /* Pretendard-Thin.ttf */; };
 		4DBBC7B926BED06E00FFDFC2 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7B026BED06D00FFDFC2 /* Pretendard-ExtraBold.ttf */; };
 		4DBBC7BA26BED06E00FFDFC2 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7B126BED06E00FFDFC2 /* Pretendard-Medium.ttf */; };
-		4DBBC80526BEDA7400FFDFC2 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC80426BEDA7400FFDFC2 /* UIStoryboard+Extension.swift */; };
 		4DBD90F726BD54F6005FA999 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD90F626BD54F6005FA999 /* UIView+Extension.swift */; };
 		4DBD90FD26BD5531005FA999 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD90FC26BD5531005FA999 /* Font.swift */; };
 		4DBD910226BD555D005FA999 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD910126BD555D005FA999 /* UIDevice+Extension.swift */; };
@@ -77,7 +76,6 @@
 		4DBBC7AF26BED06D00FFDFC2 /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
 		4DBBC7B026BED06D00FFDFC2 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		4DBBC7B126BED06E00FFDFC2 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
-		4DBBC80426BEDA7400FFDFC2 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		4DBD90F626BD54F6005FA999 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4DBD90FC26BD5531005FA999 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		4DBD910126BD555D005FA999 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				4DBD910126BD555D005FA999 /* UIDevice+Extension.swift */,
 				4DBD910626BD55B7005FA999 /* UIFont+Extension.swift */,
 				4D27530D26BD6CB40097B8EB /* UIViewController+Extension.swift */,
-				4DBBC80426BEDA7400FFDFC2 /* UIStoryboard+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -594,7 +591,6 @@
 				D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */,
 				D9A564E626BD696900ACB0EB /* User.swift in Sources */,
 				4D27530626BD57290097B8EB /* Constants.swift in Sources */,
-				4DBBC80526BEDA7400FFDFC2 /* UIStoryboard+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
