@@ -27,6 +27,9 @@
 		4DBD910726BD55B7005FA999 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD910626BD55B7005FA999 /* UIFont+Extension.swift */; };
 		4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC0316726A42DDD00E929A4 /* .swiftlint.yml */; };
 		D8D75DD365F598B2B294FEDA /* Pods_Vitamin_VitaminUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */; };
+		D929C7CE26C04B0200F37478 /* QuizSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929C7CD26C04B0200F37478 /* QuizSet.swift */; };
+		D929C7D126C04C6C00F37478 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929C7D026C04C6C00F37478 /* QuestionCell.swift */; };
+		D97C793126BEF369000748EC /* OnboardingQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */; };
 		D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */; };
 		D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E126BCCF2100ACB0EB /* SignUp.swift */; };
 		D9A564E426BD647100ACB0EB /* URLMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E326BD647100ACB0EB /* URLMaker.swift */; };
@@ -87,6 +90,9 @@
 		7471B47FDDF0403AE1956667 /* Pods_Vitamin_VitaminUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vitamin_VitaminUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79104825172E7C028AD3CDEA /* Pods_Vitamin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vitamin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69DADE05C6ABDC668F8EF3B /* Pods-Vitamin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vitamin.release.xcconfig"; path = "Target Support Files/Pods-Vitamin/Pods-Vitamin.release.xcconfig"; sourceTree = "<group>"; };
+		D929C7CD26C04B0200F37478 /* QuizSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSet.swift; sourceTree = "<group>"; };
+		D929C7D026C04C6C00F37478 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuizViewController.swift; sourceTree = "<group>"; };
 		D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D9A564E126BCCF2100ACB0EB /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		D9A564E326BD647100ACB0EB /* URLMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMaker.swift; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 			children = (
 				D9C49EFB269A97E600A5FFA5 /* ViewController.swift */,
 				D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */,
+				D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 				D9A564E026BCCF1500ACB0EB /* Models */,
 				D9A564DD26BCCE2900ACB0EB /* WebService */,
 				4DC030B8269AF71500E929A4 /* UIViewControllers */,
+				D929C7CF26C04C4D00F37478 /* Cells */,
 				4DBD90FB26BD5527005FA999 /* Enums */,
 				4DBD90F526BD54C9005FA999 /* Extensions */,
 				4D27538126BD968E0097B8EB /* Helpers */,
@@ -246,6 +254,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D929C7CF26C04C4D00F37478 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D929C7D026C04C6C00F37478 /* QuestionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D9A564DD26BCCE2900ACB0EB /* WebService */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +276,7 @@
 			children = (
 				D9A564E126BCCF2100ACB0EB /* SignUp.swift */,
 				D9A564E526BD696900ACB0EB /* User.swift */,
+				D929C7CD26C04B0200F37478 /* QuizSet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -591,12 +608,15 @@
 				4DBD910726BD55B7005FA999 /* UIFont+Extension.swift in Sources */,
 				D9C49EFC269A97E600A5FFA5 /* ViewController.swift in Sources */,
 				4DBD910226BD555D005FA999 /* UIDevice+Extension.swift in Sources */,
+				D929C7CE26C04B0200F37478 /* QuizSet.swift in Sources */,
 				D9A564EA26BEA55400ACB0EB /* OnboardingViewController.swift in Sources */,
+				D97C793126BEF369000748EC /* OnboardingQuizViewController.swift in Sources */,
 				D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */,
 				4DBD90FD26BD5531005FA999 /* Font.swift in Sources */,
 				4DBD90F726BD54F6005FA999 /* UIView+Extension.swift in Sources */,
 				D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */,
 				D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */,
+				D929C7D126C04C6C00F37478 /* QuestionCell.swift in Sources */,
 				D9A564E626BD696900ACB0EB /* User.swift in Sources */,
 				4D27530626BD57290097B8EB /* Constants.swift in Sources */,
 			);
