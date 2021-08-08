@@ -52,6 +52,15 @@ extension LoginViewController: UITextFieldDelegate {
           return false
         }
       }()
+    case .nickName:
+      continueButton.isEnabled = {
+        if let text = sender.text,
+           !text.isEmpty {
+          return true
+        } else {
+          return false
+        }
+      }()
     default:
       break
     }
