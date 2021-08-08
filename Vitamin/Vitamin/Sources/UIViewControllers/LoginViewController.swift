@@ -33,12 +33,7 @@ class LoginViewController: UIViewController {
   }()
   let textFieldValidColor: UIColor = .textBlack1
   let textFieldInvalidColor: UIColor = .textBlack5
-  var viewType: ViewType? {
-    didSet {
-      guard isViewLoaded else { return }
-      updateViewByViewType()
-    }
-  }
+  var viewType: ViewType?
 
   enum ViewType {
     case email
@@ -68,8 +63,7 @@ class LoginViewController: UIViewController {
 
     setupUI()
     setupObserver()
-
-    viewType = .email  // MARK: For Test
+    updateViewByViewType()
   }
 
   func setupUI() {
@@ -109,19 +103,36 @@ class LoginViewController: UIViewController {
       // MARK: TODO; 이메일 등록 여부 확인 후, signUp이나 login으로 넘어가기
       loginUser?.email = commonTextField.text
       checkEmail { exist in
-        self.viewType = exist ? .loginPassword : .signUpPassword
+        self.pushViewController(vcType: LoginViewController.self,
+                           storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                           viewType: exist ? .loginPassword : .signUpPassword)
       }
     case .findPassword:
       // MARK: TODO ; 비밀번호 찾기 기능
       print(">")
     case .loginPassword:
-      login()
+      login { success in
+        guard success,
+              let currentUser = LoginManager.shared.currentUser else {
+          // 에러 핸들링
+          return
+        }
+        
+        if let _ = currentUser.type {
+          // MARK: HOME이동
+        } else {
+          // MARK: 온보딩 이동
+        }
+      }
     case .nickName:
       // MARK: TODO ; 회원가입 request 요청하고 Home으로 이동하기
       print(">")
     case .signUpPassword:
       loginUser?.password = commonTextField.text
       self.viewType = .nickName
+      pushViewController(vcType: LoginViewController.self,
+                         storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                         viewType: .nickName)
     default:
       break
     }
@@ -165,6 +176,26 @@ class LoginViewController: UIViewController {
     }
 
     titleLabel.text = viewType?.titleLabelText
+  }
+
+  func pushViewController<T: UIViewController>(vcType: T.Type, storyboardName: String, viewType: ViewType? = nil) {
+    if vcType == LoginViewController.self {
+      guard let nextVC = UIStoryboard(name: storyboardName, bundle: nil)
+              .instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
+        return
+      }
+
+      nextVC.viewType = viewType
+      self.navigationController?.pushViewController(nextVC, animated: true)
+      return
+    }
+
+    guard let nextVC = UIStoryboard(name: storyboardName, bundle: nil)
+            .instantiateViewController(withIdentifier: vcType.identifier) as? LoginViewController else {
+      return
+    }
+
+    self.navigationController?.pushViewController(nextVC, animated: true)
   }
 }
 

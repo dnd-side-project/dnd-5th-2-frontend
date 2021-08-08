@@ -90,14 +90,14 @@ extension LoginViewController {
     completion(true)
   }
 
-  func login() {
+  func login(completion: @escaping (Bool) -> Void) {
     guard let loginUser = loginUser else { return }
     LoginManager.shared.login(loginUser: loginUser) { success in
       guard success else {
-        // MARK: TODO - 로그인 오류 핸들링
+        completion(false)
         return
       }
-      // MARK: TODO - Home이나 온보딩 체크
+      completion(true)
     }
   }
 }

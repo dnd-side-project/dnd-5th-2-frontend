@@ -37,7 +37,7 @@ class LoginManager {
         return
       }
 
-      let successToCreate = TokenUtils.shared.create(account: "accessToken", value: jwt)
+      let successToCreate = TokenUtils.shared.create(value: jwt)
       completionHandler(successToCreate)
     }
   }
@@ -58,5 +58,9 @@ class LoginManager {
         completionHandler(false)
       }
     }
+  }
+
+  func logOut() {
+    TokenUtils.shared.delete()
   }
 }
