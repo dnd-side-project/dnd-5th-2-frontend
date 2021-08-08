@@ -42,6 +42,21 @@ class LoginViewController: UIViewController {
     case signUpPassword
     case findPassword
 
+    var navigationTitle: String {
+      switch self {
+      case .email:
+        return ""
+      case .nickName:
+        return "닉네임 설정"
+      case .loginPassword:
+        return "로그인"
+      case .signUpPassword:
+        return "회원가입"
+      case .findPassword:
+        return "비밀번호 찾기"
+      }
+    }
+
     var titleLabelText: String {
       switch self {
       case .email:
@@ -61,9 +76,20 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    setupNavigationBar()
     setupUI()
     setupObserver()
     updateViewByViewType()
+  }
+
+  func setupNavigationBar() {
+    navigationController?.setNavigationBarHidden(false, animated: false)
+    title = viewType?.navigationTitle
+
+    guard let viewType = viewType,
+          viewType != .email else { return }
+    navigationItem.rightBarButtonItem =
+      UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action: #selector(close))
   }
 
   func setupUI() {
@@ -117,7 +143,7 @@ class LoginViewController: UIViewController {
           // 에러 핸들링
           return
         }
-        
+
         if let _ = currentUser.type {
           // MARK: HOME이동
         } else {
@@ -196,6 +222,15 @@ class LoginViewController: UIViewController {
     }
 
     self.navigationController?.pushViewController(nextVC, animated: true)
+  }
+
+  @objc func close() {
+    switch self.viewType {
+    case .loginPassword, .signUpPassword, .nickName:
+      self.navigationController?.popToRootViewController(animated: true)
+    default:
+      break
+    }
   }
 }
 

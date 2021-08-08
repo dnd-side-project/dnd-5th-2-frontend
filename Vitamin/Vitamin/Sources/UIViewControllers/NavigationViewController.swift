@@ -13,6 +13,16 @@ class NavigationViewController: UINavigationController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setRootViewController()
+    setNavigationBarHidden(true, animated: false)
+    navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationBar.shadowImage = UIImage()
+    navigationBar.backgroundColor = .clear
+    navigationBar.titleTextAttributes = [
+      NSAttributedString.Key.font: UIFont(name: "Pretendard-SemiBold", size: 16) ?? .systemFont(ofSize: 16)
+    ]
+
+    UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backButton")
+    UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backButton")
   }
 
   func setRootViewController() {

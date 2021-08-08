@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.ttf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="nkE-cL-Iq3">
@@ -17,17 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q6-0N-6Cd">
-                                <rect key="frame" x="32" y="197" width="196" height="82.5"/>
-                                <string key="text">반가워요.
-꿀꺽을 시작해볼까요?
-이메일을 부탁해요.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" red="0.11358394469999999" green="0.1134203151" blue="0.12405929709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gf6-8k-ACQ" customClass="CustomTextField" customModule="Vitamin" customModuleProvider="target">
-                                <rect key="frame" x="32" y="372.5" width="350" height="52"/>
+                                <rect key="frame" x="32" y="373" width="350" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="RF3-q8-SEo"/>
                                 </constraints>
@@ -52,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGs-8S-cpj">
-                                <rect key="frame" x="32" y="439.5" width="350" height="52"/>
+                                <rect key="frame" x="32" y="440" width="350" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="W0R-SS-L2Q"/>
                                 </constraints>
@@ -69,7 +65,7 @@
                                 </constraints>
                             </imageView>
                             <textField hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="다시 한번!" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SQf-Wk-Ydm" customClass="CustomTextField" customModule="Vitamin" customModuleProvider="target">
-                                <rect key="frame" x="32" y="426.5" width="350" height="52"/>
+                                <rect key="frame" x="32" y="427" width="350" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="bPf-Uo-4xA"/>
                                 </constraints>
@@ -81,7 +77,7 @@
                                 </connections>
                             </textField>
                             <textField hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ynU-8v-61C" customClass="CustomTextField" customModule="Vitamin" customModuleProvider="target">
-                                <rect key="frame" x="32" y="368.5" width="350" height="52"/>
+                                <rect key="frame" x="32" y="369" width="350" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="UmL-7p-tQh"/>
                                 </constraints>
@@ -92,6 +88,15 @@
                                     <outlet property="delegate" destination="SiW-Uj-sri" id="5o4-R2-XFc"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q6-0N-6Cd">
+                                <rect key="frame" x="32" y="197" width="196.5" height="83"/>
+                                <string key="text">반가워요.
+꿀꺽을 시작해볼까요?
+이메일을 부탁해요.</string>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="23"/>
+                                <color key="textColor" red="0.11358394469999999" green="0.1134203151" blue="0.12405929709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jsI-0F-SgE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
