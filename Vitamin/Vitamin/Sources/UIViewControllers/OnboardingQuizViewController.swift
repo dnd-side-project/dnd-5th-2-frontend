@@ -28,13 +28,13 @@ class OnboardingQuizViewController: UIViewController {
   @IBAction func tappedYesButton(_ sender: UIButton) {
     questionSet[0].1 = true
     self.delegate = tableView.cellForRow(at: [0, 0]) as! QuestionCell
-    delegate?.showAnswerView()
+    delegate?.showAnswerView(with: "네 맞아요")
   }
 
   @IBAction func tappedNoButton(_ sender: UIButton) {
     questionSet[0].1 = false
     self.delegate = tableView.cellForRow(at: [0, 0]) as! QuestionCell
-    delegate?.showAnswerView()
+    delegate?.showAnswerView(with: "아니요")
   }
 
   private func setIntroductionLabel() {

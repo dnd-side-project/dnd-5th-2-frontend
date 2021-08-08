@@ -171,6 +171,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="answerTextLabel" destination="LOI-WR-3qZ" id="jlu-6C-ivK"/>
                                             <outlet property="answerView" destination="Aku-km-saH" id="0DB-LB-nfH"/>
                                             <outlet property="questionTextLabel" destination="Lee-Hd-tih" id="DXi-1s-x6V"/>
                                             <outlet property="questionView" destination="tWy-XD-CJH" id="6PI-cO-Tur"/>
