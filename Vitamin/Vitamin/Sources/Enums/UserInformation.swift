@@ -8,8 +8,8 @@
 import Foundation
 
 enum Gender: String, Codable {
-  case male = "남"
-  case female = "여"
+  case male = "남성"
+  case female = "여성"
 }
 
 enum Age: Int, Codable {
