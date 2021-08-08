@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
   let textFieldInvalidColor: UIColor = .textBlack5
   var viewType: ViewType? {
     didSet {
+      guard isViewLoaded else { return }
       updateViewByViewType()
     }
   }

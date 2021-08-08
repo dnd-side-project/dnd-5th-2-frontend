@@ -10,6 +10,10 @@ import Alamofire
 
 class TokenUtils {
 
+  static let shared = TokenUtils()
+
+  private init() { }
+
   // MARK: - Todo 어떻게 bundleId 정할까?
   let service = Bundle.main.bundleIdentifier ?? "com.innie.Vitamin"
 
@@ -25,7 +29,7 @@ class TokenUtils {
     return SecItemAdd(keyChainQuery, nil) == errSecSuccess
   }
 
-  func read(_ service: String, account: String) -> String? {
+  func read(account: String) -> String? {
     let KeyChainQuery: NSDictionary = [
       kSecClass: kSecClassGenericPassword,
       kSecAttrService: service,
@@ -47,7 +51,7 @@ class TokenUtils {
     }
   }
 
-  func delete(_ service: String, account: String) {
+  func delete(account: String) {
     let keyChainQuery: NSDictionary = [
       kSecClass: kSecClassGenericPassword,
       kSecAttrService: service,
@@ -57,9 +61,8 @@ class TokenUtils {
     SecItemDelete(keyChainQuery)
   }
 
-  func getAuthorizationHeader(serviceID: String) -> HTTPHeaders? {
-    let serviceID = serviceID
-    if let accessToken = self.read(serviceID, account: "accessToken") {
+  func getAuthorizationHeader() -> HTTPHeaders? {
+    if let accessToken = self.read(account: "accessToken") {
       return ["Authorization": "bearer \(accessToken)"] as HTTPHeaders
     } else {
       return nil

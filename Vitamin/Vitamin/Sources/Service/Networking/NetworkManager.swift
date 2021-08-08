@@ -52,4 +52,20 @@ class NetworkManager {
       }
     }
   }
+
+  func requestLogin(with header: HTTPHeaders,
+                    completionHandler: @escaping (Result<User, Error>) -> Void) {
+
+    let loginURL = URLMaker.makeRequestURL(feature: .autoLogin)
+    let request = AF.request(loginURL,
+                             method: .get)
+    request.responseDecodable { (response: DataResponse<User, AFError>) in
+      switch response.result {
+      case .success(let user):
+        completionHandler(.success(user))
+      case .failure(let error):
+        completionHandler(.failure(error))
+      }
+    }
+  }
 }
