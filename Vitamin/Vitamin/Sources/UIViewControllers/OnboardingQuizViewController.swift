@@ -10,6 +10,7 @@ import UIKit
 class OnboardingQuizViewController: UIViewController {
   @IBOutlet weak var introductionLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var submitButton: UIButton!
 
   let quizSet = QuizSet()
   private var questionSet = [Quiz]()
@@ -39,6 +40,7 @@ class OnboardingQuizViewController: UIViewController {
 
     guard answerIndex < answerSet.count - 1 else {
       print("all answered button show")
+      submitButton.isEnabled = true
       return
     }
 

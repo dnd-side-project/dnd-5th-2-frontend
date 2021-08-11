@@ -99,7 +99,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZZO-AA-A0X">
-                                <rect key="frame" x="22" y="184.5" width="331" height="533.5"/>
+                                <rect key="frame" x="22" y="184.5" width="331" height="528.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="396" id="mMs-nh-nxr" customClass="QuestionCell" customModule="Vitamin" customModuleProvider="target">
@@ -218,22 +218,30 @@
                                     <outlet property="delegate" destination="GEr-SS-swg" id="wjW-l7-Q8t"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTu-e7-c2Y">
+                                <rect key="frame" x="22" y="718" width="331" height="30"/>
+                                <state key="normal" title="제출하기"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X37-hM-uaU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="GTu-e7-c2Y" firstAttribute="trailing" secondItem="ZZO-AA-A0X" secondAttribute="trailing" id="0ka-uz-QS7"/>
+                            <constraint firstItem="GTu-e7-c2Y" firstAttribute="leading" secondItem="ZZO-AA-A0X" secondAttribute="leading" id="2LI-A2-b6c"/>
                             <constraint firstAttribute="trailing" secondItem="ZZO-AA-A0X" secondAttribute="trailing" constant="22" id="BL4-Go-z8w"/>
                             <constraint firstItem="r2i-db-Pwn" firstAttribute="top" secondItem="X37-hM-uaU" secondAttribute="top" constant="53" id="OFs-LB-Srn"/>
-                            <constraint firstItem="X37-hM-uaU" firstAttribute="bottom" secondItem="ZZO-AA-A0X" secondAttribute="bottom" constant="40" id="ToZ-9d-uvq"/>
                             <constraint firstItem="ZZO-AA-A0X" firstAttribute="leading" secondItem="oXj-hn-ZAy" secondAttribute="leading" constant="22" id="c76-dp-rbS"/>
+                            <constraint firstItem="X37-hM-uaU" firstAttribute="bottom" secondItem="GTu-e7-c2Y" secondAttribute="bottom" constant="10" id="cUD-oe-FUD"/>
                             <constraint firstItem="r2i-db-Pwn" firstAttribute="leading" secondItem="X37-hM-uaU" secondAttribute="leading" constant="22" id="iwG-nk-jAP"/>
                             <constraint firstItem="ZZO-AA-A0X" firstAttribute="top" secondItem="r2i-db-Pwn" secondAttribute="bottom" constant="55" id="yrr-Nn-8q0"/>
+                            <constraint firstItem="GTu-e7-c2Y" firstAttribute="top" secondItem="ZZO-AA-A0X" secondAttribute="bottom" constant="5" id="zoT-Ao-bqJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qgi-Fj-QR1"/>
                     <size key="freeformSize" width="375" height="812"/>
                     <connections>
                         <outlet property="introductionLabel" destination="r2i-db-Pwn" id="sog-yF-1Lo"/>
+                        <outlet property="submitButton" destination="GTu-e7-c2Y" id="Rq2-hZ-qW3"/>
                         <outlet property="tableView" destination="ZZO-AA-A0X" id="7f5-bL-TSL"/>
                     </connections>
                 </viewController>
