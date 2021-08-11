@@ -10,31 +10,41 @@ import UIKit
 class OnboardingQuizViewController: UIViewController {
   @IBOutlet weak var introductionLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var noButton: UIButton!
-  @IBOutlet weak var yesButton: UIButton!
 
   let quizSet = QuizSet()
-  private var questionSet = [(Quiz, Bool?)]()
+  private var questionSet = [Quiz]()
+  private var answerSet: [Bool?] = Array(repeating: nil, count: 18)
+  private var currentAnswerIndex = 0 {
+    didSet {
+      self.navigationItem.title = "\(currentAnswerIndex + 1) \\ \(answerSet.count)"
+    }
+  }
 
   weak var delegate: QuestionCellDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     setIntroductionLabel()
-    setButtons()
-    questionSet.append((quizSet.quiz(in: 0), nil))
+    questionSet = [quizSet.quiz(in: 0)]
+    NotificationCenter.default.addObserver(self, selector: #selector(answerReceived(_:)), name: Notification.Name("handleAnswer"), object: nil)
+    self.navigationItem.title = "1 \\ \(answerSet.count)"
   }
 
-  @IBAction func tappedYesButton(_ sender: UIButton) {
-    questionSet[0].1 = true
-    self.delegate = tableView.cellForRow(at: [0, 0]) as! QuestionCell
-    delegate?.showAnswerView(with: "네 맞아요")
-  }
+  @objc func answerReceived(_ notification: Notification) {
+    let receivedObject = notification.object as! [Any]
+    let answerIndex = receivedObject.first as! Int
+    let answerValue = receivedObject.last as! Bool
 
-  @IBAction func tappedNoButton(_ sender: UIButton) {
-    questionSet[0].1 = false
-    self.delegate = tableView.cellForRow(at: [0, 0]) as! QuestionCell
-    delegate?.showAnswerView(with: "아니요")
+    answerSet[answerIndex] = answerValue
+
+    guard answerIndex < answerSet.count - 1 else {
+      print("all answered button show")
+      return
+    }
+
+    if answerIndex == questionSet.count - 1 {
+     showNextQuestion()
+    }
   }
 
   private func setIntroductionLabel() {
@@ -43,18 +53,12 @@ class OnboardingQuizViewController: UIViewController {
     introductionLabel.font = UIFont.Pretendard(type: .Medium, size: 23)
   }
 
-  private func setButtons() {
-    noButton.layer.borderWidth = 1.0
-    noButton.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 232/255, alpha: 1).cgColor
-    noButton.setTitleColor(.black, for: .normal)
-    noButton.makeRounded(radius: noButton.frame.height / 2)
-    noButton.setTitle("아니오", for: .normal)
-
-    yesButton.layer.borderWidth = 1.0
-    yesButton.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 232/255, alpha: 1).cgColor
-    yesButton.setTitleColor(.black, for: .normal)
-    yesButton.makeRounded(radius: noButton.frame.height / 2)
-    yesButton.setTitle("네", for: .normal)
+  private func showNextQuestion() {
+    currentAnswerIndex += 1
+    questionSet.append(quizSet.quiz(in: currentAnswerIndex))
+    let indexPath = IndexPath(row: questionSet.count - 1, section: 0)
+    tableView.insertRows(at: [indexPath], with: .none)
+    tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
   }
 }
 extension OnboardingQuizViewController: UITableViewDataSource {
@@ -64,10 +68,8 @@ extension OnboardingQuizViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let questionCell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as! QuestionCell
-    let currentQuestion = questionSet[indexPath.row]
-
     self.delegate = questionCell
-    delegate?.setQuestionView(with: currentQuestion.0.question)
+    delegate?.setQuestionView(with: questionSet[indexPath.row], in: indexPath.row, checkedAnswer: answerSet[indexPath.row])
     return questionCell
   }
 }
