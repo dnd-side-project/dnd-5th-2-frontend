@@ -99,6 +99,7 @@ class LoginViewController: UIViewController {
   }
 
   func setupNavigationBar() {
+    navigationItem.backButtonTitle = ""
     navigationController?.setNavigationBarHidden(false, animated: false)
     title = viewType?.navigationTitle
 
@@ -170,7 +171,6 @@ class LoginViewController: UIViewController {
       print(">")
     case .signUpPassword:
       loginUser?.password = commonTextField.text
-      self.viewType = .nickName
       pushViewController(vcType: LoginViewController.self,
                          storyboardName: Constants.StoryboardName.SignUp.rawValue,
                          viewType: .nickName)

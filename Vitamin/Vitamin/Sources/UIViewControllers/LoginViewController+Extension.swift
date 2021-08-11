@@ -23,39 +23,22 @@ extension LoginViewController: UITextFieldDelegate {
   }
 
   @objc func textFieldDidChange(sender: UITextField) {
+    let isEnable = isEnalbeContinueButton()
+    continueButton.isEnabled = isEnable
+
     switch viewType {
     case .email:
-      let isEnable = isEnalbeContinueButton()
-      continueButton.isEnabled = isEnable
       commonTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
     case .signUpPassword:
-      let isEnable: Bool = { // MARK: TODO 비밀번호 규칙 추가
-        if let passwordTextFieldText = passwordTextField.text,
-           !passwordTextFieldText.isEmpty,
-           let checkPasswordTextFieldText = checkPasswordTextField.text,
-           !checkPasswordTextFieldText.isEmpty,
-           passwordTextFieldText == checkPasswordTextFieldText {
-          return true
-        } else {
-          return false
-        }
-      }()
-      continueButton.isEnabled = isEnable
       passwordTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
       checkPasswordTextField.textColor = isEnable ? textFieldValidColor : textFieldInvalidColor
     case .loginPassword:
-      continueButton.isEnabled = {
-        if let passwordTextFieldText = passwordTextField.text,
-           !passwordTextFieldText.isEmpty {
-          return true
-        } else {
-          return false
-        }
-      }()
+      break
     case .nickName:
       continueButton.isEnabled = {
         if let text = sender.text,
-           !text.isEmpty {
+           !text.isEmpty,
+           text.count < 7 {
           return true
         } else {
           return false
@@ -71,19 +54,31 @@ extension LoginViewController: UITextFieldDelegate {
   func isEnalbeContinueButton() -> Bool {
     switch viewType {
     case .email:
-      return isValidEmail()
+      let email = commonTextField.text ?? ""
+      let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+      let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+      return emailPred.evaluate(with: email)
     case .signUpPassword:
-      return passwordTextField.text == checkPasswordTextField.text
+      guard let passwordTextFieldText = passwordTextField.text,
+            !passwordTextFieldText.isEmpty,
+            let checkPasswordTextFieldText = checkPasswordTextField.text,
+            !checkPasswordTextFieldText.isEmpty,
+            passwordTextFieldText == checkPasswordTextFieldText,
+            passwordTextFieldText.count >= 6,
+            passwordTextFieldText.count < 15 else { return false }
+      return true
+    case .loginPassword:
+      guard let passwordTextFieldText = passwordTextField.text,
+            !passwordTextFieldText.isEmpty else { return false }
+      return true
+    case .nickName:
+      let nickNameRegEx = "[A-Z0-9a-z가-힣]{1,8}"
+      guard  let text = commonTextField.text,
+             NSPredicate(format: "SELF MATCHES %@", nickNameRegEx).evaluate(with: text) else { return false }
+      return true
     default:
       return false
     }
-  }
-
-  func isValidEmail() -> Bool {
-    let email = commonTextField.text ?? ""
-    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-    return emailPred.evaluate(with: email)
   }
 }
 
@@ -91,12 +86,12 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
   func checkEmail(completion: @escaping (Bool) -> Void) {
     guard let loginUser = loginUser else {
-      completion(true)
+      completion(false)
       return
     }
 
     // MARK: TODO - email 유무 확인하고 completion 실행
-    completion(true)
+    completion(false)
   }
 
   func login(completion: @escaping (Bool) -> Void) {
