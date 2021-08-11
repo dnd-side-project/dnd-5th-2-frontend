@@ -82,6 +82,22 @@ class LoginViewController: UIViewController {
     updateViewByViewType()
   }
 
+  override func viewWillDisappear(_ animated: Bool) {
+    commonTextField.text = ""
+    passwordTextField.text = ""
+    checkPasswordTextField.text = ""
+
+    if commonTextField.isFirstResponder {
+      commonTextField.resignFirstResponder()
+    } else if passwordTextField.isFirstResponder {
+      passwordTextField.resignFirstResponder()
+    } else if checkPasswordTextField.isFirstResponder {
+      checkPasswordTextField.resignFirstResponder()
+    }
+
+    updateContinueButton(isEnable: false)
+  }
+
   func setupNavigationBar() {
     navigationController?.setNavigationBarHidden(false, animated: false)
     title = viewType?.navigationTitle
@@ -112,7 +128,6 @@ class LoginViewController: UIViewController {
     checkPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
   }
 
   @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
