@@ -27,7 +27,7 @@ class LoginManager {
     }
   }
 
-  func login(loginUser: LoginUser,
+  func login(loginUser: User,
              completionHandler: @escaping (Bool) -> Void) {
     NetworkManager.shared.requestLogin(with: loginUser) { result in
       guard let result = result as? [String: String],

@@ -7,21 +7,9 @@
 
 import Foundation
 
-class User: Codable {
-  private var _email: String = ""
-  private var _password: String = ""
-
-  var email: String {
-    get {
-      return self._email
-    }
-  }
-
-  var password: String {
-    get {
-      return ""
-    }
-  }
+struct User: Codable {
+  var email: String?
+  var password: String?
 
   var username: String? = ""
   var gender: Gender?
@@ -38,11 +26,13 @@ class User: Codable {
     case type
   }
 
-  required init(from decoder: Decoder) throws {
+  init() { }
+
+  init(from decoder: Decoder) throws {
     do {
       let values = try decoder.container(keyedBy: CodingKeys.self)
-      self._password = try values.decodeIfPresent(String.self, forKey: .password) ?? ""
-      self._email = try values.decode(String.self, forKey: .email)
+      self.email = try values.decode(String.self, forKey: .email)
+      self.password = try values.decodeIfPresent(String.self, forKey: .password) ?? ""
       self.username = try values.decodeIfPresent(String.self, forKey: .username)
       self.gender = try values.decodeIfPresent(Gender.self, forKey: .gender)
       self.age = try values.decodeIfPresent(Age.self, forKey: .age)
@@ -60,15 +50,5 @@ class User: Codable {
     try container.encode(age, forKey: .age)
     try container.encode(gender, forKey: .gender)
     try container.encode(type, forKey: .type)
-  }
-
-  init(email: String, password: String, username: String) {
-    self._email = email
-    self.username = username
-    self._password = password
-  }
-
-  func updatePassword(_ password: String) {
-    self._password = password
   }
 }

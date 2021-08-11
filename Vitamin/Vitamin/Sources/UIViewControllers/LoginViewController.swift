@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
   @IBOutlet var continueButtonTopToEmailTextFieldConstraint: NSLayoutConstraint!
   @IBOutlet var passwordTextFieldTopToTitleLabelConstraint: NSLayoutConstraint!
 
-  lazy var loginUser: LoginUser? = LoginUser(email: "", password: "")
   lazy var continueButtonTopToCheckPasswordTextFieldConstraint: NSLayoutConstraint = {
     return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15)
   }()
@@ -34,6 +33,7 @@ class LoginViewController: UIViewController {
   let textFieldValidColor: UIColor = .textBlack1
   let textFieldInvalidColor: UIColor = .textBlack5
   var viewType: ViewType?
+  var user: User?
 
   enum ViewType {
     case email
@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
     case loginPassword
     case signUpPassword
     case findPassword
+    case setGenderAge
 
     var navigationTitle: String {
       switch self {
@@ -54,6 +55,8 @@ class LoginViewController: UIViewController {
         return "회원가입"
       case .findPassword:
         return "비밀번호 찾기"
+      case .setGenderAge:
+        return "성별 및 나이 설정"
       }
     }
 
@@ -67,6 +70,8 @@ class LoginViewController: UIViewController {
         return "우리 또 만났네요.\n비밀번호를 써주세요."
       case .signUpPassword:
         return "우리 초면이네요.\n비밀번호는 뭘로 할까요?"
+      case .setGenderAge:
+        return "마지막으로 성별과 \n연령 정보가 필요해요."
       default:
         return ""
       }
@@ -140,19 +145,27 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func tapContinueButton(_ sender: UIButton) {
+    if user == nil {
+      user = User()
+    }
+
     switch self.viewType {
     case .email:
-      // MARK: TODO; 이메일 등록 여부 확인 후, signUp이나 login으로 넘어가기
-      loginUser?.email = commonTextField.text
-      checkEmail { exist in
+      guard let email = commonTextField.text else {
+        return
+      }
+      user?.email = email
+      checkEmail(email: email) { exist in
         self.pushViewController(vcType: LoginViewController.self,
-                           storyboardName: Constants.StoryboardName.SignUp.rawValue,
-                           viewType: exist ? .loginPassword : .signUpPassword)
+                                storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                                viewType: exist ? .loginPassword : .signUpPassword)
       }
     case .findPassword:
       // MARK: TODO ; 비밀번호 찾기 기능
       print(">")
     case .loginPassword:
+      user?.password = passwordTextField.text
+
       login { success in
         guard success,
               let currentUser = LoginManager.shared.currentUser else {
@@ -166,14 +179,19 @@ class LoginViewController: UIViewController {
           // MARK: 온보딩 이동
         }
       }
-    case .nickName:
-      // MARK: TODO ; 회원가입 request 요청하고 Home으로 이동하기
-      print(">")
     case .signUpPassword:
-      loginUser?.password = commonTextField.text
+      user?.password = commonTextField.text
       pushViewController(vcType: LoginViewController.self,
                          storyboardName: Constants.StoryboardName.SignUp.rawValue,
                          viewType: .nickName)
+    case .nickName:
+      user?.username = commonTextField.text
+      pushViewController(vcType: LoginViewController.self,
+                         storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                         viewType: .setGenderAge)
+    case .setGenderAge:
+      LoginManager.shared.signup(user: user)
+      break
     default:
       break
     }
@@ -227,6 +245,7 @@ class LoginViewController: UIViewController {
       }
 
       nextVC.viewType = viewType
+      nextVC.user = user
       self.navigationController?.pushViewController(nextVC, animated: true)
       return
     }

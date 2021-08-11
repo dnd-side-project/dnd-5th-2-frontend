@@ -34,7 +34,7 @@ class NetworkManager {
     }
   }
 
-  func requestLogin(with loginUser: LoginUser,
+  func requestLogin(with loginUser: User,
                     completionHandler: @escaping (Any?) -> Void) {
 
     let loginURL = URLMaker.makeRequestURL(feature: .login)
