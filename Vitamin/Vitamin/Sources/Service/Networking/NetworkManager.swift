@@ -16,11 +16,11 @@ class NetworkManager {
 
   private init() { }
 
-  func checkEmailExisting(email: String, completionHandler: @escaping (Any?) -> Void) {
+  func checkExists(parameter: [String: String], completionHandler: @escaping (Any?) -> Void) {
     let url = URLMaker.makeRequestURL(feature: .emailCheck)
     let request = AF.request(url,
                              method: .post,
-                             parameters: ["email": email])
+                             parameters: parameter)
 
     request.responseJSON { response in
       switch response.result {

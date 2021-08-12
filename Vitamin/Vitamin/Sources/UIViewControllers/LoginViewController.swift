@@ -184,12 +184,19 @@ class LoginViewController: UIViewController {
                          storyboardName: Constants.StoryboardName.SignUp.rawValue,
                          viewType: .nickName)
     case .nickName:
-      user?.username = commonTextField.text
-      pushViewController(vcType: LoginViewController.self,
-                         storyboardName: Constants.StoryboardName.SignUp.rawValue,
-                         viewType: .setGenderAge)
+      guard let userName = commonTextField.text,
+            !userName.isEmpty else { return }
+      user?.username = userName
+      checkNickName(nickName: userName) { [weak self] success in
+        guard success else { return }
+        self?.pushViewController(vcType: LoginViewController.self,
+                           storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                           viewType: .setGenderAge)
+      }
     case .setGenderAge:
-//      LoginManager.shared.signup(user: user)
+      signUp { _ in
+        // MARK: success - 온보딩 이동 / error인 경우 핸들링
+      }
       break
     default:
       break

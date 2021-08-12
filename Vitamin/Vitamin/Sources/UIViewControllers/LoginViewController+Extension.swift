@@ -90,6 +90,12 @@ extension LoginViewController {
     }
   }
 
+  func checkNickName(nickName: String, completion: @escaping (Bool) -> Void) {
+    LoginManager.shared.checkNickNameExists(nickName: nickName) { success in
+      completion(success)
+    }
+  }
+
   func login(completion: @escaping (Bool) -> Void) {
     guard let loginUser = user else { return }
     LoginManager.shared.login(loginUser: loginUser) { success in
@@ -98,6 +104,13 @@ extension LoginViewController {
         return
       }
       completion(true)
+    }
+  }
+
+  func signUp(completion: @escaping (Bool) -> Void) {
+    guard let user = user else { return }
+    LoginManager.shared.signup(user: user) { success in
+      completion(success)
     }
   }
 }

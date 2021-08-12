@@ -31,7 +31,7 @@ class NavigationViewController: UINavigationController {
             let user = LoginManager.shared.currentUser else {
         let storyboard = UIStoryboard(name: Constants.StoryboardName.SignUp.rawValue, bundle: nil)
         if let rootVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController {
-          rootVC.viewType = .setGenderAge
+          rootVC.viewType = .email
           self.viewControllers = [rootVC]
         }
         return
