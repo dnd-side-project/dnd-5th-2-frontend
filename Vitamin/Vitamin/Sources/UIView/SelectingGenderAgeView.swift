@@ -14,13 +14,8 @@ class SelectingGenderAgeView: UIView {
   @IBOutlet var ageCollectionView: UICollectionView!
 
   let minSpacing: CGFloat = 9
-
   let ages: [Age] = Age.allCases
-  var selectedGender: Gender? {
-    didSet {
-      // MARK: TODO 델리게이트
-    }
-  }
+  var selectedValues: ((Gender?, Age?) -> Void)?
 
   override init(frame: CGRect) {
       super.init(frame: frame)
@@ -52,18 +47,38 @@ class SelectingGenderAgeView: UIView {
   @IBAction func tapGender(_ sender: UIButton) {
     sender.isSelected = true
     sender.backgroundColor = .pink2
-    selectedGender = sender == maleButton ? .male : .female
-
     let deselectedButton = sender == maleButton ? femaleButton : maleButton
     deselectedButton?.isSelected = false
     deselectedButton?.backgroundColor = .bg
+    deliverSelectedValues()
+  }
+
+  func deliverSelectedValues() {
+    let _gender: Gender? = {
+      if femaleButton.isSelected { return .female }
+      if maleButton.isSelected { return .male }
+      return nil
+    }()
+
+    let _age: Age? = {
+      if let selectedItem = ageCollectionView.indexPathsForSelectedItems?.first {
+        return ages[selectedItem.row]
+      }
+      return nil
+    }()
+
+    guard let gender = _gender,
+          let age = _age else { return }
+
+    selectedValues?(gender, age)
   }
 }
 
 extension SelectingGenderAgeView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    deliverSelectedValues()
   }
+
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return ages.count
   }

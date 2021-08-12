@@ -237,6 +237,11 @@ class LoginViewController: UIViewController {
       emailTextFieldResginGestureRecognizer.isEnabled = false
       continueButtonBottomToSafeAreaConstraint.isActive = true
       selectingGenderAgeView.isHidden = false
+      selectingGenderAgeView.selectedValues = { [weak self] gender, age in
+        self?.user?.gender = gender
+        self?.user?.age = age
+        self?.updateContinueButton(isEnable: true)
+      }
     default:
       break
     }
