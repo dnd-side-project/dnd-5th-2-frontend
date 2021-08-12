@@ -43,10 +43,10 @@ class SelectingGenderAgeView: UIView {
   func setup() {
     femaleButton.makeRounded(radius: 52/2)
     maleButton.makeRounded(radius: 52/2)
-
     let cell = UINib(nibName: AgeCollectionViewCell.identifier, bundle: nil)
     ageCollectionView.register(cell, forCellWithReuseIdentifier: AgeCollectionViewCell.identifier)
     ageCollectionView.reloadData()
+    ageCollectionView.isUserInteractionEnabled = true
   }
 
   @IBAction func tapGender(_ sender: UIButton) {
@@ -61,6 +61,9 @@ class SelectingGenderAgeView: UIView {
 }
 
 extension SelectingGenderAgeView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+  }
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return ages.count
   }
@@ -71,15 +74,13 @@ extension SelectingGenderAgeView: UICollectionViewDataSource, UICollectionViewDe
     }
 
     cell.titleLabel.text = ages[indexPath.row].cellText
-
+    cell.setup(radius: collectionView.frame.height/2)
     return cell
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: Int((collectionView.frame.width - minSpacing * CGFloat((ages.count - 1))))/ages.count, height: 52)
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    return UIEdgeInsets(top: .zero, left: minSpacing/2, bottom: .zero, right: minSpacing/2)
+    let cellPadding: CGFloat = 9
+    let availableWidth: CGFloat = (collectionView.frame.width - CGFloat(ages.count-1)*cellPadding)/CGFloat(ages.count)
+    return CGSize(width: availableWidth, height: collectionView.frame.height)
   }
 }

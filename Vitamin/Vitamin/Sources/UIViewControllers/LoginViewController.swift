@@ -23,8 +23,11 @@ class LoginViewController: UIViewController {
   lazy var continueButtonTopToCheckPasswordTextFieldConstraint: NSLayoutConstraint = {
     return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15)
   }()
-  lazy var continueButtonTopToPasswordTextFieldConstrinat: NSLayoutConstraint = {
+  lazy var continueButtonTopToPasswordTextFieldConstraint: NSLayoutConstraint = {
     return continueButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15)
+  }()
+  lazy var continueButtonBottomToSafeAreaConstraint: NSLayoutConstraint = {
+    return continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -48)
   }()
   let textFieldValidColor: UIColor = .textBlack1
   let textFieldInvalidColor: UIColor = .textBlack5
@@ -208,11 +211,14 @@ class LoginViewController: UIViewController {
     commonTextField.isHidden = true
     passwordTextField.isHidden = true
     checkPasswordTextField.isHidden = true
+    lookAroundButton.isHidden = true
     updateContinueButton(isEnable: false)
     continueButtonTopToEmailTextFieldConstraint.isActive = false
+    continueButtonBottomToSafeAreaConstraint.isActive = false
 
     switch viewType {
     case .email:
+      lookAroundButton.isHidden = false
       commonTextField.isHidden = false
       continueButtonTopToEmailTextFieldConstraint.isActive = true
     case .signUpPassword:
@@ -225,8 +231,11 @@ class LoginViewController: UIViewController {
     case .loginPassword:
       passwordTextField.isHidden = false
       passwordTextFieldTopToTitleLabelConstraint.constant = 125
-      continueButtonTopToPasswordTextFieldConstrinat.isActive = true
+      continueButtonTopToPasswordTextFieldConstraint.isActive = true
     case .setGenderAge:
+      continueButtonTopToEmailTextFieldConstraint.isActive = false
+      emailTextFieldResginGestureRecognizer.isEnabled = false
+      continueButtonBottomToSafeAreaConstraint.isActive = true
       selectingGenderAgeView.isHidden = false
     default:
       break

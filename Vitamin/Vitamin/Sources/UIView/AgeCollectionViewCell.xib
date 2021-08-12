@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,44 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="197" height="194"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQT-EO-K6e">
-                        <rect key="frame" x="0.0" y="0.0" width="197" height="194"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxA-6d-wkz">
-                                <rect key="frame" x="0.0" y="0.0" width="197" height="194"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="zxA-6d-wkz" firstAttribute="leading" secondItem="tQT-EO-K6e" secondAttribute="leading" id="8ws-YW-h80"/>
-                            <constraint firstAttribute="trailing" secondItem="zxA-6d-wkz" secondAttribute="trailing" id="N4C-2A-kzA"/>
-                            <constraint firstAttribute="bottom" secondItem="zxA-6d-wkz" secondAttribute="bottom" id="bfU-Zk-Acw"/>
-                            <constraint firstItem="zxA-6d-wkz" firstAttribute="top" secondItem="tQT-EO-K6e" secondAttribute="top" id="kf5-bv-Yid"/>
-                        </constraints>
-                    </view>
+                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxA-6d-wkz">
+                        <rect key="frame" x="0.0" y="44" width="197" height="150"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="tQT-EO-K6e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6bz-7Q-Rf0"/>
-                <constraint firstAttribute="trailing" secondItem="tQT-EO-K6e" secondAttribute="trailing" id="8w9-0h-qOU"/>
-                <constraint firstAttribute="bottom" secondItem="tQT-EO-K6e" secondAttribute="bottom" id="JWj-NW-vtw"/>
-                <constraint firstItem="tQT-EO-K6e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pc4-94-ZBz"/>
+                <constraint firstItem="zxA-6d-wkz" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="bqn-GR-KJv"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="zxA-6d-wkz" secondAttribute="top" id="hZW-OF-jN3"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="zxA-6d-wkz" secondAttribute="bottom" id="jxA-ve-rBT"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="zxA-6d-wkz" secondAttribute="trailing" id="rOF-7B-Rkc"/>
             </constraints>
             <size key="customSize" width="197" height="194"/>
             <connections>
-                <outlet property="circleView" destination="tQT-EO-K6e" id="gY1-ow-mnc"/>
                 <outlet property="titleLabel" destination="zxA-6d-wkz" id="FHN-UD-QTd"/>
             </connections>
             <point key="canvasLocation" x="105.07246376811595" y="109.82142857142857"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
