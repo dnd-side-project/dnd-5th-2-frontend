@@ -7,11 +7,6 @@
 
 import UIKit
 
-/* MARK: - TODO
- 1. 폰트 적용
- 2. 비밀번호 rule 추가
- */
-
 class LoginViewController: UIViewController {
 
   @IBOutlet var commonTextField: CustomTextField!
@@ -23,6 +18,7 @@ class LoginViewController: UIViewController {
   @IBOutlet var checkPasswordTextField: CustomTextField!
   @IBOutlet var continueButtonTopToEmailTextFieldConstraint: NSLayoutConstraint!
   @IBOutlet var passwordTextFieldTopToTitleLabelConstraint: NSLayoutConstraint!
+  @IBOutlet var selectingGenderAgeView: SelectingGenderAgeView!
 
   lazy var continueButtonTopToCheckPasswordTextFieldConstraint: NSLayoutConstraint = {
     return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15)
@@ -190,7 +186,7 @@ class LoginViewController: UIViewController {
                          storyboardName: Constants.StoryboardName.SignUp.rawValue,
                          viewType: .setGenderAge)
     case .setGenderAge:
-      LoginManager.shared.signup(user: user)
+//      LoginManager.shared.signup(user: user)
       break
     default:
       break
@@ -230,6 +226,8 @@ class LoginViewController: UIViewController {
       passwordTextField.isHidden = false
       passwordTextFieldTopToTitleLabelConstraint.constant = 125
       continueButtonTopToPasswordTextFieldConstrinat.isActive = true
+    case .setGenderAge:
+      selectingGenderAgeView.isHidden = false
     default:
       break
     }

@@ -16,6 +16,23 @@ class NetworkManager {
 
   private init() { }
 
+  func checkEmailExisting(email: String, completionHandler: @escaping (Any?) -> Void) {
+    let url = URLMaker.makeRequestURL(feature: .emailCheck)
+    let request = AF.request(url,
+                             method: .post,
+                             parameters: ["email": email])
+
+    request.responseJSON { response in
+      switch response.result {
+      case .success:
+        completionHandler(response.value)
+      case .failure(let error):
+        print(error.localizedDescription)
+        completionHandler(nil)
+      }
+    }
+  }
+
   func requestSignUp(with user: User,
                      completionHandler: @escaping (Result<User, Error>) -> Void) {
 

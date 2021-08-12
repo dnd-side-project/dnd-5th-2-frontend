@@ -11,7 +11,7 @@ import Alamofire
 class TokenUtils {
 
   static let shared = TokenUtils()
-  fileprivate let account: String = "accessToken"
+  fileprivate let account: String = "asdf"
 
   private init() { }
 

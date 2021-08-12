@@ -27,6 +27,10 @@
 		4D27541626BE2B800097B8EB /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27540426BE2B800097B8EB /* LoginManager.swift */; };
 		4D27541726BE2B800097B8EB /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27540626BE2B800097B8EB /* UserDefaultsHelper.swift */; };
 		4D27541F26BE2C940097B8EB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27541E26BE2C940097B8EB /* UIColor+Extension.swift */; };
+		4D8D4E1626C4216E0059AAC6 /* SelectingGenderAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4E1526C4216E0059AAC6 /* SelectingGenderAgeView.swift */; };
+		4D8D4E1B26C421830059AAC6 /* SelectingGenderAgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */; };
+		4D8D4E2126C426320059AAC6 /* AgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4E1F26C426320059AAC6 /* AgeCollectionViewCell.swift */; };
+		4D8D4E2226C426320059AAC6 /* AgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4E2026C426320059AAC6 /* AgeCollectionViewCell.xib */; };
 		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4D27530626BD57290097B8EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27530526BD57290097B8EB /* Constants.swift */; };
 		4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */; };
@@ -91,6 +95,10 @@
 		4D27540426BE2B800097B8EB /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		4D27540626BE2B800097B8EB /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		4D27541E26BE2C940097B8EB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4D8D4E1526C4216E0059AAC6 /* SelectingGenderAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingGenderAgeView.swift; sourceTree = "<group>"; };
+		4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectingGenderAgeView.xib; sourceTree = "<group>"; };
+		4D8D4E1F26C426320059AAC6 /* AgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D8D4E2026C426320059AAC6 /* AgeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeCollectionViewCell.xib; sourceTree = "<group>"; };
 		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4D27530526BD57290097B8EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 		4D2753ED26BE2B800097B8EB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4D8D4E1426C4215D0059AAC6 /* UIView */,
 				4D2753EE26BE2B800097B8EB /* Constants.swift */,
 				4D2753EF26BE2B800097B8EB /* Enums */,
 				4D2753F126BE2B800097B8EB /* Models */,
@@ -249,6 +258,17 @@
 				4D27540626BE2B800097B8EB /* UserDefaultsHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4D8D4E1426C4215D0059AAC6 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D4E1526C4216E0059AAC6 /* SelectingGenderAgeView.swift */,
+				4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */,
+				4D8D4E1F26C426320059AAC6 /* AgeCollectionViewCell.swift */,
+				4D8D4E2026C426320059AAC6 /* AgeCollectionViewCell.xib */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		4DC030BA269AF78900E929A4 /* Resources */ = {
@@ -468,6 +488,7 @@
 				4DBBC7B726BED06E00FFDFC2 /* Pretendard-SemiBold.ttf in Resources */,
 				4DBBC7B926BED06E00FFDFC2 /* Pretendard-ExtraBold.ttf in Resources */,
 				4DBBC7B526BED06E00FFDFC2 /* Pretendard-Regular.ttf in Resources */,
+				4D8D4E1B26C421830059AAC6 /* SelectingGenderAgeView.xib in Resources */,
 				4DBBC7B626BED06E00FFDFC2 /* Pretendard-Light.ttf in Resources */,
 				D9C49F04269A97E800A5FFA5 /* LaunchScreen.storyboard in Resources */,
 				D9C49F01269A97E800A5FFA5 /* Assets.xcassets in Resources */,
@@ -475,6 +496,7 @@
 				4DBBC7B826BED06E00FFDFC2 /* Pretendard-Thin.ttf in Resources */,
 				D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */,
 				4D27532326BD746C0097B8EB /* SignUp.storyboard in Resources */,
+				4D8D4E2226C426320059AAC6 /* AgeCollectionViewCell.xib in Resources */,
 				4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,10 +642,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8D4E1626C4216E0059AAC6 /* SelectingGenderAgeView.swift in Sources */,
 				4D27540826BE2B800097B8EB /* Font.swift in Sources */,
 				4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */,
 				4D27541026BE2B800097B8EB /* ViewController.swift in Sources */,
 				4D27540A26BE2B800097B8EB /* User.swift in Sources */,
+				4D8D4E2126C426320059AAC6 /* AgeCollectionViewCell.swift in Sources */,
 				4D27540C26BE2B800097B8EB /* UIFont+Extension.swift in Sources */,
 				D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */,
 				4D27541626BE2B800097B8EB /* LoginManager.swift in Sources */,

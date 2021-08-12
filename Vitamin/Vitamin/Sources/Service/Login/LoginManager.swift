@@ -12,6 +12,8 @@ class LoginManager {
 
   static let shared = LoginManager()
 
+  let networkManager = NetworkManager.shared
+
   var currentUser: User?
 
   private init() { }
@@ -29,7 +31,7 @@ class LoginManager {
 
   func login(loginUser: User,
              completionHandler: @escaping (Bool) -> Void) {
-    NetworkManager.shared.requestLogin(with: loginUser) { result in
+    networkManager.requestLogin(with: loginUser) { result in
       guard let result = result as? [String: String],
             let jwt = result["jwt"],
             let user = result["user"] else { // MARK: TODO 백엔드 기능 구현되면 user 체크
@@ -48,7 +50,7 @@ class LoginManager {
       return
     }
 
-    NetworkManager.shared.requestLogin(with: header) { result in
+    networkManager.requestLogin(with: header) { result in
       switch result {
       case .success(let user):
         self.currentUser = user
@@ -57,6 +59,18 @@ class LoginManager {
         print(error.localizedDescription)
         completionHandler(false)
       }
+    }
+  }
+
+  func checkEmailExists(email: String, completion: @escaping (Bool) -> Void) {
+    networkManager.checkEmailExisting(email: email) { result in
+      guard let result = result as? [String: Bool],
+            let exists = result["exists"],
+            exists else {
+        completion(false)
+        return
+      }
+      completion(true)
     }
   }
 

@@ -85,7 +85,9 @@ extension LoginViewController: UITextFieldDelegate {
 // MARK: - 네트워크
 extension LoginViewController {
   func checkEmail(email: String, completion: @escaping (Bool) -> Void) {
-    completion(true)
+    LoginManager.shared.checkEmailExists(email: email) { success in
+      completion(success)
+    }
   }
 
   func login(completion: @escaping (Bool) -> Void) {

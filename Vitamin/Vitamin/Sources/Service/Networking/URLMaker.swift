@@ -14,6 +14,7 @@ enum Feature {
   case login
   case autoLogin
   case userSelfInformation
+  case emailCheck
 
   var urlPath: String {
     switch self {
@@ -23,6 +24,8 @@ enum Feature {
       return "auth/login"
     case .autoLogin, .userSelfInformation:
       return "user"
+    case .emailCheck:
+      return "auth/signup-email"
     }
   }
 }
