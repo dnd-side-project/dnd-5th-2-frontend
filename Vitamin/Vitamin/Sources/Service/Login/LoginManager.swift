@@ -38,16 +38,15 @@ class LoginManager {
   func login(loginUser: User,
              completionHandler: @escaping (Bool) -> Void) {
     networkManager.requestLogin(with: loginUser) { result in
-      guard let result = result as? [String: String],
-            let jwt = result["jwt"],
-            let user = result["user"] else {
+      guard let result = result as? [String: Any],
+            let jwt = result["jwt"] as? String,
+            let user = result["user"] as? User else { // MARK: TODO 백엔드 응답값 반영되면 확인하기
         completionHandler(false)
         return
       }
 
       let successToCreate = TokenUtils.shared.create(value: jwt)
-      // MARK: TODO 백엔드 기능 구현되면 user 체크
-//      currentUser =
+      self.currentUser = user
       completionHandler(successToCreate)
     }
   }

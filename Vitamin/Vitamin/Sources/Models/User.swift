@@ -43,12 +43,16 @@ struct User: Codable {
   }
 
   func encode(to encoder: Encoder) throws {
-    var container = encoder.container(keyedBy: CodingKeys.self)
-    try container.encode(email, forKey: .email)
-    try container.encode(password, forKey: .password)
-    try container.encode(username, forKey: .username)
-    try container.encode(age, forKey: .age)
-    try container.encode(gender, forKey: .gender)
-    try container.encode(type, forKey: .type)
+    do {
+      var container = encoder.container(keyedBy: CodingKeys.self)
+      try container.encode(email, forKey: .email)
+      try container.encode(password, forKey: .password)
+      try container.encode(username, forKey: .username)
+      try container.encode(age, forKey: .age)
+      try container.encode(gender, forKey: .gender)
+      try container.encode(type, forKey: .type)
+    } catch {
+
+    }
   }
 }
