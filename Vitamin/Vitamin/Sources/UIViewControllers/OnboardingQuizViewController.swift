@@ -29,6 +29,8 @@ class OnboardingQuizViewController: UIViewController {
     questionSet = [quizSet.quiz(in: 0)]
     NotificationCenter.default.addObserver(self, selector: #selector(answerReceived(_:)), name: Notification.Name("handleAnswer"), object: nil)
     self.navigationItem.title = "1 \\ \(answerSet.count)"
+    submitButton.setTitle("제출하기", for: .normal)
+    submitButton.isHidden = true
   }
 
   @objc func answerReceived(_ notification: Notification) {
@@ -40,7 +42,7 @@ class OnboardingQuizViewController: UIViewController {
 
     guard answerIndex < answerSet.count - 1 else {
       print("all answered button show")
-      submitButton.isEnabled = true
+      submitButton.isHidden = false
       return
     }
 
@@ -60,7 +62,7 @@ class OnboardingQuizViewController: UIViewController {
     questionSet.append(quizSet.quiz(in: currentAnswerIndex))
     let indexPath = IndexPath(row: questionSet.count - 1, section: 0)
     tableView.insertRows(at: [indexPath], with: .none)
-    tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
   }
 }
 extension OnboardingQuizViewController: UITableViewDataSource {
