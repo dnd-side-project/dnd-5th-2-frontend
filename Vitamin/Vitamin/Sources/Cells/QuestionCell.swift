@@ -88,8 +88,8 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
       return
     }
 
-    answerView.isHidden = false
-    answerTextLabel.text = answer ? "네 맞아요" : "아니요"
+    let answerText = answer ? "네 맞아요" : "아니요"
+    showAnswerView(with: answerText)
   }
 
   private func showAnswerView(with text: String) {
