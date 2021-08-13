@@ -89,6 +89,25 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
     }
 
     let answerText = answer ? "네 맞아요" : "아니요"
+
+    if answer {
+      noButton.isSelected = false
+      noButton.backgroundColor = .white
+      noButton.layer.borderWidth = 1.0
+      noButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
+
+      yesButton.isSelected = true
+      yesButton.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1)
+    } else {
+      yesButton.isSelected = false
+      yesButton.backgroundColor = .white
+      yesButton.layer.borderWidth = 1.0
+      yesButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
+
+      noButton.isSelected = true
+      noButton.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1)
+    }
+
     showAnswerView(with: answerText)
   }
 
