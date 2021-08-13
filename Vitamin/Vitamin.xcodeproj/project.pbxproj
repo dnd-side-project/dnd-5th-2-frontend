@@ -30,6 +30,7 @@
 		D929C7CE26C04B0200F37478 /* QuizSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929C7CD26C04B0200F37478 /* QuizSet.swift */; };
 		D929C7D126C04C6C00F37478 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929C7D026C04C6C00F37478 /* QuestionCell.swift */; };
 		D929C7D326C3E29D00F37478 /* OnboardingResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929C7D226C3E29D00F37478 /* OnboardingResultViewController.swift */; };
+		D929C7D526C6532800F37478 /* HealthInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D929C7D426C6532800F37478 /* HealthInformationCell.swift */; };
 		D97C793126BEF369000748EC /* OnboardingQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */; };
 		D9A564DF26BCCE3800ACB0EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */; };
 		D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E126BCCF2100ACB0EB /* SignUp.swift */; };
@@ -94,6 +95,7 @@
 		D929C7CD26C04B0200F37478 /* QuizSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSet.swift; sourceTree = "<group>"; };
 		D929C7D026C04C6C00F37478 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		D929C7D226C3E29D00F37478 /* OnboardingResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingResultViewController.swift; sourceTree = "<group>"; };
+		D929C7D426C6532800F37478 /* HealthInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInformationCell.swift; sourceTree = "<group>"; };
 		D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuizViewController.swift; sourceTree = "<group>"; };
 		D9A564DE26BCCE3800ACB0EB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D9A564E126BCCF2100ACB0EB /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				D929C7D026C04C6C00F37478 /* QuestionCell.swift */,
+				D929C7D426C6532800F37478 /* HealthInformationCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				D9A564E226BCCF2100ACB0EB /* SignUp.swift in Sources */,
 				D929C7D126C04C6C00F37478 /* QuestionCell.swift in Sources */,
 				D9A564E626BD696900ACB0EB /* User.swift in Sources */,
+				D929C7D526C6532800F37478 /* HealthInformationCell.swift in Sources */,
 				4D27530626BD57290097B8EB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
