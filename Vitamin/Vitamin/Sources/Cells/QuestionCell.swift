@@ -23,13 +23,30 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
   private var quizIndex: Int?
 
   @IBAction func tappedYesButton(_ sender: UIButton) {
-    answerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    if noButton.isSelected {
+      noButton.isSelected = false
+      noButton.backgroundColor = .white
+      noButton.layer.borderWidth = 1.0
+      noButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
+    }
+
+    sender.isSelected = true
+    sender.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1)
     showAnswerView(with: "네 맞아요")
     NotificationCenter.default.post(name: Notification.Name("handleAnswer"), object: [self.quizIndex!, true], userInfo: nil)
   }
 
   @IBAction func tappedNoButton(_ sender: UIButton) {
-    answerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    if yesButton.isSelected {
+      yesButton.isSelected = false
+      yesButton.backgroundColor = .white
+      yesButton.layer.borderWidth = 1.0
+      yesButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
+    }
+
+    sender.isSelected = true
+    yesButton.isSelected = false
+    sender.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1)
     showAnswerView(with: "아니요")
     NotificationCenter.default.post(name: Notification.Name("handleAnswer"), object: [self.quizIndex!, false], userInfo: nil)
   }
@@ -50,12 +67,24 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
 
     noButton.setTitle("아니오", for: .normal)
     noButton.setTitleColor(.black, for: .normal)
+    noButton.setTitleColor(UIColor(red: 199/255, green: 199/255, blue: 206/255, alpha: 1), for: .selected)
     noButton.makeRounded(radius: 13)
     noButton.layer.borderWidth = 1.0
     noButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
 
     guard let answer = checkedAnswer else {
       answerView.isHidden = true
+
+      noButton.isSelected = false
+      noButton.backgroundColor = .white
+      noButton.layer.borderWidth = 1.0
+      noButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
+
+      yesButton.isSelected = false
+      yesButton.backgroundColor = .white
+      yesButton.layer.borderWidth = 1.0
+      yesButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
+
       return
     }
 
@@ -66,6 +95,7 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
   private func showAnswerView(with text: String) {
     answerView.isHidden = false
     answerView.makeRounded(radius: 21)
+    answerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner]
     answerTextLabel.text = text
     answerTextLabel.textColor = .white
   }
