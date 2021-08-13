@@ -129,16 +129,28 @@
                                                                             <subviews>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfK-ZM-LfR">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="222.5" height="46"/>
+                                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <inset key="contentEdgeInsets" minX="14.039999999999999" minY="14" maxX="14" maxY="14"/>
-                                                                                    <state key="normal" title="Button"/>
+                                                                                    <state key="normal" title="Button">
+                                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                                                                    </state>
+                                                                                    <state key="selected">
+                                                                                        <color key="titleColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    </state>
                                                                                     <connections>
-                                                                                        <action selector="tappedYesButton:" destination="mMs-nh-nxr" eventType="touchUpInside" id="yfg-O6-4eX"/>
+                                                                                        <action selector="tappedYesButton:" destination="mMs-nh-nxr" eventType="touchUpInside" id="Kqc-ab-rQj"/>
                                                                                     </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-k1-7Ke">
                                                                                     <rect key="frame" x="0.0" y="52" width="222.5" height="46"/>
+                                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <inset key="contentEdgeInsets" minX="14" minY="14" maxX="14" maxY="14"/>
                                                                                     <state key="normal" title="Button"/>
+                                                                                    <state key="selected">
+                                                                                        <color key="titleColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    </state>
                                                                                     <connections>
                                                                                         <action selector="tappedNoButton:" destination="mMs-nh-nxr" eventType="touchUpInside" id="oRF-LY-fUe"/>
                                                                                     </connections>
@@ -221,6 +233,9 @@
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTu-e7-c2Y">
                                 <rect key="frame" x="22" y="718" width="331" height="30"/>
                                 <state key="normal" title="제출하기"/>
+                                <connections>
+                                    <segue destination="pRn-MQ-UiM" kind="show" id="dFN-6o-tuP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X37-hM-uaU"/>
@@ -248,6 +263,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65N-Ru-WhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1971.7391304347827" y="65.625"/>
+        </scene>
+        <!--Onboarding Result View Controller-->
+        <scene sceneID="vpo-aX-nmI">
+            <objects>
+                <viewController id="pRn-MQ-UiM" customClass="OnboardingResultViewController" customModule="Vitamin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nPI-sc-K0u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Dl-VH-b0y">
+                                <rect key="frame" x="156" y="99" width="41.5" height="101.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfb-Ae-MFu">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnk-OF-OVK">
+                                        <rect key="frame" x="0.0" y="40.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-U4-aaQ">
+                                        <rect key="frame" x="0.0" y="81" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z6b-Pj-IHq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B0I-su-zZ6"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="fZI-U4-aaQ" id="HwU-ED-Sca"/>
+                        <outlet property="resultDescriptionLabel" destination="nnk-OF-OVK" id="C9q-bJ-Nmh"/>
+                        <outlet property="statusEmojiLabel" destination="pfb-Ae-MFu" id="NeD-Qm-zaE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHl-Eh-EGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702" y="62"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gq8-7k-LS5">
