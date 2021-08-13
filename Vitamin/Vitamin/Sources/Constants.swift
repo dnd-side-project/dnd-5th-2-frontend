@@ -15,5 +15,6 @@ enum Constants {
 
   enum StoryboardName: String {
     case Main
+    case SignUp
   }
 }

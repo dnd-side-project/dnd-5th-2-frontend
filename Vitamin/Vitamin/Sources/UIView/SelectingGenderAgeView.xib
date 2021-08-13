@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
+        <array key="Pretendard-SemiBold.ttf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectingGenderAgeView" customModule="Vitamin" customModuleProvider="target">
+            <connections>
+                <outlet property="ageCollectionView" destination="fIX-76-00y" id="UgA-Tk-alt"/>
+                <outlet property="femaleButton" destination="pIj-my-WvG" id="Xyv-r0-MHL"/>
+                <outlet property="maleButton" destination="FwD-Kt-Mnt" id="xyq-tz-Ynt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="355"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7l-ke-bng">
+                    <rect key="frame" x="0.0" y="44" width="26" height="18"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIj-my-WvG">
+                    <rect key="frame" x="0.0" y="74" width="202.5" height="52"/>
+                    <color key="backgroundColor" red="0.95596319439999999" green="0.95585709809999997" blue="0.97006803750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="1m0-d5-FYE"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="여성">
+                        <color key="titleColor" red="0.7819767594" green="0.78164219859999995" blue="0.80769276619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.96091026069999996" green="0.20678594710000001" blue="0.44304502010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapGender:" destination="-1" eventType="touchUpInside" id="1Ri-l7-Os2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwD-Kt-Mnt">
+                    <rect key="frame" x="211.5" y="74" width="202.5" height="52"/>
+                    <color key="backgroundColor" red="0.95596319439999999" green="0.95585709809999997" blue="0.97006803750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="남성">
+                        <color key="titleColor" red="0.7819767594" green="0.78164219859999995" blue="0.80769276619999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.96091026069999996" green="0.20678594710000001" blue="0.44304502010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapGender:" destination="-1" eventType="touchUpInside" id="tca-ch-iGX"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연령" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cn-FZ-oJw">
+                    <rect key="frame" x="0.0" y="158" width="26" height="18"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fIX-76-00y">
+                    <rect key="frame" x="0.0" y="188" width="414" height="69"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fIX-76-00y" secondAttribute="height" multiplier="311:52" id="9UW-pe-eQH"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="9" id="gBK-SN-bDV">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="tjy-xL-J6t"/>
+                        <outlet property="delegate" destination="-1" id="fX6-9l-bHt"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="FwD-Kt-Mnt" firstAttribute="centerY" secondItem="pIj-my-WvG" secondAttribute="centerY" id="3SI-Jb-1CD"/>
+                <constraint firstItem="FwD-Kt-Mnt" firstAttribute="height" secondItem="pIj-my-WvG" secondAttribute="height" id="698-yy-zfE"/>
+                <constraint firstItem="pIj-my-WvG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7Ux-bB-y0I"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FwD-Kt-Mnt" secondAttribute="trailing" id="8dg-sE-yQE"/>
+                <constraint firstItem="fIX-76-00y" firstAttribute="top" secondItem="3cn-FZ-oJw" secondAttribute="bottom" constant="12" id="BuO-co-qKd"/>
+                <constraint firstItem="T7l-ke-bng" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CdE-os-6Qs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="T7l-ke-bng" secondAttribute="top" id="D63-7U-mek"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fIX-76-00y" secondAttribute="trailing" id="DXr-th-nEO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="pIj-my-WvG" secondAttribute="trailing" constant="4.5" id="GYa-vg-vFT"/>
+                <constraint firstItem="pIj-my-WvG" firstAttribute="top" secondItem="T7l-ke-bng" secondAttribute="bottom" constant="12" id="LNa-BX-tEs"/>
+                <constraint firstItem="FwD-Kt-Mnt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="4.5" id="Rb8-Nl-f63"/>
+                <constraint firstItem="3cn-FZ-oJw" firstAttribute="top" secondItem="pIj-my-WvG" secondAttribute="bottom" constant="32" id="hQO-Y2-eoi"/>
+                <constraint firstItem="fIX-76-00y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qlx-eD-yfT"/>
+                <constraint firstItem="3cn-FZ-oJw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tih-Dg-REo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="88" y="324"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
