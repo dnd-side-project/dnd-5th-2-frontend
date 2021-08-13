@@ -31,7 +31,7 @@ enum Feature {
 }
 
 struct URLMaker {
-  static let baseURL = "https://63cce503-cc6a-4a4b-b954-040fc6ba31e3.mock.pstmn.io/"
+  static let baseURL = "http://54.180.126.116:5000/"
   static func makeRequestURL(feature: Feature) -> String {
     return "\(self.baseURL)\(feature.urlPath)"
   }

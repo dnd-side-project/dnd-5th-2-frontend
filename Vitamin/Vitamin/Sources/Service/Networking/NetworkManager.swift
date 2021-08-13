@@ -20,7 +20,8 @@ class NetworkManager {
     let url = URLMaker.makeRequestURL(feature: .emailCheck)
     let request = AF.request(url,
                              method: .post,
-                             parameters: parameter)
+                             parameters: parameter,
+                             encoder: JSONParameterEncoder.default)
 
     request.responseJSON { response in
       switch response.result {
