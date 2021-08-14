@@ -37,6 +37,10 @@
 		4D8D4EC726C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4EC526C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.swift */; };
 		4D8D4EC826C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4EC626C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.xib */; };
 		4D8D4ECD26C6A9360059AAC6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4ECC26C6A9360059AAC6 /* HomeViewController.swift */; };
+		4D8D4EEC26C80E0E0059AAC6 /* ProductsGroupByUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4EEB26C80E0D0059AAC6 /* ProductsGroupByUserView.swift */; };
+		4D8D4EF126C80E6E0059AAC6 /* ProductsGroupByUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4EF026C80E6E0059AAC6 /* ProductsGroupByUserView.xib */; };
+		4D8D4EF726C8103E0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4EF526C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift */; };
+		4D8D4EF826C8103E0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4EF626C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib */; };
 		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */; };
 		4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */; };
@@ -117,6 +121,10 @@
 		4D8D4EC526C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupByTypeTableViewCell.swift; sourceTree = "<group>"; };
 		4D8D4EC626C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupByTypeTableViewCell.xib; sourceTree = "<group>"; };
 		4D8D4ECC26C6A9360059AAC6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4D8D4EEB26C80E0D0059AAC6 /* ProductsGroupByUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupByUserView.swift; sourceTree = "<group>"; };
+		4D8D4EF026C80E6E0059AAC6 /* ProductsGroupByUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupByUserView.xib; sourceTree = "<group>"; };
+		4D8D4EF526C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupByUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D8D4EF626C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupByUserCollectionViewCell.xib; sourceTree = "<group>"; };
 		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
@@ -293,6 +301,7 @@
 		4D8D4E1426C4215D0059AAC6 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				4D8D4EEA26C80DD10059AAC6 /* ProductsGroupByUserView */,
 				4D8D4EB226C69E250059AAC6 /* ProductsGroupByTypeView */,
 				4D8D4E1526C4216E0059AAC6 /* SelectingGenderAgeView.swift */,
 				4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */,
@@ -311,6 +320,17 @@
 				4D8D4EC626C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.xib */,
 			);
 			path = ProductsGroupByTypeView;
+			sourceTree = "<group>";
+		};
+		4D8D4EEA26C80DD10059AAC6 /* ProductsGroupByUserView */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D4EEB26C80E0D0059AAC6 /* ProductsGroupByUserView.swift */,
+				4D8D4EF026C80E6E0059AAC6 /* ProductsGroupByUserView.xib */,
+				4D8D4EF526C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift */,
+				4D8D4EF626C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib */,
+			);
+			path = ProductsGroupByUserView;
 			sourceTree = "<group>";
 		};
 		4DBBC7A826BECFDB00FFDFC2 /* Fonts */ = {
@@ -536,12 +556,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBBC7BA26BED06E00FFDFC2 /* Pretendard-Medium.ttf in Resources */,
+				4D8D4EF126C80E6E0059AAC6 /* ProductsGroupByUserView.xib in Resources */,
 				4DC0316826A42DDD00E929A4 /* .swiftlint.yml in Resources */,
 				D9A564E826BEA53300ACB0EB /* Onboarding.storyboard in Resources */,
 				4D8D4EAE26C699420059AAC6 /* Home.storyboard in Resources */,
 				4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */,
 				4DBBC7B726BED06E00FFDFC2 /* Pretendard-SemiBold.ttf in Resources */,
 				4DBBC7B926BED06E00FFDFC2 /* Pretendard-ExtraBold.ttf in Resources */,
+				4D8D4EF826C8103E0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib in Resources */,
 				4DBBC7B526BED06E00FFDFC2 /* Pretendard-Regular.ttf in Resources */,
 				4D8D4E1B26C421830059AAC6 /* SelectingGenderAgeView.xib in Resources */,
 				4DBBC7B626BED06E00FFDFC2 /* Pretendard-Light.ttf in Resources */,
@@ -711,10 +733,12 @@
 				4D27540A26BE2B800097B8EB /* User.swift in Sources */,
 				4D8D4E2126C426320059AAC6 /* AgeCollectionViewCell.swift in Sources */,
 				4D27540C26BE2B800097B8EB /* UIFont+Extension.swift in Sources */,
+				4D8D4EF726C8103E0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift in Sources */,
 				4D8D4EC726C6A37D0059AAC6 /* ProductsGroupByTypeTableViewCell.swift in Sources */,
 				D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */,
 				4D27541626BE2B800097B8EB /* LoginManager.swift in Sources */,
 				4D27540E26BE2B800097B8EB /* UIViewController+Extension.swift in Sources */,
+				4D8D4EEC26C80E0E0059AAC6 /* ProductsGroupByUserView.swift in Sources */,
 				4D27540926BE2B800097B8EB /* LoginUser.swift in Sources */,
 				4D27540B26BE2B800097B8EB /* UIDevice+Extension.swift in Sources */,
 				4D27541726BE2B800097B8EB /* UserDefaultsHelper.swift in Sources */,
