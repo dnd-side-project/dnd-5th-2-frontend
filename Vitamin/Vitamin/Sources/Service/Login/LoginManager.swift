@@ -71,9 +71,9 @@ class LoginManager {
 
   func checkEmailExists(email: String, completion: @escaping (Bool) -> Void) {
     networkManager.checkExists(parameter: ["email": email]) { result in
-      guard let result = result as? [String: Bool],
+      guard let result = result as? [String: Int],
             let exists = result["exists"],
-            exists else {
+            exists == 0 else { // 존재하면 0, 존재하지 않으면 1
         completion(false)
         return
       }
