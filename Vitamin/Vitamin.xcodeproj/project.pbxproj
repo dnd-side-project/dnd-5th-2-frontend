@@ -41,6 +41,7 @@
 		4D8D4EF126C80E6E0059AAC6 /* ProductsGroupByUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4EF026C80E6E0059AAC6 /* ProductsGroupByUserView.xib */; };
 		4D8D4EF726C8103E0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4EF526C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift */; };
 		4D8D4EF826C8103E0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4EF626C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib */; };
+		4D8D4F2426C8FDAB0059AAC6 /* HomeViewController+UICollectionViewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4F2326C8FDAB0059AAC6 /* HomeViewController+UICollectionViewAPI.swift */; };
 		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */; };
 		4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */; };
@@ -125,6 +126,7 @@
 		4D8D4EF026C80E6E0059AAC6 /* ProductsGroupByUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupByUserView.xib; sourceTree = "<group>"; };
 		4D8D4EF526C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupByUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D8D4EF626C8103D0059AAC6 /* ProductsGroupByUserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupByUserCollectionViewCell.xib; sourceTree = "<group>"; };
+		4D8D4F2326C8FDAB0059AAC6 /* HomeViewController+UICollectionViewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewAPI.swift"; sourceTree = "<group>"; };
 		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				4D2753FD26BE2B800097B8EB /* LoginViewController.swift */,
 				4DBBC85326BFAB6900FFDFC2 /* NavigationViewController.swift */,
 				4D8D4ECC26C6A9360059AAC6 /* HomeViewController.swift */,
+				4D8D4F2326C8FDAB0059AAC6 /* HomeViewController+UICollectionViewAPI.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				4D27540D26BE2B800097B8EB /* UIView+Extension.swift in Sources */,
 				4D27541126BE2B800097B8EB /* LoginViewController+Extension.swift in Sources */,
 				4D27541526BE2B800097B8EB /* TokenUtils.swift in Sources */,
+				4D8D4F2426C8FDAB0059AAC6 /* HomeViewController+UICollectionViewAPI.swift in Sources */,
 				4DBBC85426BFAB6900FFDFC2 /* NavigationViewController.swift in Sources */,
 				4D27540726BE2B800097B8EB /* Constants.swift in Sources */,
 				D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */,
