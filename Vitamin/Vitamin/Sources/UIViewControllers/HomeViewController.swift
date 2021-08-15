@@ -9,20 +9,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet var firstProductsView: ProductsGroupByTypeView!
+  @IBOutlet var secondProductsView: ProductsGroupByUserView!
+  @IBOutlet var thirdProductsView: ProductsGroupByTypeView!
 
-        // Do any additional setup after loading the view.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupView()
+  }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  func setupView() {
+    let cornerRadius: CGFloat = 14
+    firstProductsView.makeRounded(radius: cornerRadius)
+    secondProductsView.makeRounded(radius: cornerRadius)
+    thirdProductsView.makeRounded(radius: cornerRadius)
+  }
 }

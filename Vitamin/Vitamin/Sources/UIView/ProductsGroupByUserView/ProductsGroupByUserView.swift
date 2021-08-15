@@ -48,7 +48,7 @@ extension ProductsGroupByUserView: UICollectionViewDataSource {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsGroupByUserCollectionViewCell.identifier, for: indexPath) as? ProductsGroupByUserCollectionViewCell else {
       return UICollectionViewCell()
     }
-    
+
     return cell
   }
 }

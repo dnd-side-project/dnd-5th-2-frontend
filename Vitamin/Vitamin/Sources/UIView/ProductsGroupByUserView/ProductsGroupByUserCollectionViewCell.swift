@@ -13,9 +13,8 @@ class ProductsGroupByUserCollectionViewCell: UICollectionViewCell {
   @IBOutlet var productNameLabel: UILabel!
   @IBOutlet var companyNameLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    productImageView.makeRounded(radius: 14)
+  }
 }
