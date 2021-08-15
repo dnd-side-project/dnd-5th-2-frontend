@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="o12-ON-8oc">
+            <objects>
+                <viewController id="KFX-be-n3a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="47q-GD-PS9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8e-at-HUh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBu-Uq-3iK">
+                                        <rect key="frame" x="0.0" y="-8" width="414" height="1349"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아영님, 어서오세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-mr-alT">
+                                                <rect key="frame" x="20" y="45" width="176.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPA-T6-h3h">
+                                                <rect key="frame" x="20" y="128" width="374" height="358"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="358" id="HRa-XA-NID"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-Ab-zTi">
+                                                <rect key="frame" x="20" y="502" width="374" height="443"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="443" id="ihJ-Ud-Db9"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyk-qv-ZYp">
+                                                <rect key="frame" x="20" y="967" width="374" height="358"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="358" id="4Aa-uE-V1y"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="RpM-Ab-zTi" firstAttribute="leading" secondItem="vPA-T6-h3h" secondAttribute="leading" id="0eK-vA-kuv"/>
+                                            <constraint firstItem="vPA-T6-h3h" firstAttribute="leading" secondItem="aBu-Uq-3iK" secondAttribute="leading" constant="20" id="0vo-qv-Wc1"/>
+                                            <constraint firstItem="lyk-qv-ZYp" firstAttribute="top" secondItem="RpM-Ab-zTi" secondAttribute="bottom" constant="22" id="ADx-JW-lL3"/>
+                                            <constraint firstItem="zDV-mr-alT" firstAttribute="top" secondItem="aBu-Uq-3iK" secondAttribute="top" constant="45" id="Hyq-al-5ut"/>
+                                            <constraint firstItem="zDV-mr-alT" firstAttribute="leading" secondItem="aBu-Uq-3iK" secondAttribute="leading" constant="20" id="MKh-dT-7b9"/>
+                                            <constraint firstItem="lyk-qv-ZYp" firstAttribute="trailing" secondItem="RpM-Ab-zTi" secondAttribute="trailing" id="O6S-t1-iet"/>
+                                            <constraint firstItem="lyk-qv-ZYp" firstAttribute="leading" secondItem="RpM-Ab-zTi" secondAttribute="leading" id="Skp-iB-NqY"/>
+                                            <constraint firstAttribute="trailing" secondItem="vPA-T6-h3h" secondAttribute="trailing" constant="20" id="VV3-ZM-lEg"/>
+                                            <constraint firstItem="RpM-Ab-zTi" firstAttribute="trailing" secondItem="vPA-T6-h3h" secondAttribute="trailing" id="b4J-Dz-dRj"/>
+                                            <constraint firstItem="RpM-Ab-zTi" firstAttribute="top" secondItem="vPA-T6-h3h" secondAttribute="bottom" constant="16" id="bAh-xZ-zxN"/>
+                                            <constraint firstItem="vPA-T6-h3h" firstAttribute="top" secondItem="zDV-mr-alT" secondAttribute="bottom" constant="54" id="fbx-2M-Uyf"/>
+                                            <constraint firstAttribute="bottom" secondItem="lyk-qv-ZYp" secondAttribute="bottom" constant="24" id="fmQ-YQ-LOZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aBu-Uq-3iK" firstAttribute="width" secondItem="wL4-fY-ubW" secondAttribute="width" id="8Mr-NG-tQF"/>
+                                    <constraint firstItem="aBu-Uq-3iK" firstAttribute="bottom" secondItem="zBY-3d-Ygt" secondAttribute="bottom" constant="120" id="JZj-0w-Cif"/>
+                                    <constraint firstItem="aBu-Uq-3iK" firstAttribute="trailing" secondItem="zBY-3d-Ygt" secondAttribute="trailing" constant="414" id="Xfr-Rd-iYr"/>
+                                    <constraint firstItem="zBY-3d-Ygt" firstAttribute="top" secondItem="aBu-Uq-3iK" secondAttribute="top" constant="8" id="nsG-M3-aVF"/>
+                                    <constraint firstItem="aBu-Uq-3iK" firstAttribute="leading" secondItem="zBY-3d-Ygt" secondAttribute="leading" id="rpP-88-5id"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="zBY-3d-Ygt"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="wL4-fY-ubW"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W4b-dW-7mB"/>
+                        <color key="backgroundColor" red="0.95596319439999999" green="0.95585709809999997" blue="0.97006803750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="W4b-dW-7mB" firstAttribute="trailing" secondItem="A8e-at-HUh" secondAttribute="trailing" id="5Ob-ty-mGq"/>
+                            <constraint firstItem="A8e-at-HUh" firstAttribute="top" secondItem="W4b-dW-7mB" secondAttribute="top" id="cko-7P-P4c"/>
+                            <constraint firstItem="A8e-at-HUh" firstAttribute="leading" secondItem="W4b-dW-7mB" secondAttribute="leading" id="unP-wc-HvT"/>
+                            <constraint firstItem="W4b-dW-7mB" firstAttribute="bottom" secondItem="A8e-at-HUh" secondAttribute="bottom" id="v4t-ly-zQo"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VaN-sW-SbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-442.02898550724643" y="112.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
