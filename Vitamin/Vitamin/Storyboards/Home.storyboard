@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="o12-ON-8oc">
             <objects>
-                <viewController id="KFX-be-n3a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="KFX-be-n3a" customClass="HomeViewController" customModule="Vitamin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="47q-GD-PS9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,13 +23,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBu-Uq-3iK">
                                         <rect key="frame" x="0.0" y="-8" width="414" height="1349"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아영님, 어서오세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-mr-alT">
-                                                <rect key="frame" x="20" y="45" width="176.5" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-mr-alT">
+                                                <rect key="frame" x="20" y="45" width="45" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPA-T6-h3h">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPA-T6-h3h" customClass="ProductsGroupByTypeView" customModule="Vitamin" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="128" width="374" height="358"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
@@ -43,7 +43,7 @@
                                                     <constraint firstAttribute="height" constant="443" id="ihJ-Ud-Db9"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyk-qv-ZYp">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyk-qv-ZYp" customClass="ProductsGroupByTypeView" customModule="Vitamin" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="967" width="374" height="358"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <constraints>
@@ -51,7 +51,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.95596319439999999" green="0.95585709809999997" blue="0.97006803750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="RpM-Ab-zTi" firstAttribute="leading" secondItem="vPA-T6-h3h" secondAttribute="leading" id="0eK-vA-kuv"/>
                                             <constraint firstItem="vPA-T6-h3h" firstAttribute="leading" secondItem="aBu-Uq-3iK" secondAttribute="leading" constant="20" id="0vo-qv-Wc1"/>
@@ -70,7 +70,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="aBu-Uq-3iK" firstAttribute="width" secondItem="wL4-fY-ubW" secondAttribute="width" id="8Mr-NG-tQF"/>
-                                    <constraint firstItem="aBu-Uq-3iK" firstAttribute="bottom" secondItem="zBY-3d-Ygt" secondAttribute="bottom" constant="120" id="JZj-0w-Cif"/>
+                                    <constraint firstItem="aBu-Uq-3iK" firstAttribute="bottom" secondItem="zBY-3d-Ygt" secondAttribute="bottom" id="JZj-0w-Cif"/>
                                     <constraint firstItem="aBu-Uq-3iK" firstAttribute="trailing" secondItem="zBY-3d-Ygt" secondAttribute="trailing" constant="414" id="Xfr-Rd-iYr"/>
                                     <constraint firstItem="zBY-3d-Ygt" firstAttribute="top" secondItem="aBu-Uq-3iK" secondAttribute="top" constant="8" id="nsG-M3-aVF"/>
                                     <constraint firstItem="aBu-Uq-3iK" firstAttribute="leading" secondItem="zBY-3d-Ygt" secondAttribute="leading" id="rpP-88-5id"/>
@@ -95,9 +95,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
