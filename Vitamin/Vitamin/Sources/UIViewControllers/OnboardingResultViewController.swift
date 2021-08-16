@@ -80,6 +80,30 @@ class OnboardingResultViewController: UIViewController {
       resultTableView.tableFooterView = footerView
     }
   }
+
+  @IBAction func submitUserPersonalTypeResult(_ sender: Any) {
+    let resultArray = personalTypeResult.map { personalTypeCategory -> String in
+      switch personalTypeCategory {
+      case .bone:
+        return "관절/뼈 건강"
+      case .eye:
+        return "눈 건강"
+      case .fatigue:
+        return "피로"
+      case .gut:
+        return "장 건강"
+      case .liver:
+        return "간 건강"
+      case .stomach:
+        return "위 건강"
+      }
+    }
+
+    LoginManager.shared.registerUserType(typeArray: resultArray) { <#Any?#> in
+      <#code#>
+    }
+  }
+
 }
 extension OnboardingResultViewController: UITableViewDataSource {
 

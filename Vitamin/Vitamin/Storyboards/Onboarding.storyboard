@@ -336,6 +336,9 @@
                                             <rect key="frame" x="22" y="30" width="331" height="25"/>
                                             <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
                                             <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="submitUserPersonalTypeResult:" destination="pRn-MQ-UiM" eventType="touchUpInside" id="F54-vQ-Oxm"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
