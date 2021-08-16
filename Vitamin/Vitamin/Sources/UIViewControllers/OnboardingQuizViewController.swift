@@ -20,6 +20,7 @@ class OnboardingQuizViewController: UIViewController {
       self.navigationItem.title = "\(currentAnswerIndex + 1) \\ \(answerSet.count)"
     }
   }
+  private var personalTypeResult: [PersonalTypeCategory]?
 
   weak var delegate: QuestionCellDelegate?
 
@@ -33,6 +34,13 @@ class OnboardingQuizViewController: UIViewController {
     submitButton.isHidden = true
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showOnboardingResult" {
+      let resultViewController = segue.destination as! OnboardingResultViewController
+      resultViewController.personalTypeResult = Set(self.personalTypeResult ?? [])
+    }
+  }
+
   @objc func answerReceived(_ notification: Notification) {
     let receivedObject = notification.object as! [Any]
     let answerIndex = receivedObject.first as! Int
@@ -41,8 +49,7 @@ class OnboardingQuizViewController: UIViewController {
     answerSet[answerIndex] = answerValue
 
     guard answerIndex < answerSet.count - 1 else {
-      print("all answered button show")
-      submitButton.isHidden = false
+      calculateUserPersonalType()
       return
     }
 
@@ -66,6 +73,16 @@ class OnboardingQuizViewController: UIViewController {
       self.tableView.insertRows(at: [indexPath], with: .none)
       self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
+  }
+
+  private func calculateUserPersonalType() {
+    personalTypeResult = zip(questionSet, answerSet).filter({ (quiz, answer) in
+      quiz.isKey == true && answer == true
+    }).map { (quiz, _) in
+      quiz.category
+    }
+
+    submitButton.isHidden = false
   }
 }
 extension OnboardingQuizViewController: UITableViewDataSource {
