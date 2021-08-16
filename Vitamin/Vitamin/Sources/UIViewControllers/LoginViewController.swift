@@ -257,26 +257,21 @@ class LoginViewController: UIViewController {
   }
 
   func pushViewController<T: UIViewController>(vcType: T.Type, storyboardName: Constants.StoryboardName, viewType: ViewType? = nil) {
-    if vcType == LoginViewController.self {
-      guard let nextVC = UIStoryboard(name: storyboardName.rawValue, bundle: nil)
-              .instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
-        return
+    let storyboard = UIStoryboard(name: storyboardName.rawValue, bundle: nil)
+    
+    guard vcType == LoginViewController.self,
+          let nextVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
+      if let nextVC = storyboard.instantiateViewController(withIdentifier: vcType.identifier) as? T {
+        self.navigationController?.pushViewController(nextVC, animated: true)
       }
-
-      nextVC.viewType = viewType
-      nextVC.user = user
-      self.navigationController?.pushViewController(nextVC, animated: true)
       return
     }
-
-    guard let nextVC = UIStoryboard(name: storyboardName.rawValue, bundle: nil)
-            .instantiateViewController(withIdentifier: vcType.identifier) as? LoginViewController else {
-      return
-    }
-
+    
+    nextVC.viewType = viewType
+    nextVC.user = user
     self.navigationController?.pushViewController(nextVC, animated: true)
   }
-
+  
   @objc func close() {
     switch self.viewType {
     case .loginPassword, .signUpPassword, .nickName:
