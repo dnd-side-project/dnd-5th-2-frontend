@@ -22,6 +22,11 @@ class OnboardingViewController: UIViewController {
     setSkipButton()
   }
 
+  @IBAction func pushHomeVC(_ sender: UIButton) {
+    self.navigationController?.changeRootViewController(vcType: HomeViewController.self,
+                                                        storyboardName: .Home)
+  }
+
   private func setMainIntroductionLabel() {
     mainIntroductionLabel.text = "어떤 영양제가 필요한지\n꿀꺽이 알려드릴게요."
     mainIntroductionLabel.numberOfLines = 2

@@ -17,5 +17,6 @@ enum Constants {
     case Home
     case Main
     case SignUp
+    case Onboarding
   }
 }

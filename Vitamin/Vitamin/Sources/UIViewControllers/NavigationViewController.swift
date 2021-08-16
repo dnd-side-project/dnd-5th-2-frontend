@@ -38,17 +38,10 @@ class NavigationViewController: UINavigationController {
       }
 
       if let _ = user.type {
-        // MARK: TODO home으로 이동
+        self.changeRootViewController(vcType: HomeViewController.self, storyboardName: .Home)
       } else {
-        // MARK: TODO 온보딩으로 이동
+        self.changeRootViewController(vcType: OnboardingViewController.self, storyboardName: .Onboarding)
       }
-    }
-  }
-
-  func setRootViewController<T: UIViewController>(vcType: T.Type, storyboardName: String) {
-    let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-    if let rootVC = storyboard.instantiateViewController(withIdentifier: T.identifier) as? T {
-      self.viewControllers = [rootVC]
     }
   }
 }

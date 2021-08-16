@@ -156,7 +156,7 @@ class LoginViewController: UIViewController {
       user?.email = email
       checkEmail(email: email) { exist in
         self.pushViewController(vcType: LoginViewController.self,
-                                storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                                storyboardName: Constants.StoryboardName.SignUp,
                                 viewType: exist ? .loginPassword : .signUpPassword)
       }
     case .findPassword:
@@ -173,15 +173,15 @@ class LoginViewController: UIViewController {
         }
 
         if let _ = currentUser.type {
-          // MARK: HOME이동
+          self.pushViewController(vcType: HomeViewController.self, storyboardName: .Home)
         } else {
-          // MARK: 온보딩 이동
+          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: .Onboarding)
         }
       }
     case .signUpPassword:
       user?.password = commonTextField.text
       pushViewController(vcType: LoginViewController.self,
-                         storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                         storyboardName: .SignUp,
                          viewType: .nickName)
     case .nickName:
       guard let userName = commonTextField.text,
@@ -190,7 +190,7 @@ class LoginViewController: UIViewController {
       checkNickName(nickName: userName) { [weak self] success in
         guard success else { return }
         self?.pushViewController(vcType: LoginViewController.self,
-                           storyboardName: Constants.StoryboardName.SignUp.rawValue,
+                           storyboardName: .SignUp,
                            viewType: .setGenderAge)
       }
     case .setGenderAge:
@@ -256,9 +256,9 @@ class LoginViewController: UIViewController {
     titleLabel.text = viewType?.titleLabelText
   }
 
-  func pushViewController<T: UIViewController>(vcType: T.Type, storyboardName: String, viewType: ViewType? = nil) {
+  func pushViewController<T: UIViewController>(vcType: T.Type, storyboardName: Constants.StoryboardName, viewType: ViewType? = nil) {
     if vcType == LoginViewController.self {
-      guard let nextVC = UIStoryboard(name: storyboardName, bundle: nil)
+      guard let nextVC = UIStoryboard(name: storyboardName.rawValue, bundle: nil)
               .instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
         return
       }
@@ -269,7 +269,7 @@ class LoginViewController: UIViewController {
       return
     }
 
-    guard let nextVC = UIStoryboard(name: storyboardName, bundle: nil)
+    guard let nextVC = UIStoryboard(name: storyboardName.rawValue, bundle: nil)
             .instantiateViewController(withIdentifier: vcType.identifier) as? LoginViewController else {
       return
     }
