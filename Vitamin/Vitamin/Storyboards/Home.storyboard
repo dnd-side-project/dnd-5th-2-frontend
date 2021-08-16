@@ -143,6 +143,7 @@
                         <outlet property="secondProductsView" destination="RpM-Ab-zTi" id="ezT-u4-DSQ"/>
                         <outlet property="thirdProductsView" destination="lyk-qv-ZYp" id="Occ-2K-jUD"/>
                         <outlet property="typeTagCollectionView" destination="Vui-E3-uwg" id="6ak-q9-K69"/>
+                        <outlet property="welcomeLabel" destination="zDV-mr-alT" id="Fer-Si-hy6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaN-sW-SbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
