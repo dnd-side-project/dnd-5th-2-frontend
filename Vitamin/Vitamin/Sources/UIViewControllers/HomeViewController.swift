@@ -16,10 +16,10 @@ class HomeViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupView()
+    setupStyle()
   }
 
-  func setupView() {
+  func setupStyle() {
     let cornerRadius: CGFloat = 14
     firstProductsView.makeRounded(radius: cornerRadius)
     secondProductsView.makeRounded(radius: cornerRadius)
