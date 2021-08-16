@@ -32,7 +32,7 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
 
     sender.isSelected = true
     sender.backgroundColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1)
-    showAnswerView(with: "네 맞아요")
+    showAnswerView(with: "네, 맞아요")
     NotificationCenter.default.post(name: Notification.Name("handleAnswer"), object: [self.quizIndex!, true], userInfo: nil)
   }
 
@@ -88,7 +88,7 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
       return
     }
 
-    let answerText = answer ? "네 맞아요" : "아니요"
+    let answerText = answer ? "네, 맞아요" : "아니요"
 
     if answer {
       noButton.isSelected = false

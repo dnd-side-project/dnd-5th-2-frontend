@@ -20,6 +20,7 @@ class OnboardingQuizViewController: UIViewController {
       self.navigationItem.title = "\(currentAnswerIndex + 1) \\ \(answerSet.count)"
     }
   }
+  private var personalTypeResult: [PersonalTypeCategory]?
 
   weak var delegate: QuestionCellDelegate?
 
@@ -33,6 +34,13 @@ class OnboardingQuizViewController: UIViewController {
     submitButton.isHidden = true
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showOnboardingResult" {
+      let resultViewController = segue.destination as! OnboardingResultViewController
+      resultViewController.personalTypeResult = Set(calculateUserPersonalType())
+    }
+  }
+
   @objc func answerReceived(_ notification: Notification) {
     let receivedObject = notification.object as! [Any]
     let answerIndex = receivedObject.first as! Int
@@ -41,7 +49,6 @@ class OnboardingQuizViewController: UIViewController {
     answerSet[answerIndex] = answerValue
 
     guard answerIndex < answerSet.count - 1 else {
-      print("all answered button show")
       submitButton.isHidden = false
       return
     }
@@ -59,10 +66,21 @@ class OnboardingQuizViewController: UIViewController {
 
   private func showNextQuestion() {
     currentAnswerIndex += 1
-    questionSet.append(quizSet.quiz(in: currentAnswerIndex))
-    let indexPath = IndexPath(row: questionSet.count - 1, section: 0)
-    tableView.insertRows(at: [indexPath], with: .none)
-    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
+    Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+      self.questionSet.append(self.quizSet.quiz(in: self.currentAnswerIndex))
+      let indexPath = IndexPath(row: self.questionSet.count - 1, section: 0)
+      self.tableView.insertRows(at: [indexPath], with: .none)
+      self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+  }
+
+  private func calculateUserPersonalType() -> [PersonalTypeCategory] {
+    return zip(questionSet, answerSet).filter({ (quiz, answer) in
+      quiz.isKey == true && answer == true
+    }).map { (quiz, _) in
+      quiz.category
+    }
   }
 }
 extension OnboardingQuizViewController: UITableViewDataSource {

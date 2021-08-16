@@ -85,4 +85,29 @@ class NetworkManager {
       }
     }
   }
+  
+  func requestUserType(with header: HTTPHeaders,
+                       _ typeArray: [String],
+                       completionHandler: @escaping (Result<UserTypeResponse, Error>) -> Void) {
+    
+    let registerUserPersonalTypeURL = URLMaker.makeRequestURL(feature: .userType)
+    let request = AF.request(registerUserPersonalTypeURL,
+                             method: .post,
+                             parameters: ["type_name": typeArray],
+                             headers: header)
+
+    request.responseDecodable { (response: DataResponse<UserTypeResponse, AFError>) in
+      switch response.result {
+      case .success(let userTypeResponse):
+        completionHandler(.success(userTypeResponse))
+      case .failure(let error):
+        print(error.localizedDescription)
+        completionHandler(.failure(error))
+      }
+    }
+  }
+}
+
+struct UserTypeResponse: Codable {
+  
 }

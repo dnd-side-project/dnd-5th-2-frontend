@@ -15,6 +15,7 @@ enum Feature {
   case autoLogin
   case userSelfInformation
   case emailCheck
+  case userType
 
   var urlPath: String {
     switch self {
@@ -26,12 +27,15 @@ enum Feature {
       return "user"
     case .emailCheck:
       return "auth/signup-email"
+    case .userType:
+      return "user/type"
     }
   }
 }
 
 struct URLMaker {
   static let baseURL = "https://63cce503-cc6a-4a4b-b954-040fc6ba31e3.mock.pstmn.io/"
+  //  http://54.180.126.116/
   static func makeRequestURL(feature: Feature) -> String {
     return "\(self.baseURL)\(feature.urlPath)"
   }
