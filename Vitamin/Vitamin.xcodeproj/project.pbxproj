@@ -52,6 +52,7 @@
 		D9A564E826BEA53300ACB0EB /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */; };
 		D9A564EA26BEA55400ACB0EB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */; };
 		D9B4FA9D26CA7B6D003DBF1D /* SupplementDescription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */; };
+		D9B4FAA026CAC2BD003DBF1D /* SupplementDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4FA9F26CAC2BD003DBF1D /* SupplementDescriptionViewController.swift */; };
 		D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */; };
 		D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */; };
 		D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C49EFD269A97E600A5FFA5 /* Main.storyboard */; };
@@ -130,6 +131,7 @@
 		D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SupplementDescription.storyboard; sourceTree = "<group>"; };
+		D9B4FA9F26CAC2BD003DBF1D /* SupplementDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementDescriptionViewController.swift; sourceTree = "<group>"; };
 		D9C49EF4269A97E600A5FFA5 /* Vitamin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitamin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				4D2753FC26BE2B800097B8EB /* LoginViewController+Extension.swift */,
 				4D2753FD26BE2B800097B8EB /* LoginViewController.swift */,
 				4DBBC85326BFAB6900FFDFC2 /* NavigationViewController.swift */,
+				D9B4FA9F26CAC2BD003DBF1D /* SupplementDescriptionViewController.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B4FAA026CAC2BD003DBF1D /* SupplementDescriptionViewController.swift in Sources */,
 				D929C7D326C3E29D00F37478 /* OnboardingResultViewController.swift in Sources */,
 				D929C7CE26C04B0200F37478 /* QuizSet.swift in Sources */,
 				D9A564EA26BEA55400ACB0EB /* OnboardingViewController.swift in Sources */,

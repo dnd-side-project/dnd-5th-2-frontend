@@ -99,9 +99,9 @@ class OnboardingResultViewController: UIViewController {
       }
     }
 
-    LoginManager.shared.registerUserType(typeArray: resultArray) { <#Any?#> in
-      <#code#>
-    }
+//    LoginManager.shared.registerUserType(typeArray: resultArray) { <#Any?#> in
+//      <#code#>
+//    }
   }
 
 }
