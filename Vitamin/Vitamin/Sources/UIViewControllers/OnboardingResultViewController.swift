@@ -18,16 +18,34 @@ class OnboardingResultViewController: UIViewController {
   @IBOutlet weak var endOnboardingButton: UIButton!
 
   let onboardingResult = OnboardingResult()
+  private var personalResultText: ResultText?
+  var personalTypeResult = Set<PersonalTypeCategory>()
 
   override func viewDidLoad() {
     self.navigationController?.navigationBar.isHidden = true
-    statusEmojiLabel.text = "👍🏻"
+
+    switch personalTypeResult.count {
+    case 0:
+      personalResultText = onboardingResult.resultCases["Perfect"]
+    case 1...2:
+      personalResultText = onboardingResult.resultCases["Good"]
+    case 3...4:
+      personalResultText = onboardingResult.resultCases["Bad"]
+    default:
+      personalResultText = onboardingResult.resultCases["Warning"]
+    }
+
+    guard let personalResultText = self.personalResultText else {
+      return
+    }
+
+    statusEmojiLabel.text = personalResultText.mainEmoji
     statusEmojiLabel.font = UIFont.Pretendard(type: .Regular, size: 56)
 
-    resultDescriptionLabel.text = "아주 잘하고 있어요"
+    resultDescriptionLabel.text = personalResultText.mainText
     resultDescriptionLabel.font = UIFont.Pretendard(type: .Medium, size: 25)
 
-    detailDescriptionLabel.text = "지금처럼만 관리한다면 무병장수 가능!"
+    detailDescriptionLabel.text = personalResultText.additionalText
     detailDescriptionLabel.font = UIFont.Pretendard(type: .Regular, size: 15)
     detailDescriptionLabel.textColor = UIColor(red: 73/255, green: 73/255, blue: 79/255, alpha: 1)
 
@@ -87,6 +105,13 @@ struct HealthInformation {
 }
 
 struct OnboardingResult {
+  let resultCases = [
+    "Perfect": ResultText(mainEmoji: "👍🏻", mainText: "아주 잘하고 있어요", additionalText: "지금처럼만 관리한다면 무병장수 가능!"),
+    "Good": ResultText(mainEmoji: "⛵️", mainText: "건강 순항 중이에요", additionalText: "아쉬운 부분은 꿀꺽과 함께 채워볼까요?"),
+    "Bad": ResultText(mainEmoji: "👀", mainText: "주의가 필요해요", additionalText: "꿀꺽과 함께 더 건강해져봐요."),
+    "Warning": ResultText(mainEmoji: "🚨", mainText: "건강 적신호 ON", additionalText: "위험해요! 세심한 건강 관리가 시급해요.")
+  ]
+
   let informationSet = [
     HealthInformation(introduction: "과도한 업무로 혹사당하는 눈", title: "눈 건강", personalType: .eye, status: "양호"),
     HealthInformation(introduction: "삶의 질을 떨어뜨리는 장트러블", title: "장 건강", personalType: .gut, status: "양호"),
@@ -95,4 +120,10 @@ struct OnboardingResult {
     HealthInformation(introduction: "과도한 음주로 혹사당하는 간", title: "간 건강", personalType: .liver, status: "양호"),
     HealthInformation(introduction: "세심한 습관이 필요한 관절", title: "관절 / 뼈 건강", personalType: .bone, status: "양호")
   ]
+}
+
+struct ResultText {
+  let mainEmoji: String
+  let mainText: String
+  let additionalText: String
 }
