@@ -9,7 +9,8 @@ import UIKit
 
 class ProductsGroupByUserView: UIView {
 
-  @IBOutlet var collectionView: UICollectionView!
+  @IBOutlet var productsCollectionView: UICollectionView!
+  @IBOutlet var selectingProductsGroupCollectionView: UICollectionView!
 
   let itemsCountPerRow = 3
   let collectionViewPadding: CGFloat = 7
@@ -35,27 +36,50 @@ class ProductsGroupByUserView: UIView {
 
   func setupTableView() {
     let cell = UINib(nibName: ProductsGroupByUserCollectionViewCell.identifier, bundle: nil)
-    collectionView.register(cell, forCellWithReuseIdentifier: ProductsGroupByUserCollectionViewCell.identifier)
+    let selectingCell = UINib(nibName: SelectingProductsCollectionViewCell.identifier, bundle: nil)
+    productsCollectionView.register(cell, forCellWithReuseIdentifier: ProductsGroupByUserCollectionViewCell.identifier)
+    selectingProductsGroupCollectionView.register(selectingCell, forCellWithReuseIdentifier: SelectingProductsCollectionViewCell.identifier)
+    selectingProductsGroupCollectionView.selectItem(at: IndexPath(row: 0, section: 0),
+                                                    animated: false,
+                                                    scrollPosition: .centeredVertically)
   }
 }
 
 extension ProductsGroupByUserView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 6
+    if collectionView == productsCollectionView {
+      return 6
+    } else {
+      return 3
+    }
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsGroupByUserCollectionViewCell.identifier, for: indexPath) as? ProductsGroupByUserCollectionViewCell else {
-      return UICollectionViewCell()
+    if collectionView == productsCollectionView,
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsGroupByUserCollectionViewCell.identifier, for: indexPath) as? ProductsGroupByUserCollectionViewCell {
+      return cell
     }
 
-    return cell
+    if collectionView == selectingProductsGroupCollectionView,
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectingProductsCollectionViewCell.identifier, for: indexPath) as? SelectingProductsCollectionViewCell {
+      return cell
+    }
+
+    return UICollectionViewCell()
   }
 }
 
 extension ProductsGroupByUserView: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let width = (collectionView.frame.width - collectionViewPadding * CGFloat(itemsCountPerRow + 1)) / CGFloat(itemsCountPerRow)
-    return CGSize(width: width, height: width * 138 / 97)
+    if collectionView == productsCollectionView {
+      let width = (collectionView.frame.width - collectionViewPadding * CGFloat(itemsCountPerRow + 1)) / CGFloat(itemsCountPerRow)
+      return CGSize(width: width, height: width * 138 / 97)
+    }
+
+    if collectionView == selectingProductsGroupCollectionView {
+      return CGSize(width: 88, height: 24)
+    }
+
+    return .zero
   }
 }
