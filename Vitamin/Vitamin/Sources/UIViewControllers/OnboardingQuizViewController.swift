@@ -59,10 +59,13 @@ class OnboardingQuizViewController: UIViewController {
 
   private func showNextQuestion() {
     currentAnswerIndex += 1
-    questionSet.append(quizSet.quiz(in: currentAnswerIndex))
-    let indexPath = IndexPath(row: questionSet.count - 1, section: 0)
-    tableView.insertRows(at: [indexPath], with: .none)
-    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
+    Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+      self.questionSet.append(self.quizSet.quiz(in: self.currentAnswerIndex))
+      let indexPath = IndexPath(row: self.questionSet.count - 1, section: 0)
+      self.tableView.insertRows(at: [indexPath], with: .none)
+      self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
   }
 }
 extension OnboardingQuizViewController: UITableViewDataSource {
