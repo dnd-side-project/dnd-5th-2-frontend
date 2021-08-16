@@ -26,13 +26,13 @@ class OnboardingResultViewController: UIViewController {
 
     switch personalTypeResult.count {
     case 0:
-      personalResultText = onboardingResult.resultCases["Perfect"]
+      personalResultText = onboardingResult.resultCases[.perfect]
     case 1...2:
-      personalResultText = onboardingResult.resultCases["Good"]
+      personalResultText = onboardingResult.resultCases[.good]
     case 3...4:
-      personalResultText = onboardingResult.resultCases["Bad"]
+      personalResultText = onboardingResult.resultCases[.bad]
     default:
-      personalResultText = onboardingResult.resultCases["Warning"]
+      personalResultText = onboardingResult.resultCases[.warning]
     }
 
     guard let personalResultText = self.personalResultText else {
@@ -108,11 +108,18 @@ struct HealthInformation {
 }
 
 struct OnboardingResult {
-  let resultCases = [
-    "Perfect": ResultText(mainEmoji: "👍🏻", mainText: "아주 잘하고 있어요", additionalText: "지금처럼만 관리한다면 무병장수 가능!"),
-    "Good": ResultText(mainEmoji: "⛵️", mainText: "건강 순항 중이에요", additionalText: "아쉬운 부분은 꿀꺽과 함께 채워볼까요?"),
-    "Bad": ResultText(mainEmoji: "👀", mainText: "주의가 필요해요", additionalText: "꿀꺽과 함께 더 건강해져봐요."),
-    "Warning": ResultText(mainEmoji: "🚨", mainText: "건강 적신호 ON", additionalText: "위험해요! 세심한 건강 관리가 시급해요.")
+  enum ResultType {
+    case perfect
+    case good
+    case bad
+    case warning
+  }
+
+  let resultCases: [ResultType: ResultText] = [
+    .perfect: ResultText(mainEmoji: "👍🏻", mainText: "아주 잘하고 있어요", additionalText: "지금처럼만 관리한다면 무병장수 가능!"),
+    .good: ResultText(mainEmoji: "⛵️", mainText: "건강 순항 중이에요", additionalText: "아쉬운 부분은 꿀꺽과 함께 채워볼까요?"),
+    .bad: ResultText(mainEmoji: "👀", mainText: "주의가 필요해요", additionalText: "꿀꺽과 함께 더 건강해져봐요."),
+    .warning: ResultText(mainEmoji: "🚨", mainText: "건강 적신호 ON", additionalText: "위험해요! 세심한 건강 관리가 시급해요.")
   ]
 
   let informationSet = [

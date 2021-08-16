@@ -37,7 +37,7 @@ class OnboardingQuizViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showOnboardingResult" {
       let resultViewController = segue.destination as! OnboardingResultViewController
-      resultViewController.personalTypeResult = Set(self.personalTypeResult ?? [])
+      resultViewController.personalTypeResult = Set(calculateUserPersonalType())
     }
   }
 
@@ -49,7 +49,7 @@ class OnboardingQuizViewController: UIViewController {
     answerSet[answerIndex] = answerValue
 
     guard answerIndex < answerSet.count - 1 else {
-      calculateUserPersonalType()
+      submitButton.isHidden = false
       return
     }
 
@@ -75,14 +75,12 @@ class OnboardingQuizViewController: UIViewController {
     }
   }
 
-  private func calculateUserPersonalType() {
-    personalTypeResult = zip(questionSet, answerSet).filter({ (quiz, answer) in
+  private func calculateUserPersonalType() -> [PersonalTypeCategory] {
+    return zip(questionSet, answerSet).filter({ (quiz, answer) in
       quiz.isKey == true && answer == true
     }).map { (quiz, _) in
       quiz.category
     }
-
-    submitButton.isHidden = false
   }
 }
 extension OnboardingQuizViewController: UITableViewDataSource {
