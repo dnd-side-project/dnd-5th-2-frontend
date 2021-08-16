@@ -38,16 +38,15 @@ class LoginManager {
   func login(loginUser: User,
              completionHandler: @escaping (Bool) -> Void) {
     networkManager.requestLogin(with: loginUser) { result in
-      guard let result = result as? [String: Any],
-            let jwt = result["jwt"] as? String,
-            let user = result["user"] as? User else { // MARK: TODO 백엔드 응답값 반영되면 확인하기
+      switch result {
+      case .success(let loginResult):
+        let successToCreate = TokenUtils.shared.create(value: loginResult.token)
+        self.currentUser = loginResult.user
+        completionHandler(successToCreate)
+      case .failure(let error):
+        print(error.localizedDescription)
         completionHandler(false)
-        return
       }
-
-      let successToCreate = TokenUtils.shared.create(value: jwt)
-      self.currentUser = user
-      completionHandler(successToCreate)
     }
   }
 
@@ -73,7 +72,7 @@ class LoginManager {
     networkManager.checkExists(parameter: ["email": email]) { result in
       guard let result = result as? [String: Int],
             let exists = result["exists"],
-            exists == 0 else { // 존재하면 0, 존재하지 않으면 1
+            exists != 0 else { // 존재하면 1, 존재하지 않으면 0
         completion(false)
         return
       }

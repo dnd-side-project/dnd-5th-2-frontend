@@ -175,7 +175,7 @@ class LoginViewController: UIViewController {
         if let _ = currentUser.type {
           // MARK: HOME이동
         } else {
-          // MARK: 온보딩 이동
+          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: Constants.StoryboardName.Onboarding.rawValue)
         }
       }
     case .signUpPassword:

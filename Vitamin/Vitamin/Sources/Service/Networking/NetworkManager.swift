@@ -53,20 +53,19 @@ class NetworkManager {
   }
 
   func requestLogin(with loginUser: User,
-                    completionHandler: @escaping (Any?) -> Void) {
+                    completionHandler: @escaping (Result<LoginResult, Error>) -> Void) {
 
     let loginURL = URLMaker.makeRequestURL(feature: .login)
     let request = AF.request(loginURL,
                              method: .post,
                              parameters: loginUser)
 
-    request.responseJSON { response in
+    request.responseDecodable { (response: DataResponse<LoginResult, AFError>) in
       switch response.result {
-      case .success:
-        completionHandler(response.value)
+      case .success(let loginResult):
+        completionHandler(.success(loginResult))
       case .failure(let error):
-        print(error.localizedDescription)
-        completionHandler(nil)
+        completionHandler(.failure(error))
       }
     }
   }
