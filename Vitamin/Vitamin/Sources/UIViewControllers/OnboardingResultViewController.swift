@@ -90,7 +90,11 @@ extension OnboardingResultViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let healthInformationCell = tableView.dequeueReusableCell(withIdentifier: "HealthInformationCell", for: indexPath) as! HealthInformationCell
 
-    healthInformationCell.updateUI(with: onboardingResult.informationSet[indexPath.row])
+    if personalTypeResult.contains(onboardingResult.informationSet[indexPath.row].personalType) {
+      healthInformationCell.updateUI(with: onboardingResult.informationSet[indexPath.row], true)
+    } else {
+      healthInformationCell.updateUI(with: onboardingResult.informationSet[indexPath.row], false)
+    }
 
     return healthInformationCell
   }
@@ -101,7 +105,6 @@ struct HealthInformation {
   let introduction: String
   let title: String
   let personalType: PersonalTypeCategory
-  let status: String
 }
 
 struct OnboardingResult {
@@ -113,12 +116,12 @@ struct OnboardingResult {
   ]
 
   let informationSet = [
-    HealthInformation(introduction: "과도한 업무로 혹사당하는 눈", title: "눈 건강", personalType: .eye, status: "양호"),
-    HealthInformation(introduction: "삶의 질을 떨어뜨리는 장트러블", title: "장 건강", personalType: .gut, status: "양호"),
-    HealthInformation(introduction: "만성이 되면 개선이 어려운", title: "위 건강", personalType: .stomach, status: "양호"),
-    HealthInformation(introduction: "현대인의 필수 고충", title: "피로", personalType: .fatigue, status: "양호"),
-    HealthInformation(introduction: "과도한 음주로 혹사당하는 간", title: "간 건강", personalType: .liver, status: "양호"),
-    HealthInformation(introduction: "세심한 습관이 필요한 관절", title: "관절 / 뼈 건강", personalType: .bone, status: "양호")
+    HealthInformation(introduction: "과도한 업무로 혹사당하는 눈", title: "눈 건강", personalType: .eye),
+    HealthInformation(introduction: "삶의 질을 떨어뜨리는 장트러블", title: "장 건강", personalType: .gut),
+    HealthInformation(introduction: "만성이 되면 개선이 어려운", title: "위 건강", personalType: .stomach),
+    HealthInformation(introduction: "현대인의 필수 고충", title: "피로", personalType: .fatigue),
+    HealthInformation(introduction: "과도한 음주로 혹사당하는 간", title: "간 건강", personalType: .liver),
+    HealthInformation(introduction: "세심한 습관이 필요한 관절", title: "관절 / 뼈 건강", personalType: .bone)
   ]
 }
 

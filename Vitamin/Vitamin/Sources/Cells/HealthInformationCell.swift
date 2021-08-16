@@ -14,7 +14,7 @@ class HealthInformationCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var statusLabel: UIButton!
 
-  func updateUI(with healthInformation: HealthInformation) {
+  func updateUI(with healthInformation: HealthInformation, _ isCaution: Bool) {
     informationView.makeRounded(radius: 14)
 
     introductionLabel.text = healthInformation.introduction
@@ -24,6 +24,13 @@ class HealthInformationCell: UITableViewCell {
     titleLabel.text = healthInformation.title
     titleLabel.font = UIFont.Pretendard(type: .Medium, size: 15)
 
-    statusLabel.setTitle(healthInformation.status, for: .normal)
+    if isCaution {
+      statusLabel.setTitle("주의", for: .normal)
+      statusLabel.tintColor = .red
+    } else {
+      statusLabel.setTitle("양호", for: .normal)
+      statusLabel.tintColor = .blue
+    }
+
   }
 }
