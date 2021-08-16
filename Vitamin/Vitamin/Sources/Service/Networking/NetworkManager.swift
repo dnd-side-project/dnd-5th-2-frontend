@@ -79,7 +79,8 @@ class NetworkManager {
 
     let loginURL = URLMaker.makeRequestURL(feature: .autoLogin)
     let request = AF.request(loginURL,
-                             method: .get)
+                             method: .get,
+                             headers: header)
     request.responseDecodable { (response: DataResponse<User, AFError>) in
       switch response.result {
       case .success(let user):
