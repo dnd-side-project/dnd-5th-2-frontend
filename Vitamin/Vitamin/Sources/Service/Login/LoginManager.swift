@@ -19,18 +19,12 @@ class LoginManager {
   private init() { }
 
   /// 회원가입에 성공하면 로그인 요청
-  /// 로그인에 성공하면 completionHandler로 성공 여부를 전달
+  /// completionHandler로 로그인 성공 여부를 전달
   func signup(user: User,
               completionHandler: @escaping (Bool) -> Void) {
-    networkManager.requestSignUp(with: user) { [weak self] result in
-      switch result {
-      case .success(let user):
-        self?.login(loginUser: user, completionHandler: { success in
-          completionHandler(success)
-        })
-      case .failure(let error):
-        print(error.localizedDescription)
-        completionHandler(false)
+    networkManager.requestSignUp(with: user) { success in
+      self.login(loginUser: user) { success in
+       completionHandler(success)
       }
     }
   }
@@ -69,10 +63,10 @@ class LoginManager {
   }
 
   func checkEmailExists(email: String, completion: @escaping (Bool) -> Void) {
-    networkManager.checkExists(parameter: ["email": email]) { result in
-      guard let result = result as? [String: Int],
+    networkManager.checkExists(feature: .emailCheck, parameterValue: email) { result in
+      guard let result = result as? [String: Bool],
             let exists = result["exists"],
-            exists != 0 else { // 존재하면 1, 존재하지 않으면 0
+            exists else {
         completion(false)
         return
       }
@@ -81,7 +75,7 @@ class LoginManager {
   }
 
   func checkNickNameExists(nickName: String, completion: @escaping (Bool) -> Void) {
-    networkManager.checkExists(parameter: ["username": nickName]) { result in
+    networkManager.checkExists(feature: .usernameCheck, parameterValue: nickName) { result in
       guard let result = result as? [String: Bool],
             let exists = result["exists"],
             exists else {

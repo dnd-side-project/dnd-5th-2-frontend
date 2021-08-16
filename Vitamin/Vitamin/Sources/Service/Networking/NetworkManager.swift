@@ -16,13 +16,13 @@ class NetworkManager {
 
   private init() { }
 
-  func checkExists(parameter: [String: String], completionHandler: @escaping (Any?) -> Void) {
-    let url = URLMaker.makeRequestURL(feature: .emailCheck)
+  func checkExists(feature: Feature, parameterValue: String, completionHandler: @escaping (Any?) -> Void) {
+    let url = URLMaker.makeRequestURL(feature: feature)
+    let parameter = [feature.parameterKey: parameterValue]
     let request = AF.request(url,
                              method: .post,
                              parameters: parameter,
                              encoder: JSONParameterEncoder.default)
-
     request.responseJSON { response in
       switch response.result {
       case .success:
@@ -35,19 +35,22 @@ class NetworkManager {
   }
 
   func requestSignUp(with user: User,
-                     completionHandler: @escaping (Result<User, Error>) -> Void) {
+                     completionHandler: @escaping (Bool) -> Void) {
 
     let signUpURL = URLMaker.makeRequestURL(feature: .signUp)
     let request = AF.request(signUpURL,
                              method: .post,
-                             parameters: user)
+                             parameters: user,
+                             encoder: JSONParameterEncoder.default)
+      .validate(statusCode: 200..<300)
 
-    request.responseDecodable { (response: DataResponse<User, AFError>) in
+    request.response { response in
       switch response.result {
-      case .success(let user):
-        completionHandler(.success(user))
+      case .success:
+        completionHandler(true)
       case .failure(let error):
-        completionHandler(.failure(error))
+        print(error.localizedDescription)
+        completionHandler(false)
       }
     }
   }
@@ -58,7 +61,8 @@ class NetworkManager {
     let loginURL = URLMaker.makeRequestURL(feature: .login)
     let request = AF.request(loginURL,
                              method: .post,
-                             parameters: loginUser)
+                             parameters: loginUser,
+                             encoder: JSONParameterEncoder.default)
 
     request.responseDecodable { (response: DataResponse<LoginResult, AFError>) in
       switch response.result {
