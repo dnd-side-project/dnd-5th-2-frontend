@@ -51,6 +51,7 @@
 		D97C793126BEF369000748EC /* OnboardingQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */; };
 		D9A564E826BEA53300ACB0EB /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */; };
 		D9A564EA26BEA55400ACB0EB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */; };
+		D9B4FA9D26CA7B6D003DBF1D /* SupplementDescription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */; };
 		D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */; };
 		D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */; };
 		D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C49EFD269A97E600A5FFA5 /* Main.storyboard */; };
@@ -128,6 +129,7 @@
 		D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuizViewController.swift; sourceTree = "<group>"; };
 		D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SupplementDescription.storyboard; sourceTree = "<group>"; };
 		D9C49EF4269A97E600A5FFA5 /* Vitamin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitamin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				D9C49EFD269A97E600A5FFA5 /* Main.storyboard */,
 				D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */,
 				4D27532226BD746C0097B8EB /* SignUp.storyboard */,
+				D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */,
 				4D27532326BD746C0097B8EB /* SignUp.storyboard in Resources */,
 				4D8D4E2226C426320059AAC6 /* AgeCollectionViewCell.xib in Resources */,
+				D9B4FA9D26CA7B6D003DBF1D /* SupplementDescription.storyboard in Resources */,
 				4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
