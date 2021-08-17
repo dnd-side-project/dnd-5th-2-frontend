@@ -11,6 +11,7 @@ class SupplementDescriptionViewController: UIViewController {
 
   @IBOutlet weak var imageScrollView: UIScrollView!
   @IBOutlet weak var imagesStackView: UIStackView!
+  @IBOutlet weak var defaultImageView: UIImageView!
   @IBOutlet weak var imagePageControl: UIPageControl!
 
   var imageViews = [UIImageView]()
@@ -24,10 +25,15 @@ class SupplementDescriptionViewController: UIViewController {
   }
 
   private func setImagesStackView() {
-    for imageIndex in 0 ..< images.count {
+    guard images.count > 0 else {
+      return
+    }
+
+    defaultImageView.image = images.first
+
+    for imageIndex in 1 ..< images.count {
      let imageView = UIImageView()
-      let xPos = imageScrollView.frameLayoutGuide.layoutFrame.width * CGFloat(imageIndex + 4)
-      imageView.frame = CGRect(x: xPos, y: 0, width: imageScrollView.frameLayoutGuide.layoutFrame.width, height: 200)
+      imageView.frame = CGRect(x: 0, y: 0, width: imageScrollView.frameLayoutGuide.layoutFrame.width, height: 200)
       imageView.image = images[imageIndex]
       imageView.contentMode = .scaleAspectFit
       imagesStackView.addArrangedSubview(imageView)

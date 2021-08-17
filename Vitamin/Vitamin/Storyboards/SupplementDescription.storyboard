@@ -36,34 +36,22 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hgf-7L-aPr">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="1656" height="200"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="gxu-AZ-ydf">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gxu-AZ-ydf">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="200" id="VVJ-rq-B83"/>
                                                                                 </constraints>
-                                                                            </imageView>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-pR-35w">
-                                                                                <rect key="frame" x="414" y="0.0" width="414" height="200"/>
-                                                                            </imageView>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="fEy-Ej-w51">
-                                                                                <rect key="frame" x="828" y="0.0" width="414" height="200"/>
-                                                                            </imageView>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Txu-Gt-8Vp">
-                                                                                <rect key="frame" x="1242" y="0.0" width="414" height="200"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="hgf-7L-aPr" secondAttribute="bottom" id="0Da-QI-Ix6"/>
-                                                                    <constraint firstItem="Txu-Gt-8Vp" firstAttribute="width" secondItem="EUU-ez-5gb" secondAttribute="width" id="4aR-ff-XMM"/>
                                                                     <constraint firstItem="hgf-7L-aPr" firstAttribute="top" secondItem="v8r-IP-V4B" secondAttribute="top" id="Fwd-u8-lDx"/>
                                                                     <constraint firstItem="hgf-7L-aPr" firstAttribute="height" secondItem="v8r-IP-V4B" secondAttribute="height" constant="1" id="ICx-Mc-EHI"/>
                                                                     <constraint firstAttribute="trailing" secondItem="hgf-7L-aPr" secondAttribute="trailing" id="L9A-8w-fYd"/>
-                                                                    <constraint firstItem="Tyh-pR-35w" firstAttribute="width" secondItem="EUU-ez-5gb" secondAttribute="width" id="PkL-8c-ldr"/>
-                                                                    <constraint firstItem="fEy-Ej-w51" firstAttribute="width" secondItem="EUU-ez-5gb" secondAttribute="width" id="Tg7-yx-PdZ"/>
                                                                     <constraint firstItem="gxu-AZ-ydf" firstAttribute="width" secondItem="EUU-ez-5gb" secondAttribute="width" id="deI-Zh-xso"/>
                                                                     <constraint firstItem="hgf-7L-aPr" firstAttribute="leading" secondItem="v8r-IP-V4B" secondAttribute="leading" id="nyy-Ul-J9Z"/>
                                                                 </constraints>
@@ -164,8 +152,10 @@
                     </view>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
+                        <outlet property="defaultImageView" destination="gxu-AZ-ydf" id="C2w-3U-lXR"/>
                         <outlet property="imagePageControl" destination="Qaw-I2-4FW" id="Pg2-aB-KnP"/>
                         <outlet property="imageScrollView" destination="v8r-IP-V4B" id="S5a-X1-rYP"/>
+                        <outlet property="imagesStackView" destination="hgf-7L-aPr" id="a1C-tG-KnD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -174,8 +164,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backButton" width="44" height="44"/>
-        <image name="close" width="16" height="16"/>
         <image name="loginLogo" width="45" height="48.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
