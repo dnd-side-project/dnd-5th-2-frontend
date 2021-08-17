@@ -9,15 +9,15 @@ import Foundation
 import Alamofire
 
 class LoginManager {
-  
+
   static let shared = LoginManager()
-  
+
   let networkManager = NetworkManager.shared
-  
+
   var currentUser: User?
-  
+
   private init() { }
-  
+
   /// 회원가입에 성공하면 로그인 요청
   /// 로그인에 성공하면 completionHandler로 성공 여부를 전달
   func signup(user: User,
@@ -34,7 +34,7 @@ class LoginManager {
       }
     }
   }
-  
+
   func login(loginUser: User,
              completionHandler: @escaping (Bool) -> Void) {
     networkManager.requestLogin(with: loginUser) { result in
@@ -44,19 +44,19 @@ class LoginManager {
         completionHandler(false)
         return
       }
-      
+
       let successToCreate = TokenUtils.shared.create(value: jwt)
       self.currentUser = user
       completionHandler(successToCreate)
     }
   }
-  
+
   func login(completionHandler: @escaping (Bool) -> Void) {
     guard let header = TokenUtils.shared.getAuthorizationHeader() else {
       completionHandler(false)
       return
     }
-    
+
     networkManager.requestLogin(with: header) { result in
       switch result {
       case .success(let user):
@@ -68,7 +68,7 @@ class LoginManager {
       }
     }
   }
-  
+
   func checkEmailExists(email: String, completion: @escaping (Bool) -> Void) {
     networkManager.checkExists(parameter: ["email": email]) { result in
       guard let result = result as? [String: Bool],
@@ -80,7 +80,7 @@ class LoginManager {
       completion(true)
     }
   }
-  
+
   func checkNickNameExists(nickName: String, completion: @escaping (Bool) -> Void) {
     networkManager.checkExists(parameter: ["username": nickName]) { result in
       guard let result = result as? [String: Bool],
@@ -92,19 +92,19 @@ class LoginManager {
       completion(true)
     }
   }
-  
+
   func registerUserType(typeArray: [String], completionHandler: @escaping(Any?) -> Void) {
     guard let header = TokenUtils.shared.getAuthorizationHeader() else {
       completionHandler(false)
       return
     }
-    
+
     networkManager.requestUserType(with: header,
                                    typeArray) { result in
       print(result)
     }
   }
-  
+
   func logOut() {
     TokenUtils.shared.delete()
   }
