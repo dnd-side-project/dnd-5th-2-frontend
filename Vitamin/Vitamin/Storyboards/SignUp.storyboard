@@ -68,7 +68,7 @@
                                 </constraints>
                             </imageView>
                             <textField hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="다시 한번!" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SQf-Wk-Ydm" customClass="CustomTextField" customModule="Vitamin" customModuleProvider="target">
-                                <rect key="frame" x="32" y="427" width="350" height="52"/>
+                                <rect key="frame" x="32" y="379" width="350" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="bPf-Uo-4xA"/>
                                 </constraints>
@@ -80,7 +80,7 @@
                                 </connections>
                             </textField>
                             <textField hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ynU-8v-61C" customClass="CustomTextField" customModule="Vitamin" customModuleProvider="target">
-                                <rect key="frame" x="32" y="369" width="350" height="52"/>
+                                <rect key="frame" x="32" y="321" width="350" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="UmL-7p-tQh"/>
                                 </constraints>
@@ -108,7 +108,7 @@
                                 </constraints>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKc-W6-wvX">
-                                <rect key="frame" x="32" y="498" width="350" height="16"/>
+                                <rect key="frame" x="32" y="402" width="350" height="16"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="13"/>
                                 <color key="textColor" red="0.45242583749999998" green="0.45191103220000001" blue="0.48515659570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -124,9 +124,9 @@
                             <constraint firstItem="uKc-W6-wvX" firstAttribute="trailing" secondItem="fGs-8S-cpj" secondAttribute="trailing" id="CLu-K2-GMo"/>
                             <constraint firstItem="6Q6-0N-6Cd" firstAttribute="top" secondItem="dyf-qa-w63" secondAttribute="bottom" constant="32" id="Cay-RV-fQw"/>
                             <constraint firstItem="fGs-8S-cpj" firstAttribute="trailing" secondItem="gf6-8k-ACQ" secondAttribute="trailing" id="DFO-Oa-s02"/>
-                            <constraint firstItem="uKc-W6-wvX" firstAttribute="bottom" secondItem="fGs-8S-cpj" secondAttribute="bottom" constant="22" id="EzZ-Di-YqQ"/>
+                            <constraint firstItem="uKc-W6-wvX" firstAttribute="bottom" secondItem="fGs-8S-cpj" secondAttribute="top" constant="-22" id="EzZ-Di-YqQ"/>
                             <constraint firstItem="jsI-0F-SgE" firstAttribute="top" secondItem="dyf-qa-w63" secondAttribute="top" constant="-76" id="HEZ-IS-l2W"/>
-                            <constraint firstItem="ynU-8v-61C" firstAttribute="top" secondItem="6Q6-0N-6Cd" secondAttribute="bottom" constant="89" id="IcW-1c-dW4"/>
+                            <constraint firstItem="ynU-8v-61C" firstAttribute="top" secondItem="6Q6-0N-6Cd" secondAttribute="bottom" constant="41" id="IcW-1c-dW4"/>
                             <constraint firstItem="dyf-qa-w63" firstAttribute="leading" secondItem="jsI-0F-SgE" secondAttribute="leading" constant="32" id="KZh-wo-6aj"/>
                             <constraint firstItem="6Q6-0N-6Cd" firstAttribute="leading" secondItem="dyf-qa-w63" secondAttribute="leading" id="LqJ-jo-rbk"/>
                             <constraint firstItem="gf6-8k-ACQ" firstAttribute="top" secondItem="6Q6-0N-6Cd" secondAttribute="bottom" constant="93" id="Rkn-D3-saU"/>
@@ -156,6 +156,7 @@
                         <outlet property="continueButtonTopToEmailTextFieldConstraint" destination="gVa-GD-O7x" id="UM3-tA-ZIL"/>
                         <outlet property="emailTextFieldResginGestureRecognizer" destination="agC-kj-Wy0" id="sLA-Cw-cO6"/>
                         <outlet property="guideLabel" destination="uKc-W6-wvX" id="Co9-Y6-gG4"/>
+                        <outlet property="guideLabelBottomToContinueButtonConstraint" destination="EzZ-Di-YqQ" id="vgG-Jj-fGe"/>
                         <outlet property="lookAroundButton" destination="gIy-en-YrI" id="Mzr-F4-FU9"/>
                         <outlet property="passwordTextField" destination="ynU-8v-61C" id="X5S-LG-Ze9"/>
                         <outlet property="passwordTextFieldTopToTitleLabelConstraint" destination="IcW-1c-dW4" id="BcL-pg-lbr"/>

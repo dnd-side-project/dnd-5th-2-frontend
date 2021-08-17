@@ -31,6 +31,7 @@
 		4D8D4E1B26C421830059AAC6 /* SelectingGenderAgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */; };
 		4D8D4E2126C426320059AAC6 /* AgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4E1F26C426320059AAC6 /* AgeCollectionViewCell.swift */; };
 		4D8D4E2226C426320059AAC6 /* AgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4E2026C426320059AAC6 /* AgeCollectionViewCell.xib */; };
+		4D8D4FBB26CC00960059AAC6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */; };
 		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */; };
 		4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */; };
@@ -106,6 +107,7 @@
 		4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectingGenderAgeView.xib; sourceTree = "<group>"; };
 		4D8D4E1F26C426320059AAC6 /* AgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D8D4E2026C426320059AAC6 /* AgeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeCollectionViewCell.xib; sourceTree = "<group>"; };
+		4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */,
 				4D8D4E1F26C426320059AAC6 /* AgeCollectionViewCell.swift */,
 				4D8D4E2026C426320059AAC6 /* AgeCollectionViewCell.xib */,
+				4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */,
 				4D27541626BE2B800097B8EB /* LoginManager.swift in Sources */,
 				4D27540E26BE2B800097B8EB /* UIViewController+Extension.swift in Sources */,
+				4D8D4FBB26CC00960059AAC6 /* CustomTextField.swift in Sources */,
 				4D27540926BE2B800097B8EB /* LoginUser.swift in Sources */,
 				4D27540B26BE2B800097B8EB /* UIDevice+Extension.swift in Sources */,
 				4D27541726BE2B800097B8EB /* UserDefaultsHelper.swift in Sources */,
