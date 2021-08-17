@@ -175,11 +175,11 @@ class LoginViewController: UIViewController {
         if let _ = currentUser.type {
           // MARK: HOME이동
         } else {
-          // MARK: 온보딩 이동
+          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: Constants.StoryboardName.Onboarding.rawValue)
         }
       }
     case .signUpPassword:
-      user?.password = commonTextField.text
+      user?.password = passwordTextField.text
       pushViewController(vcType: LoginViewController.self,
                          storyboardName: Constants.StoryboardName.SignUp.rawValue,
                          viewType: .nickName)
@@ -187,15 +187,29 @@ class LoginViewController: UIViewController {
       guard let userName = commonTextField.text,
             !userName.isEmpty else { return }
       user?.username = userName
-      checkNickName(nickName: userName) { [weak self] success in
-        guard success else { return }
+      checkNickName(nickName: userName) { [weak self] exists in
+        guard !exists else {
+          // TODO: 닉네임 존재할 때 핸들링
+          return
+        }
+
         self?.pushViewController(vcType: LoginViewController.self,
                            storyboardName: Constants.StoryboardName.SignUp.rawValue,
                            viewType: .setGenderAge)
       }
     case .setGenderAge:
-      signUp { _ in
-        // MARK: success - 온보딩 이동 / error인 경우 핸들링
+      signUp { success in
+        guard success,
+              let currentUser = LoginManager.shared.currentUser else {
+          // 에러 핸들링
+          return
+        }
+
+        if let _ = currentUser.type {
+          // MARK: HOME이동
+        } else {
+          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: Constants.StoryboardName.Onboarding.rawValue)
+        }
       }
       break
     default:
@@ -270,7 +284,7 @@ class LoginViewController: UIViewController {
     }
 
     guard let nextVC = UIStoryboard(name: storyboardName, bundle: nil)
-            .instantiateViewController(withIdentifier: vcType.identifier) as? LoginViewController else {
+            .instantiateViewController(withIdentifier: vcType.identifier) as? T else {
       return
     }
 

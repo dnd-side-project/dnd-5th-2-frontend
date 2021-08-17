@@ -11,12 +11,11 @@ import Alamofire
 class TokenUtils {
 
   static let shared = TokenUtils()
-  fileprivate let account: String = "asdf"
+  fileprivate let account: String = "accessToken"
 
   private init() { }
 
-  // MARK: - Todo 어떻게 bundleId 정할까?
-  let service = Bundle.main.bundleIdentifier ?? "com.innie.Vitamin"
+  let service = Bundle.main.bundleIdentifier!
 
   func create(value: String) -> Bool {
     let keyChainQuery: NSDictionary = [

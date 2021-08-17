@@ -98,10 +98,6 @@ class OnboardingResultViewController: UIViewController {
         return "위 건강"
       }
     }
-
-    LoginManager.shared.registerUserType(typeArray: resultArray) { <#Any?#> in
-      <#code#>
-    }
   }
 
 }

@@ -16,6 +16,7 @@ enum Feature {
   case userSelfInformation
   case emailCheck
   case userType
+  case usernameCheck
 
   var urlPath: String {
     switch self {
@@ -29,6 +30,19 @@ enum Feature {
       return "auth/signup-email"
     case .userType:
       return "user/type"
+    case .usernameCheck:
+      return "auth/signup-username"
+    }
+  }
+
+  var parameterKey: String {
+    switch  self {
+    case .emailCheck:
+      return "email"
+    case .usernameCheck:
+      return "username"
+    default:
+      return ""
     }
   }
 }
