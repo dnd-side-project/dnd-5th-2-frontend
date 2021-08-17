@@ -9,6 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Bold.ttf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Medium.ttf">
+            <string>Pretendard-Medium</string>
+        </array>
         <array key="Pretendard-Regular.ttf">
             <string>Pretendard-Regular</string>
         </array>
@@ -173,8 +179,76 @@
             </objects>
             <point key="canvasLocation" x="-1250.7246376811595" y="407.8125"/>
         </scene>
+        <!--Login Failure View Controller-->
+        <scene sceneID="C6i-mp-Vkl">
+            <objects>
+                <viewController storyboardIdentifier="LoginFailureViewController" id="y1u-ad-ez5" customClass="LoginFailureViewController" customModule="Vitamin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sh9-7y-OCP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="failToLogin" translatesAutoresizingMaskIntoConstraints="NO" id="XIO-Uj-vWa">
+                                <rect key="frame" x="162" y="44" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="7zS-uL-jbO"/>
+                                    <constraint firstAttribute="height" constant="90" id="jDO-JM-wfZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 실패" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07Y-Ey-IXj">
+                                <rect key="frame" x="168" y="164" width="78" height="20"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
+                                <color key="textColor" red="0.11358394469999999" green="0.1134203151" blue="0.12405929709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCa-xc-mC4">
+                                <rect key="frame" x="104" y="198" width="206" height="36"/>
+                                <string key="text">네트워크가 불안정으로 실패했어요.
+다시 한번 작성해주세요.</string>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
+                                <color key="textColor" red="0.45242583749999998" green="0.45191103220000001" blue="0.48515659570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-fy-g0h">
+                                <rect key="frame" x="133.5" y="296" width="147" height="54"/>
+                                <color key="backgroundColor" red="0.95596319439999999" green="0.95585709809999997" blue="0.97006803750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AhZ-fy-g0h" secondAttribute="height" multiplier="147:54" id="D6t-9B-zgA"/>
+                                    <constraint firstAttribute="width" constant="147" id="dto-4P-19l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
+                                <state key="normal" title="다시하기">
+                                    <color key="titleColor" red="0.45242583749999998" green="0.45191103220000001" blue="0.48515659570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="y1u-ad-ez5" eventType="touchUpInside" id="3aZ-nE-VEw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J7Q-7l-S8n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AhZ-fy-g0h" firstAttribute="centerX" secondItem="GCa-xc-mC4" secondAttribute="centerX" id="4mr-Mb-hjM"/>
+                            <constraint firstItem="XIO-Uj-vWa" firstAttribute="top" secondItem="J7Q-7l-S8n" secondAttribute="top" id="Ets-dr-ZcH"/>
+                            <constraint firstItem="GCa-xc-mC4" firstAttribute="centerX" secondItem="07Y-Ey-IXj" secondAttribute="centerX" id="RVL-PH-9Eq"/>
+                            <constraint firstItem="XIO-Uj-vWa" firstAttribute="centerX" secondItem="J7Q-7l-S8n" secondAttribute="centerX" id="YdL-yu-pIg"/>
+                            <constraint firstItem="GCa-xc-mC4" firstAttribute="top" secondItem="07Y-Ey-IXj" secondAttribute="bottom" constant="14" id="be2-BV-4iJ"/>
+                            <constraint firstItem="AhZ-fy-g0h" firstAttribute="top" secondItem="GCa-xc-mC4" secondAttribute="bottom" constant="62" id="eBc-aF-9yQ"/>
+                            <constraint firstItem="07Y-Ey-IXj" firstAttribute="centerX" secondItem="XIO-Uj-vWa" secondAttribute="centerX" id="heO-dU-MLh"/>
+                            <constraint firstItem="07Y-Ey-IXj" firstAttribute="top" secondItem="XIO-Uj-vWa" secondAttribute="bottom" constant="30" id="hlu-Sv-wva"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="AhZ-fy-g0h" id="sh0-Qi-htV"/>
+                        <outlet property="imageTopConstraint" destination="Ets-dr-ZcH" id="OGE-VS-4Mx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="enM-pc-KzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-481.15942028985512" y="407.8125"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="failToLogin" width="90" height="90"/>
         <image name="loginLogo" width="45" height="48.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

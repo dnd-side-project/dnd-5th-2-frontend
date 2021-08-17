@@ -216,7 +216,7 @@ class LoginViewController: UIViewController {
       signUp { success in
         guard success,
               let currentUser = LoginManager.shared.currentUser else {
-          // 에러 핸들링
+          self.pushViewController(vcType: LoginFailureViewController.self, storyboardName: Constants.StoryboardName.SignUp.rawValue)
           return
         }
 
