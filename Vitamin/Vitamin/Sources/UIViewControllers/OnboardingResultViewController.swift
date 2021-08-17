@@ -23,7 +23,6 @@ class OnboardingResultViewController: UIViewController {
 
   override func viewDidLoad() {
     self.navigationController?.navigationBar.isHidden = true
-
     switch personalTypeResult.count {
     case 0:
       personalResultText = onboardingResult.resultCases[.perfect]

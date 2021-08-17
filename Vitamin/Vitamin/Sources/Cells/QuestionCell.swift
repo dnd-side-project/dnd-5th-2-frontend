@@ -16,6 +16,7 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
   @IBOutlet weak var questionView: UIView!
   @IBOutlet weak var answerView: UIView!
   @IBOutlet weak var questionTextLabel: UILabel!
+  @IBOutlet weak var askDotView: UIImageView!
   @IBOutlet weak var answerTextLabel: UILabel!
   @IBOutlet weak var yesButton: UIButton!
   @IBOutlet weak var noButton: UIButton!
@@ -73,8 +74,10 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
     noButton.layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 238/255, alpha: 1).cgColor
 
     guard let answer = checkedAnswer else {
-      answerView.isHidden = true
-
+      askDotView.isHidden = false
+      answerTextLabel.isHidden = true
+      answerView.makeRounded(radius: 21)
+      answerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner]
       noButton.isSelected = false
       noButton.backgroundColor = .white
       noButton.layer.borderWidth = 1.0
@@ -112,7 +115,8 @@ class QuestionCell: UITableViewCell, QuestionCellDelegate {
   }
 
   private func showAnswerView(with text: String) {
-    answerView.isHidden = false
+    askDotView.isHidden = true
+    answerTextLabel.isHidden = false
     answerView.makeRounded(radius: 21)
     answerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner]
     answerTextLabel.text = text

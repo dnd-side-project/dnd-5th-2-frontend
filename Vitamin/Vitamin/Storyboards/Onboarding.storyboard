@@ -199,24 +199,31 @@
                                                             <rect key="frame" x="0.0" y="186" width="331" height="194"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHS-5E-dCl">
-                                                                    <rect key="frame" x="0.0" y="144" width="331" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="144" width="254" height="50"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
-                                                                <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aku-km-saH">
-                                                                    <rect key="frame" x="0.0" y="16" width="36" height="178"/>
+                                                                <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aku-km-saH">
+                                                                    <rect key="frame" x="262" y="16" width="69" height="178"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOI-WR-3qZ">
-                                                                            <rect key="frame" x="18" y="12" width="0.0" height="154"/>
+                                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOI-WR-3qZ">
+                                                                            <rect key="frame" x="18" y="12" width="33" height="154"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="askDot" translatesAutoresizingMaskIntoConstraints="NO" id="VMG-Gd-M1a">
+                                                                            <rect key="frame" x="18" y="12" width="33" height="154"/>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.99607843137254903" green="0.20784313725490194" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
+                                                                        <constraint firstItem="VMG-Gd-M1a" firstAttribute="leading" secondItem="LOI-WR-3qZ" secondAttribute="leading" id="Nw8-tz-ooG"/>
+                                                                        <constraint firstItem="VMG-Gd-M1a" firstAttribute="top" secondItem="LOI-WR-3qZ" secondAttribute="top" id="O2f-em-wJ6"/>
                                                                         <constraint firstItem="LOI-WR-3qZ" firstAttribute="leading" secondItem="Aku-km-saH" secondAttribute="leading" constant="18" id="YA0-6m-VEM"/>
                                                                         <constraint firstAttribute="trailing" secondItem="LOI-WR-3qZ" secondAttribute="trailing" constant="18" id="dKW-ws-noT"/>
                                                                         <constraint firstItem="LOI-WR-3qZ" firstAttribute="top" secondItem="Aku-km-saH" secondAttribute="top" constant="12" id="hhG-GP-uUb"/>
+                                                                        <constraint firstItem="VMG-Gd-M1a" firstAttribute="bottom" secondItem="LOI-WR-3qZ" secondAttribute="bottom" id="qTf-qp-wmL"/>
+                                                                        <constraint firstItem="VMG-Gd-M1a" firstAttribute="trailing" secondItem="LOI-WR-3qZ" secondAttribute="trailing" id="xbj-2z-zhv"/>
                                                                         <constraint firstAttribute="bottom" secondItem="LOI-WR-3qZ" secondAttribute="bottom" constant="12" id="yQC-rw-k6b"/>
                                                                     </constraints>
                                                                 </view>
@@ -238,6 +245,7 @@
                                         <connections>
                                             <outlet property="answerTextLabel" destination="LOI-WR-3qZ" id="jlu-6C-ivK"/>
                                             <outlet property="answerView" destination="Aku-km-saH" id="0DB-LB-nfH"/>
+                                            <outlet property="askDotView" destination="VMG-Gd-M1a" id="kmz-po-ywR"/>
                                             <outlet property="noButton" destination="ahU-k1-7Ke" id="fKN-1G-6jd"/>
                                             <outlet property="questionTextLabel" destination="Lee-Hd-tih" id="DXi-1s-x6V"/>
                                             <outlet property="questionView" destination="tWy-XD-CJH" id="6PI-cO-Tur"/>
@@ -460,6 +468,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="askDot" width="33" height="19"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
