@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fu-Ko-lAu">
-                                <rect key="frame" x="0.0" y="106" width="414" height="1360"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="1358"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eub-xc-jNe" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1077"/>
@@ -208,26 +208,26 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="gbh-0A-3iS"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icx-30-eYq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="62"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9H-9c-A3c">
-                                        <rect key="frame" x="26" y="20" width="6" height="22"/>
+                                        <rect key="frame" x="26" y="20" width="12" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" image="goBack"/>
+                                        <state key="normal" image="back"/>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="24.5" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-2k-5to">
-                                        <rect key="frame" x="332.5" y="20" width="47.5" height="22"/>
+                                        <rect key="frame" x="310.5" y="20" width="69.5" height="24"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WE-qH-c2H">
-                                                <rect key="frame" x="0.0" y="0.0" width="11" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="21" height="24"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" image="like"/>
+                                                <state key="normal" image="heart"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxO-4d-A8g">
-                                                <rect key="frame" x="35.5" y="0.0" width="12" height="22"/>
+                                                <rect key="frame" x="45.5" y="0.0" width="24" height="24"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" image="magnify"/>
+                                                <state key="normal" image="search"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -282,10 +282,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="goBack" width="6" height="10.5"/>
-        <image name="like" width="11" height="10"/>
+        <image name="back" width="12" height="21"/>
+        <image name="heart" width="21" height="19"/>
         <image name="loginLogo" width="45" height="48.5"/>
-        <image name="magnify" width="12" height="12"/>
+        <image name="search" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
