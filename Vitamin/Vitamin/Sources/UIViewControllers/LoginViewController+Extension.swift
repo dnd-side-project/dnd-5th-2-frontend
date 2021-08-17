@@ -35,6 +35,7 @@ extension LoginViewController: UITextFieldDelegate {
     case .loginPassword:
       break
     case .nickName:
+      commonTextField.shouldBeEdited = false
       continueButton.isEnabled = {
         if let text = sender.text,
            !text.isEmpty,

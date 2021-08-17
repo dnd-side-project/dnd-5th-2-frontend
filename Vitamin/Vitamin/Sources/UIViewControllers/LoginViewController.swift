@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
   @IBOutlet var continueButtonTopToEmailTextFieldConstraint: NSLayoutConstraint!
   @IBOutlet var passwordTextFieldTopToTitleLabelConstraint: NSLayoutConstraint!
   @IBOutlet var selectingGenderAgeView: SelectingGenderAgeView!
+  @IBOutlet var guideLabel: UILabel!
 
   lazy var continueButtonTopToCheckPasswordTextFieldConstraint: NSLayoutConstraint = {
     return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15)
@@ -189,7 +190,8 @@ class LoginViewController: UIViewController {
       user?.username = userName
       checkNickName(nickName: userName) { [weak self] exists in
         guard !exists else {
-          // TODO: 닉네임 존재할 때 핸들링
+          self?.guideLabel.text = "이미 존재하는 닉네임입니다."
+          self?.commonTextField.shouldBeEdited = true
           return
         }
 
@@ -233,6 +235,7 @@ class LoginViewController: UIViewController {
     passwordTextField.isHidden = true
     checkPasswordTextField.isHidden = true
     lookAroundButton.isHidden = true
+    guideLabel.isHidden = true
     updateContinueButton(isEnable: false)
     continueButtonTopToEmailTextFieldConstraint.isActive = false
     continueButtonBottomToSafeAreaConstraint.isActive = false
@@ -249,10 +252,14 @@ class LoginViewController: UIViewController {
     case .nickName:
       commonTextField.isHidden = false
       continueButtonTopToEmailTextFieldConstraint.isActive = true
+      guideLabel.text = "2~7자 까지 작성해주세요."
+      guideLabel.isHidden = false
     case .loginPassword:
       passwordTextField.isHidden = false
       passwordTextFieldTopToTitleLabelConstraint.constant = 125
       continueButtonTopToPasswordTextFieldConstraint.isActive = true
+      guideLabel.text = "6~12자 까지 작성해주세요."
+      guideLabel.isHidden = false
     case .setGenderAge:
       continueButtonTopToEmailTextFieldConstraint.isActive = false
       emailTextFieldResginGestureRecognizer.isEnabled = false
@@ -302,6 +309,22 @@ class LoginViewController: UIViewController {
 }
 
 class CustomTextField: UITextField {
+
+  var shouldBeEdited: Bool = false {
+    willSet {
+      if newValue {
+        addBorder(color: UIColor(red: 249/255,
+                                 green: 71/255,
+                                 blue: 71/255,
+                                 alpha: 1),
+                  borderWidth: 1)
+
+      } else if shouldBeEdited {
+        addBorder(color: .textBlack5, borderWidth: 1)
+      }
+    }
+  }
+
   override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
     let width: CGFloat = 18
     return CGRect(x: frame.width - 12 - width, y: 18, width: width, height: width)

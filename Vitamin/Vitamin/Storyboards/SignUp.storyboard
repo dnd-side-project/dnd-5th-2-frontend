@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
         <array key="Pretendard-SemiBold.ttf">
             <string>Pretendard-SemiBold</string>
         </array>
@@ -104,6 +107,12 @@
                                     <constraint firstAttribute="width" secondItem="Xez-M9-ha7" secondAttribute="height" multiplier="311:198" id="R94-Qx-PZy"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKc-W6-wvX">
+                                <rect key="frame" x="32" y="498" width="350" height="16"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="13"/>
+                                <color key="textColor" red="0.45242583749999998" green="0.45191103220000001" blue="0.48515659570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jsI-0F-SgE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,14 +121,18 @@
                             <constraint firstItem="jsI-0F-SgE" firstAttribute="trailing" secondItem="ynU-8v-61C" secondAttribute="trailing" constant="32" id="1tI-bp-KZr"/>
                             <constraint firstItem="SQf-Wk-Ydm" firstAttribute="leading" secondItem="ynU-8v-61C" secondAttribute="leading" id="2nq-Fe-qek"/>
                             <constraint firstItem="fGs-8S-cpj" firstAttribute="leading" secondItem="gf6-8k-ACQ" secondAttribute="leading" id="7nv-3s-Sgo"/>
+                            <constraint firstItem="uKc-W6-wvX" firstAttribute="trailing" secondItem="fGs-8S-cpj" secondAttribute="trailing" id="CLu-K2-GMo"/>
                             <constraint firstItem="6Q6-0N-6Cd" firstAttribute="top" secondItem="dyf-qa-w63" secondAttribute="bottom" constant="32" id="Cay-RV-fQw"/>
                             <constraint firstItem="fGs-8S-cpj" firstAttribute="trailing" secondItem="gf6-8k-ACQ" secondAttribute="trailing" id="DFO-Oa-s02"/>
+                            <constraint firstItem="uKc-W6-wvX" firstAttribute="bottom" secondItem="fGs-8S-cpj" secondAttribute="bottom" constant="22" id="EzZ-Di-YqQ"/>
                             <constraint firstItem="jsI-0F-SgE" firstAttribute="top" secondItem="dyf-qa-w63" secondAttribute="top" constant="-76" id="HEZ-IS-l2W"/>
                             <constraint firstItem="ynU-8v-61C" firstAttribute="top" secondItem="6Q6-0N-6Cd" secondAttribute="bottom" constant="89" id="IcW-1c-dW4"/>
                             <constraint firstItem="dyf-qa-w63" firstAttribute="leading" secondItem="jsI-0F-SgE" secondAttribute="leading" constant="32" id="KZh-wo-6aj"/>
                             <constraint firstItem="6Q6-0N-6Cd" firstAttribute="leading" secondItem="dyf-qa-w63" secondAttribute="leading" id="LqJ-jo-rbk"/>
                             <constraint firstItem="gf6-8k-ACQ" firstAttribute="top" secondItem="6Q6-0N-6Cd" secondAttribute="bottom" constant="93" id="Rkn-D3-saU"/>
                             <constraint firstItem="SQf-Wk-Ydm" firstAttribute="top" secondItem="ynU-8v-61C" secondAttribute="bottom" constant="6" id="Th9-QF-jV2"/>
+                            <constraint firstItem="uKc-W6-wvX" firstAttribute="leading" secondItem="fGs-8S-cpj" secondAttribute="leading" id="buP-pF-OYU"/>
+                            <constraint firstItem="uKc-W6-wvX" firstAttribute="centerX" secondItem="fGs-8S-cpj" secondAttribute="centerX" id="g9d-MG-9br"/>
                             <constraint firstItem="fGs-8S-cpj" firstAttribute="top" secondItem="gf6-8k-ACQ" secondAttribute="bottom" constant="15" id="gVa-GD-O7x"/>
                             <constraint firstItem="jsI-0F-SgE" firstAttribute="trailing" secondItem="Xez-M9-ha7" secondAttribute="trailing" constant="32" id="hXc-ym-9xT"/>
                             <constraint firstItem="gIy-en-YrI" firstAttribute="centerX" secondItem="jsI-0F-SgE" secondAttribute="centerX" id="iSq-hY-F8g"/>
@@ -142,6 +155,7 @@
                         <outlet property="continueButton" destination="fGs-8S-cpj" id="RKI-8H-heV"/>
                         <outlet property="continueButtonTopToEmailTextFieldConstraint" destination="gVa-GD-O7x" id="UM3-tA-ZIL"/>
                         <outlet property="emailTextFieldResginGestureRecognizer" destination="agC-kj-Wy0" id="sLA-Cw-cO6"/>
+                        <outlet property="guideLabel" destination="uKc-W6-wvX" id="Co9-Y6-gG4"/>
                         <outlet property="lookAroundButton" destination="gIy-en-YrI" id="Mzr-F4-FU9"/>
                         <outlet property="passwordTextField" destination="ynU-8v-61C" id="X5S-LG-Ze9"/>
                         <outlet property="passwordTextFieldTopToTitleLabelConstraint" destination="IcW-1c-dW4" id="BcL-pg-lbr"/>
