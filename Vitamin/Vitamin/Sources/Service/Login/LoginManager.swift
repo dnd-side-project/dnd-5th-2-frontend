@@ -22,8 +22,8 @@ class LoginManager {
   /// completionHandler로 로그인 성공 여부를 전달
   func signup(user: User,
               completionHandler: @escaping (Bool) -> Void) {
-    networkManager.requestSignUp(with: user) { success in
-      self.login(loginUser: user) { success in
+    networkManager.requestSignUp(with: user) { [weak self] success in
+      self?.login(loginUser: user) { success in
        completionHandler(success)
       }
     }
@@ -31,11 +31,11 @@ class LoginManager {
 
   func login(loginUser: User,
              completionHandler: @escaping (Bool) -> Void) {
-    networkManager.requestLogin(with: loginUser) { result in
+    networkManager.requestLogin(with: loginUser) { [weak self] result in
       switch result {
       case .success(let loginResult):
         let successToCreate = TokenUtils.shared.create(value: loginResult.token)
-        self.currentUser = loginResult.user
+        self?.currentUser = loginResult.user
         completionHandler(successToCreate)
       case .failure(let error):
         print(error.localizedDescription)
@@ -50,10 +50,10 @@ class LoginManager {
       return
     }
 
-    networkManager.requestLogin(with: header) { result in
+    networkManager.requestLogin(with: header) {  [weak self] result in
       switch result {
       case .success(let user):
-        self.currentUser = user
+        self?.currentUser = user
         completionHandler(true)
       case .failure(let error):
         print(error.localizedDescription)
