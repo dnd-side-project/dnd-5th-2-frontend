@@ -16,10 +16,17 @@ class OnboardingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    updateRootViewController()
     setMainIntroductionLabel()
     setSubIntroductionLabel()
     setCheckUpButton()
     setSkipButton()
+  }
+
+  func updateRootViewController() {
+    if let filterdViewControllers = self.navigationController?.viewControllers.filter({ $0 is OnboardingViewController }) {
+      self.navigationController?.viewControllers = filterdViewControllers
+    }
   }
 
   private func setMainIntroductionLabel() {
