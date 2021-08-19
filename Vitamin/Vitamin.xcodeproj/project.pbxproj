@@ -53,6 +53,7 @@
 		4D8D4FDE26CD51AB0059AAC6 /* HorizontalProductsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4FDC26CD51AB0059AAC6 /* HorizontalProductsCollectionViewCell.xib */; };
 		4D8D4FE526CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FE326CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift */; };
 		4D8D4FE626CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4FE426CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib */; };
+		4D8D4FEB26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FEA26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift */; };
 		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */; };
 		4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */; };
@@ -149,6 +150,7 @@
 		4D8D4FDC26CD51AB0059AAC6 /* HorizontalProductsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalProductsCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D8D4FE326CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupCollectionReusableView.swift; sourceTree = "<group>"; };
 		4D8D4FE426CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupCollectionReusableView.xib; sourceTree = "<group>"; };
+		4D8D4FEA26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductsGroupCollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8D4FC826CD4DCF0059AAC6 /* ProductsGroupCollectionViewCell.swift */,
+				4D8D4FEA26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift */,
 				4D8D4FC926CD4DCF0059AAC6 /* ProductsGroupCollectionViewCell.xib */,
 			);
 			path = ProductsGroupCollectionViewCell;
@@ -840,6 +843,7 @@
 				4D8D4ECD26C6A9360059AAC6 /* HomeViewController.swift in Sources */,
 				D929C7D526C6532800F37478 /* HealthInformationCell.swift in Sources */,
 				4D27541326BE2B800097B8EB /* NetworkManager.swift in Sources */,
+				4D8D4FEB26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift in Sources */,
 				4D8D4F2B26C904090059AAC6 /* SelectingProductsCollectionViewCell.swift in Sources */,
 				4D27541426BE2B800097B8EB /* URLMaker.swift in Sources */,
 				4D27541F26BE2C940097B8EB /* UIColor+Extension.swift in Sources */,

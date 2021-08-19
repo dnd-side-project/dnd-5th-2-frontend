@@ -18,5 +18,10 @@ class ProductsGroupCollectionViewCell: UICollectionViewCell {
   }
 
   func setupCollectionView() {
+    horizontalProductsCollectionView.delegate = self
+    horizontalProductsCollectionView.dataSource = self
+
+    let cell = UINib(nibName: ThreeProductsCollectionViewCell.identifier, bundle: nil)
+    horizontalProductsCollectionView.register(cell, forCellWithReuseIdentifier: ThreeProductsCollectionViewCell.identifier)
   }
 }
