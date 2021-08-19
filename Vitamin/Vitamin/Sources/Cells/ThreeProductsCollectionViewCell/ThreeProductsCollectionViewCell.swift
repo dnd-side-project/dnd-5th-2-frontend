@@ -15,9 +15,13 @@ class ThreeProductsCollectionViewCell: UICollectionViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    setupTableView()
   }
 
   func setupTableView() {
+    tableView.delegate = self
+    tableView.dataSource = self
+
     let cell = UINib(nibName: ProductsGroupByTypeTableViewCell.identifier, bundle: nil)
     tableView.register(cell, forCellReuseIdentifier: ProductsGroupByTypeTableViewCell.identifier)
   }

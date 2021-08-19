@@ -46,18 +46,4 @@ extension UIView {
     layer.borderColor = color.cgColor
     layer.borderWidth = borderWidth
   }
-
-  // MARK: TODO 하드코딩 바꾸기
-  func applyCircleShadow(cornerRadius: CGFloat,
-                         shadowRadius: CGFloat = 2,
-                         shadowOpacity: Float = 0.3,
-                         shadowColor: CGColor = UIColor.white.cgColor,
-                         shadowOffset: CGSize = CGSize.zero) {
-    layer.cornerRadius = cornerRadius
-    layer.masksToBounds = false
-    layer.shadowColor = shadowColor
-    layer.shadowOffset = shadowOffset
-    layer.shadowRadius = shadowRadius
-    layer.shadowOpacity = shadowOpacity
-  }
 }

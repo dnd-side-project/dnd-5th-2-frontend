@@ -17,7 +17,7 @@ class ProductsGroupByTypeTableViewCell: UITableViewCell {
     super.awakeFromNib()
 
     productImageView.makeRounded(radius: 30)
-    productImageView.applyCircleShadow(cornerRadius: productImageView.frame.height/2) // MARK: TODO 그림자 정보 확인하면 업데이트
+    productImageView.addBorder(color: UIColor(red: 0.91, green: 0.91, blue: 0.93, alpha: 1), borderWidth: 1)
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {

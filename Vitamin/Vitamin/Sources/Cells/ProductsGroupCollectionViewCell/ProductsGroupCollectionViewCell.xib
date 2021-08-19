@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyg-4n-kWs">
-                        <rect key="frame" x="20" y="76" width="42" height="24"/>
+                        <rect key="frame" x="20" y="76" width="41.5" height="24"/>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -35,8 +35,8 @@
                         <color key="textColor" red="0.39954099059999998" green="0.39960259199999998" blue="0.39952749009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pru-5j-RfY">
-                        <rect key="frame" x="0.0" y="148" width="320" height="208"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pru-5j-RfY">
+                        <rect key="frame" x="0.0" y="148" width="320" height="158"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="PaX-1p-Q3d">
                             <size key="itemSize" width="128" height="128"/>
@@ -51,7 +51,7 @@
             <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="jyg-4n-kWs" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="6oo-eL-iCc"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Pru-5j-RfY" secondAttribute="bottom" id="ABj-SS-P0U"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Pru-5j-RfY" secondAttribute="bottom" constant="50" id="ABj-SS-P0U"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="Pru-5j-RfY" secondAttribute="trailing" id="HEN-6X-Fck"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="jyg-4n-kWs" secondAttribute="top" constant="-32" id="Iuc-6K-V9r"/>
                 <constraint firstItem="Pru-5j-RfY" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="VJp-Kg-fMc"/>
