@@ -9,34 +9,27 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-  @IBOutlet var welcomeLabel: UILabel!
-  @IBOutlet var firstProductsView: ProductsGroupByTypeView!
-  @IBOutlet var secondProductsView: ProductsGroupByUserView!
-  @IBOutlet var thirdProductsView: ProductsGroupByTypeView!
-  @IBOutlet var typeTagCollectionView: UICollectionView!
+  @IBOutlet var collectionView: UICollectionView!
 
   let user = LoginManager.shared.currentUser
 
+  let collectionViewCellEdgeInsets = UIEdgeInsets(top: .zero, left: 20, bottom: 16, right: 20)
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    loadUserInformation()
     setupStyle()
+    registerCollectionView()
   }
 
   func setupStyle() {
-    let cornerRadius: CGFloat = 14
-    firstProductsView.makeRounded(radius: cornerRadius)
-    secondProductsView.makeRounded(radius: cornerRadius)
-    thirdProductsView.makeRounded(radius: cornerRadius)
-    typeTagCollectionView.contentInset = UIEdgeInsets(top: .zero, left: 20, bottom: .zero, right: 20)
+
   }
 
-  func loadUserInformation() {
-    guard let user = user else {
-      welcomeLabel.text = "어서오세요"
-      return
-    }
-
-    welcomeLabel.text = "\(user.username ?? "")님, 어서오세요"
+  func registerCollectionView() {
+    let cell = UINib(nibName: ProductsGroupCollectionViewCell.identifier, bundle: nil)
+    let headerView = UINib(nibName: ProductsGroupCollectionReusableView.identifier, bundle: nil)
+    collectionView.register(cell, forCellWithReuseIdentifier: ProductsGroupCollectionViewCell.identifier)
+    collectionView.register(headerView, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                            withReuseIdentifier: ProductsGroupCollectionReusableView.identifier)
   }
 }
