@@ -37,7 +37,7 @@ class NavigationViewController: UINavigationController {
         return
       }
 
-      if let _ = user.type {
+      if !user.types.isEmpty {
         self.changeRootViewController(vcType: HomeViewController.self, storyboardName: .Home)
       } else {
         self.changeRootViewController(vcType: OnboardingViewController.self, storyboardName: .Onboarding)

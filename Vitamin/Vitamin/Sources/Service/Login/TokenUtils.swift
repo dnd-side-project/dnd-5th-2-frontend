@@ -63,7 +63,7 @@ class TokenUtils {
 
   func getAuthorizationHeader() -> HTTPHeaders? {
     if let accessToken = self.read() {
-      return ["Authorization": "bearer \(accessToken)"] as HTTPHeaders
+      return ["Authorization": "\(accessToken)"] as HTTPHeaders
     } else {
       return nil
     }

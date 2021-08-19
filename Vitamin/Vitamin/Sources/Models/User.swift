@@ -14,16 +14,16 @@ struct User: Codable {
   var username: String? = ""
   var gender: Gender?
   var age: Age?
-  var type: UserType?
+  var types: [UserType] = []
   var profileImg: String?
 
   enum CodingKeys: String, CodingKey {
     case email
     case password
-    case username
+    case username = "user_name"
     case gender
     case age
-    case type
+    case types = "type_name"
   }
 
   init() { }
@@ -36,9 +36,9 @@ struct User: Codable {
       self.username = try values.decodeIfPresent(String.self, forKey: .username)
       self.gender = try values.decodeIfPresent(Gender.self, forKey: .gender)
       self.age = try values.decodeIfPresent(Age.self, forKey: .age)
-      self.type = try values.decodeIfPresent(UserType.self, forKey: .type)
-    } catch {
-
+      self.types = try values.decodeIfPresent([UserType].self, forKey: .types) ?? []
+    } catch let error {
+      print(error.localizedDescription)
     }
   }
 
@@ -50,7 +50,7 @@ struct User: Codable {
       try container.encode(username, forKey: .username)
       try container.encode(age, forKey: .age)
       try container.encode(gender, forKey: .gender)
-      try container.encode(type, forKey: .type)
+      try container.encode(types, forKey: .types)
     } catch {
 
     }

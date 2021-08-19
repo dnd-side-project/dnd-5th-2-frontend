@@ -154,7 +154,8 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func lookAround(_ sender: UIButton) {
-    // MARK: TODO - Home으로 연결
+    pushViewController(vcType: HomeViewController.self,
+                       storyboardName: .Home)
   }
 
   @IBAction func tapContinueButton(_ sender: UIButton) {
@@ -170,7 +171,7 @@ class LoginViewController: UIViewController {
       user?.email = email
       checkEmail(email: email) { exist in
         self.pushViewController(vcType: LoginViewController.self,
-                                storyboardName: Constants.StoryboardName.SignUp,
+                                storyboardName: .SignUp,
                                 viewType: exist ? .loginPassword : .signUpPassword)
       }
     case .findPassword:
@@ -186,7 +187,7 @@ class LoginViewController: UIViewController {
           return
         }
 
-        if let _ = currentUser.type {
+        if !currentUser.types.isEmpty {
           self.pushViewController(vcType: HomeViewController.self, storyboardName: .Home)
         } else {
           self.pushViewController(vcType: OnboardingViewController.self, storyboardName: .Onboarding)
@@ -213,17 +214,18 @@ class LoginViewController: UIViewController {
                            viewType: .setGenderAge)
       }
     case .setGenderAge:
-      signUp { success in
+      signUp { [weak self] success in
+        guard let self = self else { return }
         guard success,
               let currentUser = LoginManager.shared.currentUser else {
-          self.pushViewController(vcType: LoginFailureViewController.self, storyboardName: Constants.StoryboardName.SignUp)
+          self.pushViewController(vcType: LoginFailureViewController.self, storyboardName: .SignUp)
           return
         }
 
-        if let _ = currentUser.type {
-          // MARK: HOME이동
+        if !currentUser.types.isEmpty {
+          self.pushViewController(vcType: HomeViewController.self, storyboardName: .Home)
         } else {
-          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: Constants.StoryboardName.Onboarding)
+          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: .Onboarding)
         }
       }
       break
