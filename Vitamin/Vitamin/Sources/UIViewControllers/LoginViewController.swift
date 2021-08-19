@@ -18,10 +18,12 @@ class LoginViewController: UIViewController {
   @IBOutlet var checkPasswordTextField: CustomTextField!
   @IBOutlet var continueButtonTopToEmailTextFieldConstraint: NSLayoutConstraint!
   @IBOutlet var passwordTextFieldTopToTitleLabelConstraint: NSLayoutConstraint!
+  @IBOutlet var guideLabelBottomToContinueButtonConstraint: NSLayoutConstraint!
   @IBOutlet var selectingGenderAgeView: SelectingGenderAgeView!
+  @IBOutlet var guideLabel: UILabel!
 
   lazy var continueButtonTopToCheckPasswordTextFieldConstraint: NSLayoutConstraint = {
-    return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 15)
+    return continueButton.topAnchor.constraint(equalTo: checkPasswordTextField.bottomAnchor, constant: 37)
   }()
   lazy var continueButtonTopToPasswordTextFieldConstraint: NSLayoutConstraint = {
     return continueButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15)
@@ -75,6 +77,17 @@ class LoginViewController: UIViewController {
         return ""
       }
     }
+
+    var defaultGuideLabel: String {
+      switch self {
+      case .signUpPassword:
+        return  "6~12자 까지 작성해주세요."
+      case .nickName:
+        return "2~7자 까지 작성해주세요."
+      default:
+        return ""
+      }
+    }
   }
 
   override func viewDidLoad() {
@@ -90,6 +103,7 @@ class LoginViewController: UIViewController {
     commonTextField.text = ""
     passwordTextField.text = ""
     checkPasswordTextField.text = ""
+    guideLabel.text = viewType?.defaultGuideLabel
 
     if commonTextField.isFirstResponder {
       commonTextField.resignFirstResponder()
@@ -179,7 +193,7 @@ class LoginViewController: UIViewController {
         }
       }
     case .signUpPassword:
-      user?.password = commonTextField.text
+      user?.password = passwordTextField.text
       pushViewController(vcType: LoginViewController.self,
                          storyboardName: .SignUp,
                          viewType: .nickName)
@@ -187,15 +201,30 @@ class LoginViewController: UIViewController {
       guard let userName = commonTextField.text,
             !userName.isEmpty else { return }
       user?.username = userName
-      checkNickName(nickName: userName) { [weak self] success in
-        guard success else { return }
+      checkNickName(nickName: userName) { [weak self] exists in
+        guard !exists else {
+          self?.guideLabel.text = "이미 존재하는 닉네임입니다."
+          self?.commonTextField.shouldBeEdited = true
+          return
+        }
+
         self?.pushViewController(vcType: LoginViewController.self,
                            storyboardName: .SignUp,
                            viewType: .setGenderAge)
       }
     case .setGenderAge:
-      signUp { _ in
-        // MARK: success - 온보딩 이동 / error인 경우 핸들링
+      signUp { success in
+        guard success,
+              let currentUser = LoginManager.shared.currentUser else {
+          self.pushViewController(vcType: LoginFailureViewController.self, storyboardName: Constants.StoryboardName.SignUp)
+          return
+        }
+
+        if let _ = currentUser.type {
+          // MARK: HOME이동
+        } else {
+          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: Constants.StoryboardName.Onboarding)
+        }
       }
       break
     default:
@@ -219,6 +248,7 @@ class LoginViewController: UIViewController {
     passwordTextField.isHidden = true
     checkPasswordTextField.isHidden = true
     lookAroundButton.isHidden = true
+    guideLabel.isHidden = true
     updateContinueButton(isEnable: false)
     continueButtonTopToEmailTextFieldConstraint.isActive = false
     continueButtonBottomToSafeAreaConstraint.isActive = false
@@ -232,15 +262,21 @@ class LoginViewController: UIViewController {
       passwordTextField.isHidden = false
       checkPasswordTextField.isHidden = false
       continueButtonTopToCheckPasswordTextFieldConstraint.isActive = true
+      guideLabelBottomToContinueButtonConstraint.constant = -12
+      guideLabel.text = viewType?.defaultGuideLabel
+      guideLabel.isHidden = false
     case .nickName:
       commonTextField.isHidden = false
+      continueButtonTopToEmailTextFieldConstraint.constant = 51
       continueButtonTopToEmailTextFieldConstraint.isActive = true
+      guideLabelBottomToContinueButtonConstraint.constant = -22
+      guideLabel.text = viewType?.defaultGuideLabel
+      guideLabel.isHidden = false
     case .loginPassword:
       passwordTextField.isHidden = false
       passwordTextFieldTopToTitleLabelConstraint.constant = 125
       continueButtonTopToPasswordTextFieldConstraint.isActive = true
     case .setGenderAge:
-      continueButtonTopToEmailTextFieldConstraint.isActive = false
       emailTextFieldResginGestureRecognizer.isEnabled = false
       continueButtonBottomToSafeAreaConstraint.isActive = true
       selectingGenderAgeView.isHidden = false
@@ -279,17 +315,5 @@ class LoginViewController: UIViewController {
     default:
       break
     }
-  }
-}
-
-class CustomTextField: UITextField {
-  override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-    let width: CGFloat = 18
-    return CGRect(x: frame.width - 12 - width, y: 18, width: width, height: width)
-  }
-
-  func setupUI() {
-    makeRounded(radius: 13)
-    addBorder(color: .textBlack5, borderWidth: 1)
   }
 }

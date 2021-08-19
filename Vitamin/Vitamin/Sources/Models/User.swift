@@ -56,3 +56,8 @@ struct User: Codable {
     }
   }
 }
+
+struct LoginResult: Codable {
+  var token: String
+  var user: User
+}

@@ -19,35 +19,28 @@ class LoginManager {
   private init() { }
 
   /// 회원가입에 성공하면 로그인 요청
-  /// 로그인에 성공하면 completionHandler로 성공 여부를 전달
+  /// completionHandler로 로그인 성공 여부를 전달
   func signup(user: User,
               completionHandler: @escaping (Bool) -> Void) {
-    networkManager.requestSignUp(with: user) { [weak self] result in
-      switch result {
-      case .success(let user):
-        self?.login(loginUser: user, completionHandler: { success in
-          completionHandler(success)
-        })
-      case .failure(let error):
-        print(error.localizedDescription)
-        completionHandler(false)
+    networkManager.requestSignUp(with: user) { [weak self] success in
+      self?.login(loginUser: user) { success in
+       completionHandler(success)
       }
     }
   }
 
   func login(loginUser: User,
              completionHandler: @escaping (Bool) -> Void) {
-    networkManager.requestLogin(with: loginUser) { result in
-      guard let result = result as? [String: Any],
-            let jwt = result["jwt"] as? String,
-            let user = result["user"] as? User else { // MARK: TODO 백엔드 응답값 반영되면 확인하기
+    networkManager.requestLogin(with: loginUser) { [weak self] result in
+      switch result {
+      case .success(let loginResult):
+        let successToCreate = TokenUtils.shared.create(value: loginResult.token)
+        self?.currentUser = loginResult.user
+        completionHandler(successToCreate)
+      case .failure(let error):
+        print(error.localizedDescription)
         completionHandler(false)
-        return
       }
-
-      let successToCreate = TokenUtils.shared.create(value: jwt)
-      self.currentUser = user
-      completionHandler(successToCreate)
     }
   }
 
@@ -57,10 +50,10 @@ class LoginManager {
       return
     }
 
-    networkManager.requestLogin(with: header) { result in
+    networkManager.requestLogin(with: header) {  [weak self] result in
       switch result {
       case .success(let user):
-        self.currentUser = user
+        self?.currentUser = user
         completionHandler(true)
       case .failure(let error):
         print(error.localizedDescription)
@@ -70,10 +63,10 @@ class LoginManager {
   }
 
   func checkEmailExists(email: String, completion: @escaping (Bool) -> Void) {
-    networkManager.checkExists(parameter: ["email": email]) { result in
-      guard let result = result as? [String: Int],
+    networkManager.checkExists(feature: .emailCheck, parameterValue: email) { result in
+      guard let result = result as? [String: Bool],
             let exists = result["exists"],
-            exists == 0 else { // 존재하면 0, 존재하지 않으면 1
+            exists else {
         completion(false)
         return
       }
@@ -82,7 +75,7 @@ class LoginManager {
   }
 
   func checkNickNameExists(nickName: String, completion: @escaping (Bool) -> Void) {
-    networkManager.checkExists(parameter: ["username": nickName]) { result in
+    networkManager.checkExists(feature: .usernameCheck, parameterValue: nickName) { result in
       guard let result = result as? [String: Bool],
             let exists = result["exists"],
             exists else {
@@ -90,6 +83,18 @@ class LoginManager {
         return
       }
       completion(true)
+    }
+  }
+
+  func registerUserType(typeArray: [String], completionHandler: @escaping(Any?) -> Void) {
+    guard let header = TokenUtils.shared.getAuthorizationHeader() else {
+      completionHandler(false)
+      return
+    }
+
+    networkManager.requestUserType(with: header,
+                                   typeArray) { result in
+      print(result)
     }
   }
 

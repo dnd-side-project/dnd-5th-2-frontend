@@ -52,6 +52,8 @@
 		4D8D4FE526CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FE326CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift */; };
 		4D8D4FE626CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4FE426CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib */; };
 		4D8D4FEB26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FEA26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift */; };
+		4D8D4FBB26CC00960059AAC6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */; };
+		4D8D4FC026CC03D40059AAC6 /* LoginFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FBF26CC03D40059AAC6 /* LoginFailureViewController.swift */; };
 		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */; };
 		4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */; };
@@ -72,6 +74,7 @@
 		D97C793126BEF369000748EC /* OnboardingQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */; };
 		D9A564E826BEA53300ACB0EB /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */; };
 		D9A564EA26BEA55400ACB0EB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */; };
+		D9B4FA9D26CA7B6D003DBF1D /* SupplementDescription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */; };
 		D9C49EF8269A97E600A5FFA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */; };
 		D9C49EFA269A97E600A5FFA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */; };
 		D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C49EFD269A97E600A5FFA5 /* Main.storyboard */; };
@@ -147,6 +150,8 @@
 		4D8D4FE326CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupCollectionReusableView.swift; sourceTree = "<group>"; };
 		4D8D4FE426CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupCollectionReusableView.xib; sourceTree = "<group>"; };
 		4D8D4FEA26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductsGroupCollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4D8D4FBF26CC03D40059AAC6 /* LoginFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailureViewController.swift; sourceTree = "<group>"; };
 		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 		D97C793026BEF369000748EC /* OnboardingQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuizViewController.swift; sourceTree = "<group>"; };
 		D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		D9A564E926BEA55400ACB0EB /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SupplementDescription.storyboard; sourceTree = "<group>"; };
 		D9C49EF4269A97E600A5FFA5 /* Vitamin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vitamin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C49EF7269A97E600A5FFA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C49EF9269A97E600A5FFA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +290,7 @@
 				4DBBC85326BFAB6900FFDFC2 /* NavigationViewController.swift */,
 				4D8D4ECC26C6A9360059AAC6 /* HomeViewController.swift */,
 				4D8D4F2326C8FDAB0059AAC6 /* HomeViewController+UICollectionViewAPI.swift */,
+				4D8D4FBF26CC03D40059AAC6 /* LoginFailureViewController.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +339,7 @@
 				4D8D4E1A26C421830059AAC6 /* SelectingGenderAgeView.xib */,
 				4D8D4E1F26C426320059AAC6 /* AgeCollectionViewCell.swift */,
 				4D8D4E2026C426320059AAC6 /* AgeCollectionViewCell.xib */,
+				4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -429,6 +437,7 @@
 				D9A564E726BEA53300ACB0EB /* Onboarding.storyboard */,
 				4D27532226BD746C0097B8EB /* SignUp.storyboard */,
 				4D8D4EAD26C699420059AAC6 /* Home.storyboard */,
+				D9B4FA9C26CA7B6D003DBF1D /* SupplementDescription.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -645,6 +654,7 @@
 				D9C49EFF269A97E600A5FFA5 /* Main.storyboard in Resources */,
 				4D27532326BD746C0097B8EB /* SignUp.storyboard in Resources */,
 				4D8D4E2226C426320059AAC6 /* AgeCollectionViewCell.xib in Resources */,
+				D9B4FA9D26CA7B6D003DBF1D /* SupplementDescription.storyboard in Resources */,
 				4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,6 +820,7 @@
 				4D27540E26BE2B800097B8EB /* UIViewController+Extension.swift in Sources */,
 				4D8D4EEC26C80E0E0059AAC6 /* ProductsGroupByUserView.swift in Sources */,
 				4D8D4FCA26CD4DD00059AAC6 /* ProductsGroupCollectionViewCell.swift in Sources */,
+				4D8D4FBB26CC00960059AAC6 /* CustomTextField.swift in Sources */,
 				4D27540926BE2B800097B8EB /* LoginUser.swift in Sources */,
 				4D27540B26BE2B800097B8EB /* UIDevice+Extension.swift in Sources */,
 				4D27541726BE2B800097B8EB /* UserDefaultsHelper.swift in Sources */,
@@ -830,6 +841,7 @@
 				4D8D4FEB26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift in Sources */,
 				4D8D4F2B26C904090059AAC6 /* SelectingProductsCollectionViewCell.swift in Sources */,
 				4D27541426BE2B800097B8EB /* URLMaker.swift in Sources */,
+				4D8D4FC026CC03D40059AAC6 /* LoginFailureViewController.swift in Sources */,
 				4D27541F26BE2C940097B8EB /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

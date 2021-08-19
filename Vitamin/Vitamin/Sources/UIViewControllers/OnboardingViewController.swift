@@ -16,6 +16,7 @@ class OnboardingViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    updateRootViewController()
     setMainIntroductionLabel()
     setSubIntroductionLabel()
     setCheckUpButton()
@@ -25,6 +26,12 @@ class OnboardingViewController: UIViewController {
   @IBAction func pushHomeVC(_ sender: UIButton) {
     self.navigationController?.changeRootViewController(vcType: HomeViewController.self,
                                                         storyboardName: .Home)
+  }
+
+  func updateRootViewController() {
+    if let filterdViewControllers = self.navigationController?.viewControllers.filter({ $0 is OnboardingViewController }) {
+      self.navigationController?.viewControllers = filterdViewControllers
+    }
   }
 
   private func setMainIntroductionLabel() {
