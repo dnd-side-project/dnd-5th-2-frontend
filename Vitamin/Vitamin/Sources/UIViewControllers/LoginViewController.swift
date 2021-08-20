@@ -180,17 +180,18 @@ class LoginViewController: UIViewController {
     case .loginPassword:
       user?.password = passwordTextField.text
 
-      login { success in
+      login { [weak self] success in
         guard success,
               let currentUser = LoginManager.shared.currentUser else {
-          // 에러 핸들링
+          self?.guideLabel.text = "비밀번호를 틀렸네요. \n다시 확인해주세요."
+          self?.updateContinueButton(isEnable: false)
           return
         }
 
         if !currentUser.types.isEmpty {
-          self.pushViewController(vcType: HomeViewController.self, storyboardName: .Home)
+          self?.pushViewController(vcType: HomeViewController.self, storyboardName: .Home)
         } else {
-          self.pushViewController(vcType: OnboardingViewController.self, storyboardName: .Onboarding)
+          self?.pushViewController(vcType: OnboardingViewController.self, storyboardName: .Onboarding)
         }
       }
     case .signUpPassword:

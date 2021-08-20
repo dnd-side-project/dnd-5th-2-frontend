@@ -14,7 +14,7 @@ class LoginFailureViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    navigationController?.navigationBar.isHidden = true
     dismissButton.makeRounded(radius: 13)
   }
 
@@ -23,6 +23,6 @@ class LoginFailureViewController: UIViewController {
   }
 
   @IBAction func dismiss(_ sender: UIButton) {
-
+    self.navigationController?.popViewController(animated: true)
   }
 }

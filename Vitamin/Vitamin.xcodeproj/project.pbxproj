@@ -45,6 +45,8 @@
 		4D8D4F2B26C904090059AAC6 /* SelectingProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4F2926C904090059AAC6 /* SelectingProductsCollectionViewCell.swift */; };
 		4D8D4F2C26C904090059AAC6 /* SelectingProductsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4F2A26C904090059AAC6 /* SelectingProductsCollectionViewCell.xib */; };
 		4D8D4F6E26CA272E0059AAC6 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4F6D26CA272E0059AAC6 /* UINavigationController+Extension.swift */; };
+		4D8D4FBB26CC00960059AAC6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */; };
+		4D8D4FC026CC03D40059AAC6 /* LoginFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FBF26CC03D40059AAC6 /* LoginFailureViewController.swift */; };
 		4D8D4FCA26CD4DD00059AAC6 /* ProductsGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FC826CD4DCF0059AAC6 /* ProductsGroupCollectionViewCell.swift */; };
 		4D8D4FCB26CD4DD00059AAC6 /* ProductsGroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4FC926CD4DCF0059AAC6 /* ProductsGroupCollectionViewCell.xib */; };
 		4D8D4FD526CD4FBD0059AAC6 /* ThreeProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FD326CD4FBD0059AAC6 /* ThreeProductsCollectionViewCell.swift */; };
@@ -52,8 +54,6 @@
 		4D8D4FE526CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FE326CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift */; };
 		4D8D4FE626CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D4FE426CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib */; };
 		4D8D4FEB26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FEA26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift */; };
-		4D8D4FBB26CC00960059AAC6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */; };
-		4D8D4FC026CC03D40059AAC6 /* LoginFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D4FBF26CC03D40059AAC6 /* LoginFailureViewController.swift */; };
 		4DBBC79E26BE51A400FFDFC2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */; };
 		4DBBC7B226BED06E00FFDFC2 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */; };
 		4DBBC7B326BED06E00FFDFC2 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */; };
@@ -143,6 +143,8 @@
 		4D8D4F2926C904090059AAC6 /* SelectingProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D8D4F2A26C904090059AAC6 /* SelectingProductsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectingProductsCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D8D4F6D26CA272E0059AAC6 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4D8D4FBF26CC03D40059AAC6 /* LoginFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailureViewController.swift; sourceTree = "<group>"; };
 		4D8D4FC826CD4DCF0059AAC6 /* ProductsGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D8D4FC926CD4DCF0059AAC6 /* ProductsGroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		4D8D4FD326CD4FBD0059AAC6 /* ThreeProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeProductsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -150,8 +152,6 @@
 		4D8D4FE326CEA0020059AAC6 /* ProductsGroupCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGroupCollectionReusableView.swift; sourceTree = "<group>"; };
 		4D8D4FE426CEA0020059AAC6 /* ProductsGroupCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsGroupCollectionReusableView.xib; sourceTree = "<group>"; };
 		4D8D4FEA26CEAE240059AAC6 /* ProductsGroupCollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductsGroupCollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
-		4D8D4FBA26CC00960059AAC6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		4D8D4FBF26CC03D40059AAC6 /* LoginFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailureViewController.swift; sourceTree = "<group>"; };
 		4DBBC79D26BE51A400FFDFC2 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		4DBBC7A926BED06D00FFDFC2 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		4DBBC7AA26BED06D00FFDFC2 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
