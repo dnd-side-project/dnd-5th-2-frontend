@@ -20,7 +20,7 @@ struct User: Codable {
   enum CodingKeys: String, CodingKey {
     case email
     case password
-    case username = "user_name"
+    case username
     case gender
     case age
     case types = "type_name"

@@ -7,13 +7,47 @@
 
 import Foundation
 
-enum PersonalTypeCategory {
-  case gut
-  case stomach
+enum PersonalTypeCategory: CaseIterable {
+  case gut // 위
+  case stomach // 장
   case bone
   case fatigue
   case eye
   case liver
+
+  var homeTitle: String {
+    switch self {
+    case .gut:
+      return "소화가 잘 안되는 위를 위한 제품 모음"
+    case .stomach:
+      return "예민하고 둔감한 장을 위한 제품 모음"
+    case .bone:
+      return "평소 통증이 잦은 관절/뼈를 위한 제품 모음"
+    case .fatigue:
+      return "매일같이 피곤한 사람을 위한 제품 모음"
+    case .eye:
+      return "침침하고 피로한 눈을 위한 제품 모음"
+    case .liver:
+      return "음주로 인해 지친 간을 위한 제품 모음"
+    }
+  }
+
+  var homeSubtitle: String {
+    switch self {
+    case .gut:
+      return "자주 속이 더부룩하다면 확인!"
+    case .stomach:
+      return "변비로 인해 고생한다면 확인!"
+    case .bone:
+      return "더 늦기 전에 관절을 챙기고싶다면 확인!"
+    case .fatigue:
+      return "잠을 자도 피곤하다면 확인!"
+    case .eye:
+      return "업무와 스마트폰으로 지친 눈을 위해 확인!"
+    case .liver:
+      return "주1회 이상 음주한다면 확인!"
+    }
+  }
 }
 
 struct Quiz {

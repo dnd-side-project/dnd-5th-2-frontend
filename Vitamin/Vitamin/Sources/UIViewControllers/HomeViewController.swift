@@ -17,12 +17,7 @@ class HomeViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupStyle()
     registerCollectionView()
-  }
-
-  func setupStyle() {
-
   }
 
   func registerCollectionView() {

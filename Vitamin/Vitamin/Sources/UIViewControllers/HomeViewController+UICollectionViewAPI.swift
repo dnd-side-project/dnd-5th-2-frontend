@@ -17,6 +17,19 @@ extension HomeViewController: UICollectionViewDataSource {
       return UICollectionViewCell()
     }
 
+    cell.titleLabel.text = PersonalTypeCategory.allCases[indexPath.row].homeTitle
+    cell.subtitleLabel.text = PersonalTypeCategory.allCases[indexPath.row].homeSubtitle
+
+    if indexPath.row == 0 {
+      cell.supplements = [Supplement(supplementName: "진센큐", companyName: "바른영양연구소"),
+                          Supplement(supplementName: "위건강엔 매스틱", companyName: "(주)코스맥스 바이오"),
+                          Supplement(supplementName: "나우푸드", companyName: "now")]
+    } else {
+      cell.supplements = [Supplement(supplementName: "프로바이오틱스", companyName: "나우제약"),
+                          Supplement(supplementName: "구미젤리", companyName: "네이쳐스웨이"),
+                          Supplement(supplementName: "베지캡술", companyName: "닥터스베스트")]
+    }
+
     return cell
   }
 

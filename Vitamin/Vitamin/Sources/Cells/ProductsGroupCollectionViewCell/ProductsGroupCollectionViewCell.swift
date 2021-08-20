@@ -10,6 +10,14 @@ import UIKit
 class ProductsGroupCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet var horizontalProductsCollectionView: UICollectionView!
+  @IBOutlet var titleLabel: UILabel!
+  @IBOutlet var subtitleLabel: UILabel!
+
+  var supplements: [Supplement] = [] {
+    didSet {
+      horizontalProductsCollectionView.reloadData()
+    }
+  }
 
   override func awakeFromNib() {
     super.awakeFromNib()

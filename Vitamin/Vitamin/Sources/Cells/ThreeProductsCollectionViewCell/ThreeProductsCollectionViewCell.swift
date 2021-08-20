@@ -11,6 +11,12 @@ class ThreeProductsCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet var tableView: UITableView!
 
+  var supplements: [Supplement] = [] {
+    didSet {
+      tableView.reloadData()
+    }
+  }
+
   let tableViewItemCount = 3
 
   override func awakeFromNib() {
@@ -35,6 +41,11 @@ extension ThreeProductsCollectionViewCell: UITableViewDataSource, UITableViewDel
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductsGroupByTypeTableViewCell.identifier) as? ProductsGroupByTypeTableViewCell else {
       return UITableViewCell()
+    }
+
+    if indexPath.row < supplements.count {
+      cell.companyNameLabel.text = supplements[indexPath.row].companyName
+      cell.productNameLabel.text = supplements[indexPath.row].supplementName
     }
 
     return cell

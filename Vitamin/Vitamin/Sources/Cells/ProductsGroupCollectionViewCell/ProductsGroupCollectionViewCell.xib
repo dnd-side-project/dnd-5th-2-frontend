@@ -62,6 +62,8 @@
             <size key="customSize" width="320" height="356"/>
             <connections>
                 <outlet property="horizontalProductsCollectionView" destination="Pru-5j-RfY" id="jDB-vn-Xa4"/>
+                <outlet property="subtitleLabel" destination="eAX-yC-br6" id="wHR-bn-rd7"/>
+                <outlet property="titleLabel" destination="jyg-4n-kWs" id="7Z1-lR-Swj"/>
             </connections>
             <point key="canvasLocation" x="333.33333333333337" y="180.80357142857142"/>
         </collectionViewCell>

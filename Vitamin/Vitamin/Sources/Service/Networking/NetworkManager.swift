@@ -81,6 +81,7 @@ class NetworkManager {
     let request = AF.request(loginURL,
                              method: .get,
                              headers: header)
+
     request.responseDecodable { (response: DataResponse<User, AFError>) in
       switch response.result {
       case .success(let user):

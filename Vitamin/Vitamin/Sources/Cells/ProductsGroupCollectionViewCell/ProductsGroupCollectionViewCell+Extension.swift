@@ -16,6 +16,7 @@ extension ProductsGroupCollectionViewCell: UICollectionViewDataSource {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThreeProductsCollectionViewCell.identifier,
                                                         for: indexPath) as? ThreeProductsCollectionViewCell
     else { return UICollectionViewCell() }
+    cell.supplements = supplements
     return cell
   }
 }
